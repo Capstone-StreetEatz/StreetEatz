@@ -3,32 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<title>All Posts</title>
-	<link rel="stylesheet" href="/css/index.css">
+	<link th:replace="partials/header :: bootstrap">
+	<link th:replace="partials/header :: index_stylesheet" />
 
 </head>
 <body>
-<nav th:replace="partials/navabar :: navbar"/>
-
 <div class="page-wrapper">
-	<h1>All Post</h1>
-
-	<div  th:each="post : ${posts}">
-
-		<div class="ad-card">
-			<!--                <p>Id: <span th:text="${post.id}" ></span></p>-->
-			<p> <span class="ad-title" th:text="${post.title}" ></span></p>
-			<p> <span class="ad-body" th:text="${post.body}" ></span></p>
-
-			<form action="posts/delete" method="post">
-				<a th:href="@{/posts/{id}(id=${post.getId()})}">View Details</a>
-				<input name="id" th:hidden="true" th:value="${post.getId()}" >
-				<button type="submit">Delete</button>
-			</form>
-		</div>
-	</div>
-</div>
+	<nav th:replace="partials/navbar :: navbar"></nav>
 
 </div>
+
+<script th:replace="partials/Bootstrap/bootstrap-script :: bootstrapScript"></script>
+<script th:replace="partials/index_js :: javascript"></script>
 </body>
 
 </html>
