@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>All Posts</title>
+	<link rel="stylesheet" href="/css/index.css">
+
 </head>
 <body>
+<nav th:replace="partials/navabar :: navbar"/>
 
+<div class="page-wrapper">
+	<h1>All Post</h1>
+
+	<div  th:each="post : ${posts}">
+
+		<div class="ad-card">
+			<!--                <p>Id: <span th:text="${post.id}" ></span></p>-->
+			<p> <span class="ad-title" th:text="${post.title}" ></span></p>
+			<p> <span class="ad-body" th:text="${post.body}" ></span></p>
+
+			<form action="posts/delete" method="post">
+				<a th:href="@{/posts/{id}(id=${post.getId()})}">View Details</a>
+				<input name="id" th:hidden="true" th:value="${post.getId()}" >
+				<button type="submit">Delete</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+</div>
 </body>
+
 </html>

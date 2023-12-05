@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Individual Post</title>
+	<link rel="stylesheet" href="/css/update.css">
+
 </head>
 <body>
 
+<nav th:replace="partials/navabar :: navbar"/>
+
+<h1>Create Post</h1>
+
+<div class="page-wrapper">
+	<div class="ad-card">
+		<form th:action="@{/posts/update}" method="post" th:object="${post}">
+			<div class="form-control">
+				<label for="title">title</label>
+				<input  type="text" name="title" id="title" th:value="${post.getTitle()}" th:field="*{title}">
+
+				<label for="body">body</label>
+				<textarea name="body" id="body"  th:text="${post.getBody()}" th:field="*{body}"></textarea>
+			</div>
+			<input name="id" th:hidden="true" th:value="${post.getId()}" th:field="*{id}">
+			<input name="author" th:hidden="true" th:value="${post.getAuthor()}" th:field="*{author}">
+			<button type="submit">Update</button>
+
+
+		</form>
+	</div>
+</div>
+
 </body>
+
 </html>

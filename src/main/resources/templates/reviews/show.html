@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">>
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Individual Post</title>
+	<link rel="stylesheet" href="/css/show.css">
+
 </head>
 <body>
+<nav th:replace="partials/navabar :: navbar"/>
+
+<div class="page-wrapper">
+	<h1>Viewing Individual Id</h1>
+	<div class="ad-card">
+		<p> <span th:text="${post.getAuthor().email}"></span></p>
+
+		<p>title: <span th:text="${post.title}"></span></p>
+		<p>body: <span th:text="${post.body}"></span></p>
+		<div class="form-control">
+			<form th:action="@{/posts/delete}" method="post" th:object="${post}">
+				<input name="id" th:hidden="true" th:value="${post.getId()}" th:field="*{id}">
+				<button type="submit">Delete</button>
+			</form>
+			<form th:action="@{/posts/update/{id}(id=${post.getId()})}">
+				<button>Update</button>
+			</form>
+
+		</div>
+	</div>
+	<div sec:authorize="isAuthenticated()">
+		This content is only shown to authenticated users.
+
+		User ID: <span th:text="${#authentication.principal.id}"/>
+		Username: <span th:text="${#authentication.principal.username}"/>
+		Email: <span th:text="${#authentication.principal.email}"/>
+	</div>
+</div>
+
 
 </body>
+
 </html>
