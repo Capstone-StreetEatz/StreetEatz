@@ -5,7 +5,7 @@ drop table if exists reviews;
 CREATE TABLE reviews
 (
     id            INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    user_name     VARCHAR(255) NOT NULL,
+    user_name     INT UNSIGNED NOT NULL,
     truck_name    INT UNSIGNED NOT NULL,
     rating        double NOT NULL,
     comment       VARCHAR(1000) NOT NULL,
