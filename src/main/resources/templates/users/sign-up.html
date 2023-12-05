@@ -3,22 +3,30 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>Sign up</title>
-	<link rel="stylesheet" href="/css/signup.css">
+	<link th:replace="partials/header :: bootstrap">
+	<link th:replace="partials/header :: signup_stylesheet" />
+
 </head>
 <body>
-<nav th:replace="partials/navabar :: navbar"></nav>
-<h1>Create an account</h1>
-<form th:action="@{/sign-up}" method="POST" th:object="${user}">
-	<label for="username">Username</label>
-	<input id="username" th:field="*{username}" />
+<div class="page-wrapper">
+	<nav th:replace="partials/navbar :: navbar"></nav>
+	<h1>Create an account</h1>
+	<form th:action="@{/sign-up}" method="POST" th:object="${user}">
+		<label for="username">Username</label>
+		<input id="username" th:field="*{username}" />
 
-	<label for="email">Email</label>
-	<input id="email" th:field="*{email}" />
+		<label for="email">Email</label>
+		<input id="email" th:field="*{email}" />
 
-	<label for="password">Password</label>
-	<input id="password" type="password" th:field="*{password}" />
+		<label for="password">Password</label>
+		<input id="password" type="password" th:field="*{password}" />
 
-	<input value="Sign me up!" type="submit" />
-</form>
+		<input value="Sign me up!" type="submit" />
+	</form>
+</div>
+
+<script th:replace="partials/Bootstrap/bootstrap-script :: bootstrapScript"></script>
+<script th:replace="partials/index_js :: javascript"></script>
+
 </body>
 </html>

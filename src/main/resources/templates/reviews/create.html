@@ -3,13 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Create Post</title>
-	<link rel="stylesheet" href="/css/create.css">
+	<link th:replace="partials/header :: bootstrap">
+	<link th:replace="partials/header :: create_stylesheet" />
 
 </head>
 <body>
-<nav th:replace="partials/navabar :: navbar"/>
-<h1>Create Post</h1>
 <div class="page-wrapper">
+	<nav th:replace="partials/navbar :: navbar"></nav>
 	<div class="ad-card">
 		<form th:action="@{/posts/create}" method="post" th:object="${post}">
 			<div class="form-control">
@@ -25,3 +25,9 @@
 		</form>
 	</div>
 </div>
+
+<script th:replace="partials/Bootstrap/bootstrap-script :: bootstrapScript"></script>
+<script th:replace="partials/index_js :: javascript"></script>
+
+</body>
+</html>
