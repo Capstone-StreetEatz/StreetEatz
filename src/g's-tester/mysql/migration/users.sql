@@ -9,7 +9,7 @@ CREATE TABLE users
     user_email    VARCHAR(255) NOT NULL,
     user_password VARCHAR(255) NOT NULL,
     user_picture  VARCHAR(300),
-    user_role     int unsigned not null,
+    user_role   int unsigned not null,
     PRIMARY KEY (id),
     UNIQUE (user_email),
     UNIQUE (user_name),
