@@ -37,12 +37,12 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests((requests) -> requests
                         /* Pages that require authentication
                          * only authenticated users can create and edit ads */
-                        .requestMatchers("/", "/reviews/create", "/reviews/*/update", "/reviews/update/**").authenticated()
+                        .requestMatchers("/reviews/create", "/reviews/*/update", "/reviews/update/**").authenticated()
                         /* Pages that do not require authentication
                          * anyone can visit the home page, register, login, and view ads */
-                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login").permitAll()
+                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about").permitAll()
                         // allow loading of static resources
-                        .requestMatchers("/css/**", "/js/**", "/img/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/img/**", "/partials/**", "/partial_css/**").permitAll()
                 )
                 /* Login configuration */
                 .formLogin((login) -> login.loginPage("/login").defaultSuccessUrl("/reviews"))
