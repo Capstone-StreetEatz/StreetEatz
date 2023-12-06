@@ -4,16 +4,39 @@
     <meta charset="UTF-8">
     <title>User Profile</title>
     <link th:replace="partials/header :: bootstrap">
-    <link th:replace="partials/header :: show_stylesheet" />
+    <link th:replace="partials_css/css_index :: user_stylesheet" />
 </head>
 <body>
 <div class="page-wrapper">
     <nav th:replace="partials/navbar :: navbar"></nav>
-
+    <!-- main -->
+    <div class="main">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="../../static/assets/user_icon.png" alt="Profile picture" class="img-thumbnail">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="user-info">
+                            <h2>Title</h2>
+                            <p><em>Email@google.com</em></p>
+                            <p>Bio</p>
+                            <p>Website</p>
+                            <a href="#">Social Media Links</a>
+                            <br>
+                            <button type="submit">edit profile</button>
+                            <button type="submit">delete profile</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:replace="partials/footer :: footer"></footer>
 </div>
 
-<footer th:replace="partials/footer :: footer"></footer>
-<script th:replace="partials/Bootstrap/bootstrap-script :: bootstrapScript"></script>
+<script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
 <script th:replace="partials/index_js :: javascript"></script>
 </body>
 </html>
