@@ -9,7 +9,7 @@ public class IndexController {
 
 
     public String hello(){
-        return "redirect:/login";
+        return "reviews/index";
 
     }
 
