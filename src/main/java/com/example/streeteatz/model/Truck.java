@@ -33,4 +33,44 @@ public class Truck {
             inverseJoinColumns={@JoinColumn(name="foodType_id")}
     )
     private List<FoodType> foodType;
+
+    public String getTruckName() {
+        return truckName;
+    }
+
+    public void setTruckName(String truckName) {
+        this.truckName = truckName;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public int getLocation() {
+        return location;
+    }
+
+    public void setLocation(int location) {
+        this.location = location;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public List<FoodType> getFoodType() {
+        return foodType;
+    }
+
+    public void setFoodType(List<FoodType> foodType) {
+        this.foodType = foodType;
+    }
 }
