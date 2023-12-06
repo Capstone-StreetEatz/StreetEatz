@@ -2,8 +2,10 @@ package com.example.streeteatz.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
-@Table(name = "TypeOfFood")
+@Table(name = "foodType")
 public class FoodType {
 
     @Id
@@ -12,6 +14,9 @@ public class FoodType {
 
     @Column(nullable = false, length = 50)
     private String FoodType;
+
+    @ManyToMany(mappedBy = "foodType")
+    private List<Truck> trucks;
 
     public FoodType() {
     }
