@@ -44,7 +44,7 @@ public class ReviewController {
     @GetMapping("/reviews/{id}")
     public String individualReview(@PathVariable int id, Model model){
 
-        Review review = reviewDao.getReviewById(1);
+        Review review = reviewDao.getReviewById(id);
 
 
        model.addAttribute("review", review);
@@ -101,6 +101,6 @@ public class ReviewController {
 
         reviewDao.save(review);
 
-        return "redirect:/reviews";
+        return "redirect:/profile";
     }
 }

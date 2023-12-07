@@ -1,7 +1,11 @@
 package com.example.streeteatz.controller;
 
 
+
 import com.example.streeteatz.model.Truck;
+
+import com.example.streeteatz.model.Review;
+
 import com.example.streeteatz.model.User;
 import com.example.streeteatz.repository.TruckRepository;
 import com.example.streeteatz.repository.UserRepository;
@@ -12,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -52,6 +57,7 @@ public class UserController {
         User user = userDao.getUserById(loggedInUser.getId());
         model.addAttribute("user", user);
         model.addAttribute("isTruckOwner", user.isTruckOwner());
+
 
         user.setTruckOwner(user.isTruckOwner());
 
