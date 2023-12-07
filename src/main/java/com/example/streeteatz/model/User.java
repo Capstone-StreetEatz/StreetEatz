@@ -31,9 +31,6 @@ public class User {
     @Column
     private boolean truckOwner;
 
-
-
-
     public User() {
     }
 

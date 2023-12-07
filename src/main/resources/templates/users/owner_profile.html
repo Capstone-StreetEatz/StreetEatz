@@ -4,34 +4,82 @@
     <meta charset="UTF-8">
     <title>Owner Profile</title>
     <link th:replace="partials/header :: bootstrap">
-    <link th:replace="partials_css/css_index :: user_stylesheet" />
+    <link rel="stylesheet" th:href="@{../../static/assets/img/css/ownerProfile.css}">
+
 </head>
 <body>
-<div class="main">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="../../static/assets/truck_icon.png" alt="Profile picture" class="img-thumbnail">
-                </div>
-                <div class="col-md-8">
-                    <div class="user-info">
-                        <h2>Owner Title</h2>
-                        <p><em>Email@google.com</em></p>
-                        <p>Bio</p>
-                        <p>Website</p>
-                        <a href="#">Social Media Links</a>
-                        <br>
-                        <button type="submit">edit profile</button>
-                        <button type="submit">delete profile</button>
+<div class="page-wrapper">
+    <nav th:replace="partials/navbar :: navbar"></nav>
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="user-info">
+                            <h2>Owner Title</h2>
+                            <p><em>Email@google.com</em></p>
+                            <p>Bio</p>
+                            <p>Website</p>
+                            <a href="#">Social Media Links</a>
+                            <br>
+                            <button type="submit">edit profile</button>
+                            <button type="submit">delete profile</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <footer th:replace="partials/footer :: footer"></footer>
+        <footer th:replace="partials/footer :: footer"></footer>
+    </main>
+    <section class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#tab1" data-bs-toggle="list">Reviews</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tab2" data-bs-toggle="list">Photos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#tab3" data-bs-toggle="list">Directions</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <!--            Reviews-->
+            <div class="tab-pane active" id="tab1" role="tabpanel">
+                <div class="row">
+                    <div class="column">
+                        <!--     average reviews goes here-->
+                    </div>
+                    <div class="column">
+<!--                        list of all reviews of truck goes here-->
+                    </div>
+                </div>
+            </div>
+            <!--            photos-->
+            <div class="tab-pane" id="tab2" role="tabpanel">
+                <div class="gallery">
+<!--                    placeholder images to make sure it works. will input filestack logic later-->
+<!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+<!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+<!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                </div>
+            </div>
+            <!--            directions-->
+            <div class="tab-pane" id="tab3" role="tabpanel">
+                <div>
+                    <!--                    map goes here-->
+                    <h3>Get Directions</h3>
+                    <!--                    input location input-->
+                </div>
+            </div>
+        </div>
+        <footer th:replace="partials/footer :: footer"></footer>
+    </section>
 </div>
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script th:replace="partials/index_js :: javascript"></script>
+<script th:src="@{../../static/assets/img/js/ownerProfile.js}"></script>
 </body>
 </html>

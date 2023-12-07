@@ -32,7 +32,6 @@ public class UserController {
     public String saveUser(@ModelAttribute User user){
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
-//        System.out.println(user.getisTruckOwner());
         System.out.println(user.isTruckOwner());
         userDao.save(user);
         return "redirect:/login";
@@ -42,18 +41,13 @@ public class UserController {
         User user = userDao.findByUsername(principal.getName());
         model.addAttribute("user", user);
 
-//        user.setTruckOwner(user.getisTruckOwner());
         user.setTruckOwner(user.isTruckOwner());
-//        System.out.println(user.getisTruckOwner());
-//        userDao.save(user);
 
         if (user.isTruckOwner()) {
             return "users/owner_profile";
         } else {
             return "users/user_profile";
         }
-
-
     }
 
 }
