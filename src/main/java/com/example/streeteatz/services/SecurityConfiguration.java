@@ -39,7 +39,7 @@ public class SecurityConfiguration {
                          * only authenticated users can create and edit ads */
 
 
-                        .requestMatchers( "/reviews/**", "/reviews/create", "/reviews/*/update", "/reviews/update/**","/profile","/index").authenticated()
+                        .requestMatchers( "/reviews/**", "/reviews/create", "/reviews/*/update", "/reviews/update/**","/profile").authenticated()
 
                         /* Pages that do not require authentication
                          * anyone can visit the home page, register, login, and view ads */
@@ -52,7 +52,7 @@ public class SecurityConfiguration {
 
                 )
                 /* Login configuration */
-                .formLogin((login) -> login.loginPage("/login").defaultSuccessUrl("/index"))
+                .formLogin((login) -> login.loginPage("/login").defaultSuccessUrl("/profile"))
                 /* Logout configuration */
                 .logout((logout) -> logout.logoutSuccessUrl("/"));
 //                .httpBasic(withDefaults());
