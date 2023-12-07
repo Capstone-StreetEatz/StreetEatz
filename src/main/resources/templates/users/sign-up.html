@@ -4,14 +4,20 @@
 	<meta charset="UTF-8" />
 	<title>Sign up</title>
 	<link th:replace="partials/header :: bootstrap">
-	<link th:replace="partials_css/css_index :: user_stylesheet" />
 
 </head>
 <body>
 <div class="page-wrapper">
 	<nav th:replace="partials/navbar :: navbar"></nav>
 	<h1>Create an account</h1>
-	<form th:action="@{/sign-up}" method="POST" th:object="${user}">
+
+	<form th:action="@{/sign-up}" th:method="POST" th:object="${user}">
+		<label for="accountType">Account Type:</label>
+		<select id="accountType" th:field="*{truckOwner}">
+			<option th:value="0">User</option>
+			<option th:value="1">Owner</option>
+		</select>
+
 		<label for="username">Username</label>
 		<input id="username" th:field="*{username}" />
 
@@ -26,7 +32,7 @@
 </div>
 
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script th:replace="partials/index_js :: javascript"></script>
+<!--<script th:replace="partials/index_js :: javascript"></script>-->
 
 </body>
 </html>

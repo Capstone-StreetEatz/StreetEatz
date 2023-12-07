@@ -28,17 +28,29 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     List<Review> reviews;
 
+    @Column
+    private boolean truckOwner;
 
     public User() {
     }
 
-    public User(int id, String username, String email, String password, String avatar, List<Review> reviews) {
+    public User(int id, String username, String email, String password, String avatar, List<Review> reviews, boolean truckOwner) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.avatar = avatar;
         this.reviews = reviews;
+        this.truckOwner = truckOwner;
+    }
+
+    public User(String username, String email, String password, String avatar, List<Review> reviews, boolean truckOwner) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.avatar = avatar;
+        this.reviews = reviews;
+        this.truckOwner = truckOwner;
     }
 
     public User(User copy) {
@@ -48,8 +60,17 @@ public class User {
         password = copy.password;
         avatar = copy.avatar;
         reviews = copy.reviews;
+        truckOwner = copy.truckOwner;
     }
 
+
+    public boolean isTruckOwner() {
+        return truckOwner;
+    }
+
+    public void setTruckOwner(boolean truckOwner) {
+        this.truckOwner = truckOwner;
+    }
 
     public int getId() {
         return id;

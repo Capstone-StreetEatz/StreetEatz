@@ -4,22 +4,25 @@
 	<meta charset="UTF-8">
 	<title>Create Post</title>
 	<link th:replace="partials/header :: bootstrap">
-	<link th:replace="partials_css/css_index :: create_stylesheet" />
+
+<!--	<link th:replace="partials_css/css_index :: create_stylesheet" />-->
+
 
 </head>
 <body>
 <div class="page-wrapper">
 	<nav th:replace="partials/navbar :: navbar"></nav>
 	<div class="ad-card">
-		<form th:action="@{/posts/create}" method="post" th:object="${post}">
+		<form th:action="@{/reviews/create}" method="post" th:object="${review}">
 			<div class="form-control">
-				<label for="title" >title</label>
-				<input  type="text" name="title" id="title" th:field="*{title}">
-
 				<label for="body">body</label>
 				<textarea th:field="*{body}" name="body" id="body" cols="30" rows="10"></textarea>
+				<label for="rating" >Rating</label>
+				<input  type="range" min="0" max="10" name="rating" id="rating" th:field="*{rating}">
+				<label for="user_id" >Rating</label>
+				<input  type="text" name="user_id" id="user_id" th:field="*{user}" th:value="">
 			</div>
-			<button type="submit">Post</button>
+			<button type="submit">Post Review</button>
 
 
 		</form>
@@ -27,7 +30,7 @@
 </div>
 
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script th:replace="partials/index_js :: javascript"></script>
+<!--<script th:replace="partials/index_js :: javascript"></script>-->
 
 </body>
 </html>
