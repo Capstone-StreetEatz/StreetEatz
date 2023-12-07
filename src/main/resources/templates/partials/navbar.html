@@ -26,6 +26,10 @@
                         <a class="nav-link" th:href="@{/login}">Login</a>
                     </div>
                 </li>
+                    <div sec:authorize="isAnonymous()">
+                        <a class="nav-link" th:href="@{/showall}">See All Trucks</a>
+                    </div>
+
             </ul>
         </div>
     </div>
