@@ -17,7 +17,7 @@ public class UserController {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder){
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
     }
@@ -35,6 +35,13 @@ public class UserController {
         System.out.println(user.isTruckOwner());
         userDao.save(user);
         return "redirect:/login";
+    }
+
+
+    @GetMapping("/index")
+    public String showLogIn(Model model){
+        model.addAttribute("user", new User());
+        return "reviews/index";
     }
     @GetMapping("/profile")
     public String showProfile(Model model, Principal principal) {

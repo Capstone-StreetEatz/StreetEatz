@@ -21,7 +21,7 @@ public class Review {
     private int rating;
 
     @ManyToOne
-    @JoinColumn (name = "user")
+    @JoinColumn (name = "user_id")
     private User user;
 
     @ManyToOne
@@ -39,6 +39,7 @@ public class Review {
         this.user = user;
         this.truck = truck;
     }
+
 
     public int getId() {
         return id;
