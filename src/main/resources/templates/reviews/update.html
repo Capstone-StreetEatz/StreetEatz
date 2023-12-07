@@ -10,16 +10,16 @@
 <div class="page-wrapper">
 	<nav th:replace="partials/navbar :: navbar"></nav>
 	<div class="ad-card">
-		<form th:action="@{/posts/update}" method="post" th:object="${post}">
+		<form th:action="@{/reviews/update}" method="post" th:object="${review}">
 			<div class="form-control">
-				<label for="title">title</label>
-				<input  type="text" name="title" id="title" th:value="${post.getTitle()}" th:field="*{title}">
+				<label for="rating">Rating</label>
+				<input  type="text" name="rating" id="rating" th:value="${review.rating}" th:field="*{rating}">
 
-				<label for="body">body</label>
-				<textarea name="body" id="body"  th:text="${post.getBody()}" th:field="*{body}"></textarea>
+				<label for="body">Body</label>
+				<textarea name="body" id="body"  th:text="${review.body}" th:field="*{body}"></textarea>
 			</div>
-			<input name="id" th:hidden="true" th:value="${post.getId()}" th:field="*{id}">
-			<input name="author" th:hidden="true" th:value="${post.getAuthor()}" th:field="*{author}">
+			<input name="id" th:hidden="true" th:value="${review.id}" th:field="*{id}">
+			<input name="author" th:hidden="true" th:value="${review.user}" th:field="*{user}">
 			<button type="submit">Update</button>
 
 
