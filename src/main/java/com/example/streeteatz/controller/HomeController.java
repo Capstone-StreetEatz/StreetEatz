@@ -8,7 +8,7 @@ public class HomeController {
     @GetMapping("/")
 
     public String hello(){
-        return "redirect:/profile";
+        return "reviews/index";
     }
 
 }

@@ -4,10 +4,39 @@
 	<meta charset="UTF-8">
 	<title>Index</title>
 	<link th:replace="partials/header :: bootstrap">
-	<link th:replace="partials_css/css_index :: index_stylesheet" />
+	<link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
+	<script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+	<style>
+		#map {height: 500px; width: 90%; margin: 0 auto;}
+	</style>
 
 </head>
 <body>
+
+<style>
+	.map-overlay-container {
+		position: absolute;
+		width: 25%;
+		top: 0;
+		left: 0;
+		padding: 10px;
+		z-index: 1;
+	}
+
+	.map-overlay {
+		font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+		background-color: #fff;
+		border-radius: 3px;
+		padding: 10px;
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.map-overlay h2,
+	.map-overlay p {
+		margin: 0 0 10px;
+	}
+</style>
+
 <div class="page-wrapper">
 	<nav th:replace="partials/navbar :: navbar"></nav>
 
@@ -39,10 +68,20 @@
 	</div>
 //End of CARDS//
 
+	<div id="map">
+
+	<div class="map-overlay-container">
+		<div class="map-overlay">
+			<h2 id="location-title"></h2>
+			<p id="location-description"></p>
+		</div>
+	</div>
+
 </div>
 
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script th:replace="partials/index_js :: javascript"></script>
+<script type="text/javascript" th:src="@{/js/mapbox.js}"></script>
+
 </body>
 
 </html>
