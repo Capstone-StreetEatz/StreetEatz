@@ -9,7 +9,7 @@ public class HomeController {
 
 
     public String hello(){
-        return "redirect:/login";
+        return "redirect:/index";
 
     }
 

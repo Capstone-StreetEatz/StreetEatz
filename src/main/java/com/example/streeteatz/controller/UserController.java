@@ -15,7 +15,7 @@ public class UserController {
     private UserRepository userDao;
     private PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder){
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
     }
@@ -39,11 +39,11 @@ public class UserController {
         model.addAttribute("user", new User());
         return "users/user_profile";
     }
-//    @PostMapping("/login")
-//    public String showLogIn(Model model){
-//        model.addAttribute("user", new User());
-//        return "/index";
-//    }
+    @GetMapping("/index")
+    public String showLogIn(Model model){
+        model.addAttribute("user", new User());
+        return "reviews/index";
+    }
 
 
 }

@@ -44,7 +44,7 @@ public class ReviewController {
     @GetMapping("/reviews/{id}")
     public String individualReview(@PathVariable int id, Model model){
 
-        Review review = reviewDao.getReviewById(id);
+        Review review = reviewDao.getReviewById(1);
 
 
        model.addAttribute("review", review);
@@ -95,7 +95,7 @@ public class ReviewController {
     }
 
     @PostMapping("/reviews/update")
-    public String reviewUpdate(@ModelAttribute ("post") Review review){
+    public String reviewUpdate(@ModelAttribute ("review") Review review){
 
 
 
