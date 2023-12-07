@@ -10,6 +10,7 @@ public class IndexController {
 
     public String hello(){
 
+
         return "reviews/index";
 
 
