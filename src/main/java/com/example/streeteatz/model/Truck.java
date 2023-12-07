@@ -19,7 +19,8 @@ public class Truck {
 
     @OneToOne
     private User owner;
-
+    @Column(length = 300)
+    private String website;
     @Column(nullable = false)
     private int location;
 
@@ -33,6 +34,41 @@ public class Truck {
             inverseJoinColumns={@JoinColumn(name="foodType_id")}
     )
     private List<FoodType> foodType;
+
+    public Truck(int id, String truckName, User owner, String website, int location, String avatar, List<FoodType> foodType) {
+        this.id = id;
+        this.truckName = truckName;
+        this.owner = owner;
+        this.website = website;
+        this.location = location;
+        this.avatar = avatar;
+        this.foodType = foodType;
+    }
+
+    public Truck(String truckName, User owner, String website, int location, String avatar, List<FoodType> foodType) {
+        this.truckName = truckName;
+        this.owner = owner;
+        this.website = website;
+        this.location = location;
+        this.avatar = avatar;
+        this.foodType = foodType;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
 
     public String getTruckName() {
         return truckName;
@@ -73,4 +109,6 @@ public class Truck {
     public void setFoodType(List<FoodType> foodType) {
         this.foodType = foodType;
     }
+
+
 }
