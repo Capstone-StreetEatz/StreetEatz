@@ -4,12 +4,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
-    @GetMapping("/")
+public class IndexController {
+    @GetMapping("/index")
 
 
     public String hello(){
-        return "redirect:/index";
+
+        return "reviews/index";
+
 
     }
 
