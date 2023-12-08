@@ -78,7 +78,7 @@ public class ReviewController {
 
     @PostMapping("/reviews/delete")
     public String reviewDelete(@RequestParam int id, Model model){
-
+        System.out.println(id);
         reviewDao.deleteById(id);
 
         return "redirect:/profile";
