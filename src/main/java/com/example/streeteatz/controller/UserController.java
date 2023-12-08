@@ -52,11 +52,15 @@ public class UserController {
     }
     //To show ALL users the user profile page:
     @GetMapping("/profile")
-    public String showOwnerProfile(Model model) {
+    public String showProfile(Model model) {
+      
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
+
+        List<Review> reviews = user.getReviews();
         model.addAttribute("user", user);
         model.addAttribute("isTruckOwner", user.isTruckOwner());
+        model.addAttribute("reviews", reviews);
 
 
         user.setTruckOwner(user.isTruckOwner());
