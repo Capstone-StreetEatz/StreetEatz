@@ -8,8 +8,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface TruckRepository extends JpaRepository<Truck, Integer> {
 
 
-    Truck getById (int Id);
-    User findByUsername(String username);
 
 //    Truck getUserById(int id);
 //    Truck findByUsername(String username);
