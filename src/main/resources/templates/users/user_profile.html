@@ -24,10 +24,10 @@
 <!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->
                                 <p>Username: <span th:text="${#authentication.principal.username}"/></p>
                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
+
                                 <button type="submit">edit profile</button>
                                 <button type="submit">delete profile</button>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -71,14 +71,15 @@
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div>
+
                     <p>Photos go here</p>
+
                 </div>
             </div>
         </div>
 <!--        <footer th:replace="partials/footer :: footer"></footer>-->
     </section>
 </div>
-
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
 <!--<script th:replace="partials/index_js :: javascript"></script>-->
 </body>
