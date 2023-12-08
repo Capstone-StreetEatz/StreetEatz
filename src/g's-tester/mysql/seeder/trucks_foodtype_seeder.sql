@@ -1,4 +1,20 @@
 # use capstone_db;
 #
-# INSERT INTO capstone_db.truck_foodtypes (truck_id, foodtype_id) VALUES (1,3);
-# INSERT INTO capstone_db.truck_foodtypes (truck_id, foodtype_id) VALUES (1,4);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (1,3);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (1,4);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (2,1);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (2,2);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (3,1);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (3,4);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (4,4);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (4,2);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (5,1);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (5,3);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (6,1);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (6,2);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (7,2);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (7,3);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (8,4);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (8,2);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (9,1);
+# INSERT INTO capstone_db.trucks_food_type (trucks_id, food_type_id) VALUES (9,2);
