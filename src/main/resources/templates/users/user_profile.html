@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>User Profile</title>
@@ -18,14 +18,16 @@
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
-                            <h2>Title</h2>
-                            <p><em>Email@google.com</em></p>
-                            <p>Bio</p>
-                            <p>Website</p>
-                            <a href="#">Social Media Links</a>
-                            <br>
-                            <button type="submit">edit profile</button>
-                            <button type="submit">delete profile</button>
+
+                            <div sec:authorize="isAuthenticated()">
+
+<!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->
+                                <p>Username: <span th:text="${#authentication.principal.username}"/></p>
+                               <p>Email: <span th:text="${#authentication.principal.email}"/></p>
+
+                                <button type="submit">edit profile</button>
+                                <button type="submit">delete profile</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -45,19 +47,39 @@
             <!--            Reviews-->
             <div class="tab-pane active" id="tab1" role="tabpanel">
                 <div>
+                    <p>Review goes here </p>
+                    <div  th:each="review : ${reviews}">
+
+                        <div class="ad-card" style="border: 1px solid black">
+
+                            <p> <span class="ad-title" th:text="${review.body}" ></span></p>
+                            <p> <span class="ad-body" th:text="${review.rating}" ></span></p>
+
+                            <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">
+                                <button class="update-profile">Update Info</button>
+                            </form>
+
+                            <form th:action="@{posts/delete}" method="post">
+                                <a th:href="@{/reviews/{id}(id=${review.id})}">View Details</a>
+                                <input name="id" th:hidden="true" th:value="${review.id}" >
+                                <button type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div>
 
+                    <p>Photos go here</p>
+
                 </div>
             </div>
         </div>
-        <footer th:replace="partials/footer :: footer"></footer>
+<!--        <footer th:replace="partials/footer :: footer"></footer>-->
     </section>
 </div>
-
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
 <!--<script th:replace="partials/index_js :: javascript"></script>-->
 </body>

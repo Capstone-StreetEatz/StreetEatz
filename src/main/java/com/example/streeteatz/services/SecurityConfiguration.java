@@ -38,12 +38,14 @@ public class SecurityConfiguration {
                         /* Pages that require authentication
                          * only authenticated users can create and edit ads */
 
-                        .requestMatchers( "/reviews/create", "/reviews/*/update", "/reviews/update/**","/profile").authenticated()
+
+                        .requestMatchers( "/reviews/**", "/reviews/create", "/reviews/*/update", "/reviews/update/**","/profile", "/updateUser", "/updateOwner").authenticated()
 
                         /* Pages that do not require authentication
                          * anyone can visit the home page, register, login, and view ads */
-                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about", "/index").permitAll()
+                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about", "/index", "showall").permitAll()
                         // allow loading of static resources
+
 
                         .requestMatchers("/css/**", "/js/**", "/img/**","/partials/**", "/partials_css/**", "/assets/**").permitAll()
 

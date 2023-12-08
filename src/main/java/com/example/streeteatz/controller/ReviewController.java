@@ -95,12 +95,12 @@ public class ReviewController {
     }
 
     @PostMapping("/reviews/update")
-    public String reviewUpdate(@ModelAttribute ("post") Review review){
+    public String reviewUpdate(@ModelAttribute ("review") Review review){
 
 
 
         reviewDao.save(review);
 
-        return "redirect:/reviews";
+        return "redirect:/profile";
     }
 }
