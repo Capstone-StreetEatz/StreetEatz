@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TruckRepository extends JpaRepository<User, Integer> {
 
-    User getUserById(int id);
-    User findByUsername(String username);
+//    User getUserById(int id);
+//    User findByUsername(String username);
 
 }

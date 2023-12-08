@@ -1,97 +1,163 @@
+
+Kyle Sowers
+5:06 PM
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>Index</title>
-
-<!--	<link th:replace="partials/header :: bootstrap">-->
-<!--	<link th:replace="partials_css/css_index :: index_stylesheet" />-->
+	<!--	<link th:replace="partials/header :: bootstrap">-->
 	<link th:replace="partials/header :: bootstrap">
-
+	<link th:replace="partials_css/css_index :: index_stylesheet" />
 	<link href="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css" rel="stylesheet">
 	<script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
 	<style>
-		#map {height: 500px; width: 90%; margin: 0 auto;}
+        #map {height: 500px; width: 90%; margin: 0 auto;}
 	</style>
-
-
 </head>
 <body>
-
 <style>
-	.map-overlay-container {
-		position: absolute;
-		width: 25%;
-		top: 0;
-		left: 0;
-		padding: 10px;
-		z-index: 1;
-	}
-
-	.map-overlay {
-		font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
-		background-color: #fff;
-		border-radius: 3px;
-		padding: 10px;
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-	}
-
-	.map-overlay h2,
-	.map-overlay p {
-		margin: 0 0 10px;
-	}
+    .map-overlay-container {
+        position: absolute;
+        width: 25%;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        z-index: 1;
+    }
+    .map-overlay {
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+        background-color: #fff;
+        border-radius: 3px;
+        padding: 10px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+    .map-overlay h2,
+    .map-overlay p {
+        margin: 0 0 10px;
+    }
 </style>
-
 <div class="page-wrapper">
-<!--	<nav th:replace="partials/navbar :: navbar"></nav>-->
-
-
-//Start of HERO
-	<div class="container my-5">
-		<div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
-			<div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-				<h1 class="display-4 fw-bold lh-1 text-body-emphasis">Border hero with cropped image and shadows</h1>
-				<p class="lead">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-				<div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
-					<button type="button" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">Primary</button>
-					<button type="button" class="btn btn-outline-secondary btn-lg px-4">Default</button>
+	<nav th:replace="partials/navbar :: navbar"></nav>
+	<!--//Start of HERO-->
+	<div class=" text-center">
+		<video class="d-block mx-auto" autoplay loop muted playsinline th:src="@{/assets/img/food_truck_video.mp4}" alt="Truck Park birdseye view video clip" style="height: 40%; width: 100%;">
+		</video>
+	</div>
+	<!--//End of HERO-->
+	<!--//Start of CARDS scroller//Needs refactoring style for correct card style//Will need to be a forEach to display all//-->
+	<div class="container">
+		<div id="carouselExample" class="carousel slide">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row gap-2">
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row gap-2">
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row gap-2">
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+						<div class="card col m-4" >
+							<img src="..." class="card-img-left" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Maipe Foodies</h5>
+								<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
+								<a href="#" class="btn btn-primary">Learn More</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
-<!--				<img class="rounded-lg-3" src="bootstrap-docs.png" alt="" width="720">-->
-
+			<button class="carousel-control-prev color-primary" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span >Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span >Next</span>
+			</button>
+		</div>
+	</div>
+	<!--//End of CARDS scroller//-->
+	<!--
+	-->
+	<div id="map">
+		<div class="map-overlay-container">
+			<div class="map-overlay">
+				<h2 id="location-title"></h2>
+				<p id="location-description"></p>
 			</div>
 		</div>
 	</div>
-<!--//End of HERO-->
-<!--//Start of CARDS//Needs refactoring style for correct card style//Will need to be a forEach to display all//-->
-	<div class="card" style="width: 18rem;">
-		<img src="..." class="card-img-left" alt="...">
-		<div class="card-body">
-			<h5 class="card-title">Maipe Foodies</h5>
-			<p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes, fusion island and asian flavors</p>
-			<a href="#" class="btn btn-primary">Learn More</a>
-		</div>
-	</div>
-<!--//End of CARDS//-->
-
-	<div id="map">
-
-	<div class="map-overlay-container">
-		<div class="map-overlay">
-			<h2 id="location-title"></h2>
-			<p id="location-description"></p>
-		</div>
-	</div>
-
-</div>
-
-
-<script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script type="text/javascript" th:src="@{/js/mapbox.js}"></script>
-<!--<script th:replace="partials/index_js :: javascript"></script>-->
-
+	<script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
+	<script type="text/javascript" th:src="@{/js/mapbox.js}"></script>
+	<script th:replace="partials/index_js :: javascript"></script>
 </div>
 </body>
-
 </html>

@@ -1,0 +1,28 @@
+card-container {
+    display: flex;
+    align-items: center;
+}
+.cards-wrapper {
+    display: flex;
+    max-height: 120px;
+    transition: transform 0.3s ease;
+}
+.cards-wrapper::-webkit-scrollbar {
+    width: 0;
+}
+.cards-wrapper .card {
+    min-width: 350px;
+    max-height: 150px;
+    line-height: 150px;
+    background-color: #ddd;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    gap: 50px;
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 10%;
+    color: #000;
+}

@@ -48,6 +48,7 @@ public class UserController {
     @GetMapping("/profile")
     public String showProfile(Model model, Principal principal) {
         User user = userDao.findByUsername(principal.getName());
+
         List<Review> reviews = user.getReviews();
 
         model.addAttribute("user", user);
