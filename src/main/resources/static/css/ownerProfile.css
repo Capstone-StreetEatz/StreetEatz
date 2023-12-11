@@ -75,6 +75,12 @@ at middle of screen */
     transform: translate(-50%, -50%);
 }
 
+#map1 {
+    height: 500px;
+    width: 90%;
+
+}
+
 /* Making images more responsive for smaller size device */
 @media (max-width:670px) {
     .gallery{
@@ -89,4 +95,7 @@ at middle of screen */
     .heading{
         font-size: 20px;
     }
+
+    /*For the map of where the truck is.*/
+
 }
