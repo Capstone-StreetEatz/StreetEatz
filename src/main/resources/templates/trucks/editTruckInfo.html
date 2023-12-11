@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{partials/fragments :: head(TruckInfo, '/css/editTruckInfo.css')}">
+  <title>Edit Truck Info</title>
+</head>
+<body>
+<div class="page-wrapper">
+  <nav th:replace="partials/fragments :: navbar"></nav>
+
+  <form th:action="@{/editTruckInfo}" th:method="post" th:object="${truck}">
+    <div class="form-group">
+
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website" th:field="*{website}" class="form-control">
+      <input type="hidden" th:field="*{id}">
+      <input type="submit" class="btn btn-block">
+    </div>
+  </form>
+  <footer th:replace="partials/fragments :: footer"></footer>
+
+</div>
+<th:block th:replace="partials/fragments :: scripts"></th:block>
+
+</body>
+</html>

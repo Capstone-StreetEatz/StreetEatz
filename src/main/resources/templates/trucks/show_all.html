@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-    <link th:replace="partials/header :: bootstrap">
-
+<head th:replace="~{partials/fragments :: head(ShowAll, '/css/showAll.css')}">
+    <title>Show All</title>
 </head>
 <body>
 <div class="page-wrapper">
-    <nav th:replace="partials/navbar :: navbar"></nav>
+    <nav th:replace="partials/fragments :: navbar"></nav>
 
 <h1> This will be where we display all our trucks in our DB :D</h1>
+    <footer th:replace="partials/fragments :: footer"></footer>
 
     <div class="row gap-2">
         <div class="card col m-4" >
@@ -93,7 +91,6 @@
 
 </div>
 
-<script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
+<th:block th:replace="partials/fragments :: scripts"></th:block>
 </body>
-
 </html>

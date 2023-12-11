@@ -56,14 +56,15 @@ public class UserController {
       
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
-
+        Truck truck = truckDao.findByOwner(user);
         List<Review> reviews = user.getReviews();
+
         model.addAttribute("user", user);
+        model.addAttribute("truck", truck);
         model.addAttribute("isTruckOwner", user.isTruckOwner());
         model.addAttribute("reviews", reviews);
 
-
-        user.setTruckOwner(user.isTruckOwner());
+//        user.setTruckOwner(user.isTruckOwner());
 
         if (user.isTruckOwner()){
             return "users/owner_profile";
@@ -73,33 +74,34 @@ public class UserController {
     }
 
     @GetMapping("/updateUser")
-    public String showUpdateUserForm(Model model, Principal principal) {
-        User user = userDao.findByUsername(principal.getName());
+    public String showUpdateUserForm(Model model) {
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userDao.getUserById(loggedInUser.getId());
         model.addAttribute("user", user);
         return "users/updateProfile";
     }
 
     @PostMapping("/updateUser")
-    public String upateUser(@ModelAttribute User user){
+    public String updateUser(@ModelAttribute User user){
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
         return "redirect:/profile";
     }
     @GetMapping("/updateOwner")
-    public String showUpdateOwnerForm(Model model, Principal principal) {
-        User user = userDao.findByUsername(principal.getName());
+    public String showUpdateOwnerForm(Model model) {
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userDao.getUserById(loggedInUser.getId());
         model.addAttribute("user", user);
         return "users/updateOwner";
     }
 
     @PostMapping("/updateOwner")
     public String updateOwner(@ModelAttribute User user){
-
+//        System.out.println(user.isTruckOwner());
         String hash = passwordEncoder.encode(user.getPassword());
         user.setPassword(hash);
         userDao.save(user);
-
         return "redirect:/profile";
     }
     //To show SOME USERS a truck profile page

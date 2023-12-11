@@ -9,10 +9,10 @@ public interface TruckRepository extends JpaRepository<Truck, Integer> {
 
 
 
-//    Truck getUserById(int id);
-//    Truck findByUsername(String username);
+    Truck getTruckById(int id);
+//    Truck findTruckBy(String username);
 
     Truck findByOwner(User user);
 
-
+//    Truck findTruckByOwner(int id);
 }

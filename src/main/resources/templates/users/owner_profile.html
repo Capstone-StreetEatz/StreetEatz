@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8">
+<head th:replace="~{partials/fragments :: head(OwnerProfile, '/css/ownerProfile.css')}">
     <title>Owner Profile</title>
-    <link th:replace="partials/header :: bootstrap">
-    <link rel="stylesheet" th:href="@{../../static/css/ownerProfile.css}">
-
 </head>
 <body>
 <div class="page-wrapper">
-    <nav th:replace="partials/navbar :: navbar"></nav>
+    <nav th:replace="partials/fragments :: navbar"></nav>
     <main class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -19,21 +15,30 @@
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
-<!--                            <h2>Owner Title</h2>-->
-<!--                            <p><em>Email@google.com</em></p>-->
-<!--                            <p>Bio</p>-->
-<!--                            <p>Website</p>-->
-<!--                            <p>Location</p>-->
-<!--                            <a href="#">Social Media Links</a>-->
-<!--                            <br>-->
-                            <button type="submit">edit profile</button>
+                            <div sec:authorize="isAuthenticated()">
+
+                                <!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->
+                                <p>Username: <span th:text="${#authentication.principal.username}"/></p>
+                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
+                                <div th:if="${truck != null}">
+                                    <p>Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a> </p>
+                                </div>
+                                <div th:if="${truck.getWebsite() == null}">
+                                    <a th:href="@{/truckinfo}">Add Truck Website</a>
+                                </div>
+                                <div th:if="${truck.getWebsite() != null}">
+                                    <a th:href="@{/editTruckInfo}">Edit Truck Website</a>
+                                </div>
+
+                            <a th:href="@{/updateOwner}">edit profile</a>
                             <button type="submit">delete profile</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <footer th:replace="partials/footer :: footer"></footer>
     </main>
     <section class="container">
         <ul class="nav nav-tabs">
@@ -77,10 +82,10 @@
                 </div>
             </div>
         </div>
-        <footer th:replace="partials/footer :: footer"></footer>
     </section>
+    <footer th:replace="partials/fragments :: footer"></footer>
 </div>
-<script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script th:src="@{../../static/js/ownerProfile.js}"></script>
+<th:block th:replace="partials/fragments :: scripts"></th:block>
+
 </body>
 </html>
