@@ -21,13 +21,13 @@ public class TruckController {
         this.truckDao = truckDao;
     }
 
-    @GetMapping("/showall")
+    @GetMapping("/showAll")
 
     public String hello() {
         return "trucks/show_all";
     }
 
-    @GetMapping("/truckinfo")
+    @GetMapping("/truckInfo")
     public String showTruckInfoForm(Model model){
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
@@ -39,7 +39,7 @@ public class TruckController {
         return "/trucks/truckInfo";
     }
 
-    @PostMapping("/truckinfo")
+    @PostMapping("/truckInfo")
     public String truckInfo(@ModelAttribute Truck truck){
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());

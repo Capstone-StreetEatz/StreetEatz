@@ -27,38 +27,52 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" th:href="@{/about}">About</a>
                     </li>
-                    <div>
-                        <a class="nav-link" th:href="@{/showall}">See All Trucks</a>
-                    </div>
+                    <li>
+                        <a class="nav-link" th:href="@{/showAll}">See All Trucks</a>
+                    </li>
                 </ul>
             </div>
             <div class="">
                 <ul class="navbar-nav">
-                    <div class="nav-item" sec:authorize="isAuthenticated()">
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
                         <a class="nav-link" th:href="@{/profile}">Profile</a>
-                    </div>
-                    <div class="nav-item" sec:authorize="isAnonymous()">
+                    </li>
+                    <li class="nav-item" sec:authorize="isAnonymous()">
                         <a class="nav-link" th:href="@{/sign-up}">Sign Up</a>
-                    </div>
-                    <div class="nav-item" sec:authorize="isAuthenticated()">
+                    </li>
+                    <li class="nav-item" sec:authorize="isAuthenticated()">
                         <form th:action="@{/logout}" th:method="post">
                             <button class="btn">Logout</button>
                         </form>
-                    </div>
-                    <div class="nav-item" sec:authorize="isAnonymous()">
+                    </li>
+                    <li class="nav-item" sec:authorize="isAnonymous()">
                         <a class="nav-link" th:href="@{/login}">Login</a>
-                    </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </nav>
 <!--FOOTER-->
-<footer th:fragment="footer" xmlns:sec="http://www.w3.org/1999/xhtml">
 
-    <h1>That's all folks</h1>
+        <footer th:fragment="footer" xmlns:sec="http://www.w3.org/1999/xhtml" class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item">
+                    <a th:href="@{/}" class="nav-link px-2 text-body-secondary">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link px-2 text-body-secondary" aria-current="page" th:href="@{/about}">About</a>
+                </li>
+                <li>
+                    <a class="nav-link px-2 text-body-secondary" th:href="@{/showAll}">See All Trucks</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link px-2 text-body-secondary" th:href="@{/sign-up}">Sign Up</a>
+                </li>
+            </ul>
+            <p class="text-center text-body-secondary">&copy; 2023 Company, Inc</p>
+        </footer>
 
-</footer>
 
 
 <!--SCRIPTS-->
@@ -67,7 +81,11 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js"></script>
+    <script src="/js/keys.js"></script>
+    <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+    <script src="/js/filestack.js"></script>
     <script src="/js/mapbox.js"></script>
+
 </th:block>
 </body>
 </html>

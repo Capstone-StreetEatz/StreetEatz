@@ -12,18 +12,24 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4">
-                        <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/user_icon.png}">
+                        <div th:if="${user.getAvatar() != null}">
+                            <img alt="Profile picture" class="img-thumbnail" th:src="*{user.getAvatar()}">
+                        </div>
+                        <div th:if="${user.getAvatar() == null}">
+                            <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/user_icon.png}">
+                        </div>
+
+                        <button type="button" id="upload" name="upload">Upload an image</button>
+
+                    <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
+                        <input type="hidden" name="img" id="img" value="">
+                    </form>
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
-
                             <div sec:authorize="isAuthenticated()">
-
-<!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->
                                 <p>Username: <span th:text="${#authentication.principal.username}"/></p>
                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
-
-
                                 <a th:href="@{/updateUser}">edit profile</a>
                                 <button type="submit">delete profile</button>
                             </div>
@@ -78,9 +84,11 @@
         </div>
 <!--        <footer th:replace="partials/footer :: footer"></footer>-->
     </section>
-    <footer th:replace="partials/fragments :: footer"></footer>
-
+    <div class="container">
+        <footer th:replace="partials/fragments :: footer"></footer>
+    </div>
 </div>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
+
 </body>
 </html>
