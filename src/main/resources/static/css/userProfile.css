@@ -1,0 +1,6 @@
+/*Need to add media query to this to make it smaller for smaller screens*/
+.img-thumbnail{
+    width: 450px; /* adjust this to the size you want */
+    border-radius: 50%;
+    object-fit: cover;
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head th:replace="~{partials/fragments :: head(UpdateOwner, '/css/update.css')}">
+<head th:replace="~{partials/fragments :: head(UpdateOwner, '/css/userProfile.css')}">
     <title>Update Owner</title>
 </head>
 <body>
@@ -75,14 +75,11 @@
             </div>
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
-                <div>
-
-                    <p>Photos go here</p>
-
+                <div class="gallery">
+<!--                    <img th:src="" class="gallery-img">-->
                 </div>
             </div>
         </div>
-<!--        <footer th:replace="partials/footer :: footer"></footer>-->
     </section>
     <div class="container">
         <footer th:replace="partials/fragments :: footer"></footer>
