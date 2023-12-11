@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+<head th:replace="~{partials/fragments :: head(TruckInfo, '/css/truckInfo.css')}">
     <title>Truck Info</title>
 </head>
 <body>
 <div class="page-wrapper">
-  <nav th:replace="partials/navbar :: navbar"></nav>
+    <nav th:replace="partials/fragments :: navbar"></nav>
 
   <form th:action="@{/truckinfo}" th:method="post" th:object="${truck}">
     <div class="form-group">
@@ -17,7 +16,10 @@
       <input type="submit" class="btn btn-block">
     </div>
   </form>
+    <footer th:replace="partials/fragments :: footer"></footer>
+
 </div>
+<th:block th:replace="partials/fragments :: scripts"></th:block>
 
 </body>
 </html>

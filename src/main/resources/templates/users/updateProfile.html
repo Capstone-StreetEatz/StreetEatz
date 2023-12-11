@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-  <meta charset="UTF-8">
-  <title>Update Profile</title>
-
+<head th:replace="~{partials/fragments :: head(UpdateOwner, '/css/update.css')}">
+  <title>Update Owner</title>
 </head>
 <body>
 
 <div class="page-wrapper">
-  <nav th:replace="partials/navbar :: navbar"></nav>
+  <nav th:replace="partials/fragments :: navbar"></nav>
   <div class="container">
     <h1>Edit Profile</h1>
 
@@ -29,6 +27,9 @@
       <input type="submit" class="btn btn-block">
     </form>
   </div>
+  <footer th:replace="partials/fragments :: footer"></footer>
 </div>
+<th:block th:replace="partials/fragments :: scripts"></th:block>
+
 </body>
 </html>

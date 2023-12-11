@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-<head>
-    <meta charset="UTF-8">
+<head th:replace="~{partials/fragments :: head(OwnerProfile, '/css/ownerProfile.css')}">
     <title>Owner Profile</title>
-    <link th:replace="partials/header :: bootstrap">
-<!--    <link rel="stylesheet" th:href="@{../../static/css/ownerProfile.css}">-->
-
 </head>
 <body>
 <div class="page-wrapper">
-    <nav th:replace="partials/navbar :: navbar"></nav>
+    <nav th:replace="partials/fragments :: navbar"></nav>
     <main class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -43,7 +39,6 @@
                 </div>
             </div>
         </div>
-        <footer th:replace="partials/footer :: footer"></footer>
     </main>
     <section class="container">
         <ul class="nav nav-tabs">
@@ -87,10 +82,10 @@
                 </div>
             </div>
         </div>
-        <footer th:replace="partials/footer :: footer"></footer>
     </section>
+    <footer th:replace="partials/fragments :: footer"></footer>
 </div>
-<script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<!--<script th:src="@{../../static/js/ownerProfile.js}"></script>-->
+<th:block th:replace="partials/fragments :: scripts"></th:block>
+
 </body>
 </html>
