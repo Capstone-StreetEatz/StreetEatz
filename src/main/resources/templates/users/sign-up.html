@@ -4,8 +4,9 @@
 	<title>Sign up</title>
 </head>
 <body>
+<nav th:replace="partials/fragments :: navbar"></nav>
 <div class="page-wrapper">
-	<nav th:replace="partials/fragments :: navbar"></nav>
+
 	<div class="container">
 		<form class="signup-form" th:action="@{/sign-up}" th:method="POST" th:object="${user}">
 			<h1>Create an account</h1>
@@ -27,12 +28,12 @@
 			<input class="btn-signup" value="Sign me up!" type="submit" />
 		</form>
 	</div>
-	<div class="container fixed-bottom">
-		<footer th:replace="partials/fragments :: footer"></footer>
-	</div>
-
+<!--	<div class="container fixed-bottom">-->
+<!--		<footer th:replace="partials/fragments :: footer"></footer>-->
+<!--	</div>-->
 </div>
 
+<footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 
 </body>
