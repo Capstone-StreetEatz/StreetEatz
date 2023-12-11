@@ -22,7 +22,7 @@ html {
 .about-section {
     padding: 50px;
     text-align: center;
-    background-color: #a65f0a;
+    background-color: #FC7A1E;
     color: white;
 }
 .container {
@@ -42,13 +42,13 @@ html {
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #060b7a;
+    background-color: #054A91;
     text-align: center;
     cursor: pointer;
     width: 100%;
 }
 .button:hover {
-    background-color: #de9b58;
+    background-color: #FC7A1E;
 }
 @media screen and (max-width: 650px) {
     .column {

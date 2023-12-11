@@ -104,18 +104,15 @@ public class UserController {
         userDao.save(user);
         return "redirect:/profile";
     }
-    //To show SOME USERS a truck profile page
 
-//    @GetMapping("/myTruckProfile")
-//    public String showUserProfile(Model model, Principal principal) {
-//        User user = userDao.findByUsername(principal.getName());
-//        model.addAttribute("user", user);
-//
-//        user.setTruckOwner(user.isTruckOwner());
-//
-//        return "users/owner_profile";
-//
-//    }
+    @PostMapping("/imgUpload")
+    public String imgUpload(@RequestParam(name = "img") String imgLink){
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userDao.getUserById(loggedInUser.getId());
+        user.setAvatar(imgLink);
+        userDao.save(user);
+        return "redirect:/profile";
+    }
 
 }
 
