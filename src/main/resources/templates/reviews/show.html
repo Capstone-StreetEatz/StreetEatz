@@ -10,12 +10,12 @@
 	<div class="ad-card">
 
 		<p> <span th:text="${review.getUser().getUsername()}"></span></p>
-<!--		<p>title: <span th:text="${review.title}"></span></p>-->
+
 		<p>Body: <span th:text="${review.body}"></span></p>
 		<p>Rating: <span th:text="${review.rating}"></span></p>
 		<div class="form-control">
-			<form th:action="@{/reviews/delete}" method="review" th:object="${review}">
-				<input name="id" th:hidden="true" th:value="${review.getId()}" th:field="*{id}">
+			<form th:action="@{/reviews/delete}" method="post">
+				<input name="id" th:hidden="true" th:value="${review.id}" >
 				<button type="submit">Delete</button>
 			</form>
 			<form th:action="@{/reviews/update/{id}(id=${review.getId()})}">
