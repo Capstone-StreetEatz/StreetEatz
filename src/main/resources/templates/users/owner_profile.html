@@ -15,6 +15,10 @@
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
+
+                            <p>Truck Name: <span th:text="${truck.getTruckName()}"/></p>
+                            <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
+                            <p>Visit Website: <span th:text="${truck.getWebsite()}"/></p>
                             <div sec:authorize="isAuthenticated()">
 
                                 <!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->

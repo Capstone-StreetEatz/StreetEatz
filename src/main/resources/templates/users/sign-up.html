@@ -6,29 +6,31 @@
 <body>
 <div class="page-wrapper">
 	<nav th:replace="partials/fragments :: navbar"></nav>
-	<h1>Create an account</h1>
+	<div class="container">
+		<form class="signup-form" th:action="@{/sign-up}" th:method="POST" th:object="${user}">
+			<h1>Create an account</h1>
+			<label for="accountType">Account Type:</label>
+			<select id="accountType" th:field="*{truckOwner}">
+				<option th:value="0">User</option>
+				<option th:value="1">Owner</option>
+			</select>
 
-	<form th:action="@{/sign-up}" th:method="POST" th:object="${user}">
-		<label for="accountType">Account Type:</label>
-		<select id="accountType" th:field="*{truckOwner}">
-			<option th:value="0">User</option>
-			<option th:value="1">Owner</option>
-		</select>
+			<label for="username">Username</label>
+			<input id="username" th:field="*{username}" />
 
-		<label for="username">Username</label>
-		<input id="username" th:field="*{username}" />
+			<label for="email">Email</label>
+			<input id="email" th:field="*{email}" />
 
-		<label for="email">Email</label>
-		<input id="email" th:field="*{email}" />
+			<label for="password">Password</label>
+			<input id="password" type="password" th:field="*{password}" />
 
-		<label for="password">Password</label>
-		<input id="password" type="password" th:field="*{password}" />
-
-		<input value="Sign me up!" type="submit" />
-	</form>
+			<input class="btn-signup" value="Sign me up!" type="submit" />
+		</form>
+	</div>
 	<div class="container fixed-bottom">
 		<footer th:replace="partials/fragments :: footer"></footer>
 	</div>
+
 </div>
 
 <th:block th:replace="partials/fragments :: scripts"></th:block>
