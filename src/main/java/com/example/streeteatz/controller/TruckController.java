@@ -27,9 +27,11 @@ public class TruckController {
     }
 
     @GetMapping("/showAll")
+
     public String showAllTrucks(Model model) {
 
         ArrayList<Truck> trucks = (ArrayList<Truck>) truckDao.findAll();
+
 
         model.addAttribute("trucks",trucks);
         return "trucks/show_all";
