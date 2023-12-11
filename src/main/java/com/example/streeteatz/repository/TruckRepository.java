@@ -5,6 +5,8 @@ import com.example.streeteatz.model.Truck;
 import com.example.streeteatz.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.util.List;
+
 public interface TruckRepository extends JpaRepository<Truck, Integer> {
 
 
@@ -15,4 +17,6 @@ public interface TruckRepository extends JpaRepository<Truck, Integer> {
     Truck findByOwner(User user);
 
 //    Truck findTruckByOwner(int id);
+
+    List<Truck> findAll();
 }
