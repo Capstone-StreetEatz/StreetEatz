@@ -1,5 +1,6 @@
 package com.example.streeteatz.controller;
 
+import com.example.streeteatz.model.Review;
 import com.example.streeteatz.model.Truck;
 import com.example.streeteatz.model.User;
 import com.example.streeteatz.repository.TruckRepository;
@@ -9,7 +10,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class TruckController {
@@ -21,9 +26,12 @@ public class TruckController {
         this.truckDao = truckDao;
     }
 
-    @GetMapping("/showall")
+    @GetMapping("/showAll")
+    public String showAllTrucks(Model model) {
 
-    public String hello() {
+        ArrayList<Truck> trucks = (ArrayList<Truck>) truckDao.findAll();
+
+        model.addAttribute("trucks",trucks);
         return "trucks/show_all";
     }
 
@@ -72,5 +80,17 @@ public class TruckController {
 
         return "redirect:/profile";
 
+    }
+
+    @GetMapping("/trucks/{id}")
+    public String individualReview(@PathVariable int id, Model model){
+
+        Truck truck = truckDao.getTruckById(id);
+
+
+        model.addAttribute("truck", truck);
+
+        return "users/owner_profile";
+        
     }
 }
