@@ -9,125 +9,128 @@
 <div class="page-wrapper">
     <nav th:replace="partials/fragments :: navbar"></nav>
     <!--//Start of HERO-->
-    <div class="video-wrapper">
-        <video class="d-block" autoplay loop muted playsinline th:src="@{/assets/img/food_truck_video.mp4}"
-               alt="Truck Park birdseye view video clip" style="height: 100%; width: 100%;">
-        </video>
 
-    </div>
-    <!--//End of HERO-->
-    <!--//Start of CARDS scroller//Needs refactoring style for correct card style//Will need to be a forEach to display all//-->
-    <div class="container">
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row gap-2">
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
+    <div class="video-wrapper d-flex justify-content-end">
+        <div class="black-overlay"></div>
+
+        <video autoplay loop muted playsinline th:src="@{/assets/img/food_truck_video.mp4}"
+                   alt="Truck Park birdseye view video clip">
+            </video>
+
+        <div class="container">
+                <div class="hero-caption">
+                    <div class="container">
+                                <div id="carouselExample" class="carousel slide">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <div class="row gap-2">
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row gap-2">
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <div class="row gap-2">
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                                <div class="card col m-4">
+                                                    <img src="..." class="card-img-left" alt="...">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Maipe Foodies</h5>
+                                                        <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
+                                                            fusion island and asian flavors</p>
+                                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev color-primary" type="button" data-bs-target="#carouselExample"
+                                            data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span>Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span>Next</span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row gap-2">
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row gap-2">
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="card col m-4">
-                            <img src="..." class="card-img-left" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Maipe Foodies</h5>
-                                <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned, Family recipes,
-                                    fusion island and asian flavors</p>
-                                <a href="#" class="btn btn-primary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev color-primary" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span>Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span>Next</span>
-            </button>
-        </div>
     </div>
-    <!--//End of CARDS scroller//-->
-    <!--
-    -->
+
 
     <div id="map">
 
