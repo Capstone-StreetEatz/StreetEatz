@@ -6,7 +6,7 @@
     background-color: black;
     background-image: url("../assets/img/main_icon.PNG");
     background-repeat: no-repeat;
-    background-size: 1400px 800px;
+    background-size: 1400px 900px;
     background-position: center;
     height: 100vh;
 }
@@ -36,7 +36,7 @@
     padding: 30px;
     margin-bottom: 145px;
     width: 600px;
-    height: 350px;
+    height: 400px;
     background-color: #054A91;
     color: #f9c784;
 }
