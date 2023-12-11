@@ -12,7 +12,7 @@
   <div class="container">
     <h1>Edit Profile</h1>
 
-        <form th:action="/profile" th:method="post" th:object="${truck}" >
+        <form th:action="@{/updateOwner}" th:method="post" th:object="${user}" >
           <div class="form-group">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" value="${user.username}" th:field="*{username}" class="form-control">
@@ -25,19 +25,12 @@
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" th:field="*{password}" class="form-control">
           </div>
-    <!--      <div class="form-group">-->
-    <!--        <label for="avatar">Avatar:</label>-->
-    <!--        <input type="avatar" id="avatar" name="avatar" class="form-control">-->
-    <!--      </div>-->
-    <!--      sec:authorize="isAuthenticated()"-->
-          <div class="form-group">
-            <label for="website">Website:</label>
-            <input type="website" id="website" name="website" th:field="*{website}" class="form-control">
-          </div>
+          <input type="hidden" th:field="*{truckOwner}">
+          <input type="hidden" th:field="*{id}">
         <input type="submit" class="btn btn-block">
         </form>
   </div>
 </div>
-<script th:replace="partials/Bootstrap/bootstrap-script :: bootstrapScript"></script>
+<!--<script th:replace="partials/Bootstrap/bootstrap-script :: bootstrapScript"></script>-->
 </body>
 </html>

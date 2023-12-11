@@ -54,6 +54,9 @@ public class Truck {
         this.foodType = foodType;
     }
 
+    public Truck() {
+    }
+
     public int getId() {
         return id;
     }
@@ -109,6 +112,5 @@ public class Truck {
     public void setFoodType(List<FoodType> foodType) {
         this.foodType = foodType;
     }
-
 
 }

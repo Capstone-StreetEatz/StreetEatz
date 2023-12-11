@@ -25,7 +25,8 @@
                                 <p>Username: <span th:text="${#authentication.principal.username}"/></p>
                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
 
-                                <button type="submit">edit profile</button>
+
+                                <a th:href="@{/updateUser}">edit profile</a>
                                 <button type="submit">delete profile</button>
                             </div>
                         </div>

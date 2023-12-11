@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Owner Profile</title>
     <link th:replace="partials/header :: bootstrap">
-    <link rel="stylesheet" th:href="@{../../static/css/ownerProfile.css}">
+<!--    <link rel="stylesheet" th:href="@{../../static/css/ownerProfile.css}">-->
 
 </head>
 <body>
@@ -19,15 +19,25 @@
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
-<!--                            <h2>Owner Title</h2>-->
-<!--                            <p><em>Email@google.com</em></p>-->
-<!--                            <p>Bio</p>-->
-<!--                            <p>Website</p>-->
-<!--                            <p>Location</p>-->
-<!--                            <a href="#">Social Media Links</a>-->
-<!--                            <br>-->
-                            <button type="submit">edit profile</button>
+                            <div sec:authorize="isAuthenticated()">
+
+                                <!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->
+                                <p>Username: <span th:text="${#authentication.principal.username}"/></p>
+                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
+                                <div th:if="${truck != null}">
+                                    <p>Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a> </p>
+                                </div>
+                                <div th:if="${truck.getWebsite() == null}">
+                                    <a th:href="@{/truckinfo}">Add Truck Website</a>
+                                </div>
+                                <div th:if="${truck.getWebsite() != null}">
+                                    <a th:href="@{/editTruckInfo}">Edit Truck Website</a>
+                                </div>
+
+                            <a th:href="@{/updateOwner}">edit profile</a>
                             <button type="submit">delete profile</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -81,6 +91,6 @@
     </section>
 </div>
 <script th:replace="partials/bootstrap_script :: bootstrapScript"></script>
-<script th:src="@{../../static/js/ownerProfile.js}"></script>
+<!--<script th:src="@{../../static/js/ownerProfile.js}"></script>-->
 </body>
 </html>
