@@ -6,8 +6,9 @@
     background-color: black;
     background-image: url("../assets/img/main_icon.PNG");
     background-repeat: no-repeat;
-    background-size: 1600px 1000px;
+    background-size: 1400px 800px;
     background-position: center;
+    height: 100vh;
 }
 
 .container {
@@ -29,14 +30,15 @@
     justify-self: center;
     align-self: center;
     gap: 15px;
-    box-shadow: 0 0 150px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 150px 20px rgba(0, 0, 0, 1);
     border: 9px solid #e7e7e7;
     border-radius: 18px;
-    padding: 45px;
-    margin-bottom: 240px;
-    width: 700px;
-    height: 400px;
+    padding: 30px;
+    margin-bottom: 145px;
+    width: 600px;
+    height: 350px;
     background-color: #054A91;
+    color: #f9c784;
 }
 
 h1 {
