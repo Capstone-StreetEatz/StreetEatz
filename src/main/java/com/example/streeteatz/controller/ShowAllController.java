@@ -9,7 +9,10 @@ public class ShowAllController {
     @GetMapping("/showall")
 
     public String hello() {
+
         return "trucks/show_all";
     }
+
+
 
 }
