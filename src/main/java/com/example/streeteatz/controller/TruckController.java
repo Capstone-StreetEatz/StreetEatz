@@ -21,7 +21,7 @@ public class TruckController {
         this.truckDao = truckDao;
     }
 
-    @GetMapping("/showall")
+    @GetMapping("/showAll")
 
     public String hello() {
         return "trucks/show_all";
