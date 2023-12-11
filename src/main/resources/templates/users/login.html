@@ -4,8 +4,9 @@
 	<title>Login</title>
 </head>
 <body>
+<nav th:replace="partials/fragments :: navbar"></nav>
 <div class="page-wrapper">
-	<nav th:replace="partials/fragments :: navbar"></nav>
+
 	<div class="container">
 		<div th:if="${param.error}">
 			Invalid Username and Password.
@@ -23,11 +24,8 @@
 			<input class="btn-login" type="submit" value="Log In" />
 		</form>
 	</div>
-	<div class="container">
-		<footer th:replace="partials/fragments :: footer"></footer>
-	</div>
 </div>
-
+<footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 
 </body>
