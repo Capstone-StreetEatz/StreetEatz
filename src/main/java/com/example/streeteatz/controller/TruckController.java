@@ -55,6 +55,7 @@ public class TruckController {
         User user = userDao.getUserById(loggedInUser.getId());
         truck.setOwner(user);
         truck.setTruckName(user.getUsername());
+        truck.setAvatar(user.getAvatar());
         truckDao.save(truck);
 
         return "redirect:/profile";
@@ -89,9 +90,10 @@ public class TruckController {
     public String individualReview(@PathVariable int id, Model model){
 
         Truck truck = truckDao.getTruckById(id);
-
+        User owner = userDao.getUserById(truck.getOwner().getId());
 
         model.addAttribute("truck", truck);
+        model.addAttribute("user", owner);
 
         return "users/owner_profile";
         

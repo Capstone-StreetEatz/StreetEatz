@@ -30,6 +30,7 @@
                         <div class="user-info">
                             <div sec:authorize="isAuthenticated()">
                                 <p>Username: <span th:text="${#authentication.principal.username}"/></p>
+                                <p><span th:text="${#authentication.principal.bio}"></span></p>
                                 <p>Email: <span th:text="${#authentication.principal.email}"/></p>
                                 <a th:href="@{/updateUser}">edit profile</a>
 <!--                                <button type="submit">delete profile</button>-->

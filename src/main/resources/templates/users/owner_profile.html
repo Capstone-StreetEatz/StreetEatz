@@ -11,12 +11,18 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4">
-                        <div th:if="${user.getAvatar() != null}">
-                            <img alt="Profile picture" class="img-thumbnail" th:src="*{user.getAvatar()}">
+                        <div th:if="${truck != null}">
+                            <div th:if="${user.getAvatar() != null}">
+                                <img alt="Profile picture" class="img-thumbnail" th:src="*{user.getAvatar()}">
+                            </div>
+                            <div th:if="${user.getAvatar() == null}">
+                                <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
+                            </div>
                         </div>
-                        <div th:if="${user.getAvatar() == null}">
-                            <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
+                        <div th:if="${truck == null}">
+                                <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
                         </div>
+
 
                         <div sec:authorize="isAuthenticated()">
                             <button type="button" id="upload" name="upload">Upload an image</button>
@@ -28,14 +34,14 @@
                     <div class="col-md-8">
                         <div class="user-info">
 
-                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>
+<!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
                             <div th:if="${truck != null}">
                                 <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
                             </div>
                             <div sec:authorize="isAuthenticated()">
-                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
+                                <p>Email: <span th:text="${user.getEmail()}"/></p>
                                 <div th:if="${truck == null}">
                                         <a th:href="@{/truckInfo}">Add Truck Info</a>
                                 </div>

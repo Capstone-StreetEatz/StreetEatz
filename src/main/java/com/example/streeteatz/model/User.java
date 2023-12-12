@@ -24,22 +24,28 @@ public class User {
 
     @Column(length = 300)
     private String avatar;
+    @Column(length = 500)
+    private String bio;
+
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private Truck truck;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     List<Review> reviews;
 
     @Column
     private boolean truckOwner;
-
     public User() {
     }
 
-    public User(int id, String username, String email, String password, String avatar, List<Review> reviews, boolean truckOwner) {
+    public User(int id, String username, String email, String password, String avatar, String bio, Truck truck, List<Review> reviews, boolean truckOwner) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.avatar = avatar;
+        this.bio = bio;
+        this.truck = truck;
         this.reviews = reviews;
         this.truckOwner = truckOwner;
     }
@@ -118,5 +124,21 @@ public class User {
 
     public void setReviews(List<Review> reviews) {
         this.reviews = reviews;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    public Truck getTruck() {
+        return truck;
+    }
+
+    public void setTruck(Truck truck) {
+        this.truck = truck;
     }
 }

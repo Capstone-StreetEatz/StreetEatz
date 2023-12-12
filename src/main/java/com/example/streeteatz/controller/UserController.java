@@ -111,14 +111,8 @@ public class UserController {
     public String imgUpload(@RequestParam(name = "img") String imgLink){
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
-
-        Truck loggedInTruck = (Truck) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Truck truck = truckDao.getTruckById(loggedInTruck.getId());
-
         user.setAvatar(imgLink);
-        truck.setAvatar(imgLink);
         userDao.save(user);
-        truckDao.save(truck);
 
         return "redirect:/profile";
     }
@@ -132,8 +126,10 @@ public class UserController {
     }
     @PostMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable Integer id){
+        Truck truck= truckDao.findByOwner(userDao.getUserById(id));
+        truckDao.deleteById(truck.getId());
         userDao.deleteById(id);
-        return "redirect:/profile";
+        return "redirect:/index";
     }
 }
 

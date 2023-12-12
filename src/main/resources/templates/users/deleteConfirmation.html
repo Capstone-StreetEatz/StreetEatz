@@ -9,7 +9,7 @@
     <form th:action="@{/deleteUser/{id}(id=${user.id})}" th:method="post" th:object="${user}">
         <h1>Your profile was successfully deleted</h1>
         <input type="hidden" th:field="*{id}">
-        <input type="submit" class="btn btn-block">
+        <input type="submit" value="Done" class="btn btn-block">
     </form>
     <div class="container fixed-bottom">
         <footer th:replace="partials/fragments :: footer"></footer>
