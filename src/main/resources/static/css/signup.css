@@ -36,7 +36,7 @@
     padding: 30px;
     margin-bottom: 85px;
     width: 600px;
-    height: 500px;
+    height: 550px;
     background-color: #054A91;
     color: #f9c784;
 }
@@ -44,6 +44,15 @@
 h1 {
     text-align: center;
     color: #f9c784;
+}
+
+p {
+    text-align: center;
+    color: #e7e7e7;
+}
+
+p:hover {
+    color: #fc7a1e;
 }
 
 .btn-signup {
