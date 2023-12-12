@@ -78,6 +78,7 @@ public class TruckController {
         User user = userDao.getUserById(loggedInUser.getId());
         truck.setOwner(user);
         truck.setTruckName(user.getUsername());
+//        truck.setLocation(truck.getLocation());
         truckDao.save(truck);
 
         return "redirect:/profile";

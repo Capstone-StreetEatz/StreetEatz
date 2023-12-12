@@ -1,0 +1,20 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="~{partials/fragments :: head(DeleteConfirmation, '/css/delete.css')}">
+    <title>Delete Profile</title>
+</head>
+<body>
+<div class="page-wrapper">
+    <nav th:replace="partials/fragments :: navbar"></nav>
+
+    <form th:action="@{/deleteUser/{id}(id=${user.id})}" th:method="post" th:object="${user}">
+        <h1>Your profile was successfully deleted</h1>
+        <input type="hidden" th:field="*{id}">
+        <input type="submit" class="btn btn-block">
+    </form>
+    <div class="container fixed-bottom">
+        <footer th:replace="partials/fragments :: footer"></footer>
+    </div>
+</div>
+<th:block th:replace="partials/fragments :: scripts"></th:block>
+</body>
+</html>

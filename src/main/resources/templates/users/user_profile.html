@@ -19,19 +19,21 @@
                             <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/user_icon.png}">
                         </div>
 
-                        <button type="button" id="upload" name="upload">Upload an image</button>
-
-                    <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
-                        <input type="hidden" name="img" id="img" value="">
-                    </form>
+                        <div sec:authorize="isAuthenticated()">
+                            <button type="button" id="upload" name="upload">Upload an image</button>
+                            <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
+                                <input type="hidden" name="img" id="img" value="">
+                            </form>
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
                             <div sec:authorize="isAuthenticated()">
                                 <p>Username: <span th:text="${#authentication.principal.username}"/></p>
-                               <p>Email: <span th:text="${#authentication.principal.email}"/></p>
+                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
                                 <a th:href="@{/updateUser}">edit profile</a>
-                                <button type="submit">delete profile</button>
+<!--                                <button type="submit">delete profile</button>-->
+                                <a th:href="@{/deleteUser}">delete profile</a>
                             </div>
                         </div>
                     </div>
@@ -53,12 +55,12 @@
             <div class="tab-pane active" id="tab1" role="tabpanel">
                 <div>
                     <p>Review goes here </p>
-                    <div  th:each="review : ${reviews}">
+                    <div th:each="review : ${reviews}">
 
                         <div class="ad-card" style="border: 1px solid black">
 
-                            <p> <span class="ad-title" th:text="${review.body}" ></span></p>
-                            <p> <span class="ad-body" th:text="${review.rating}" ></span></p>
+                            <p><span class="ad-title" th:text="${review.body}"></span></p>
+                            <p><span class="ad-body" th:text="${review.rating}"></span></p>
 
                             <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">
                                 <button class="update-profile">Update Info</button>
@@ -66,7 +68,7 @@
 
                             <form th:action="@{reviews/delete}" method="post">
                                 <a th:href="@{/reviews/{id}(id=${review.id})}">View Details</a>
-                                <input name="id" th:hidden="true" th:value="${review.id}" >
+                                <input name="id" th:hidden="true" th:value="${review.id}">
                                 <button type="submit">Delete</button>
                             </form>
                         </div>
@@ -76,7 +78,7 @@
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div class="gallery">
-<!--                    <img th:src="" class="gallery-img">-->
+                    <!--                    <img th:src="" class="gallery-img">-->
                 </div>
             </div>
         </div>
