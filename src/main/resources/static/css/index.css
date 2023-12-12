@@ -6,9 +6,10 @@ body {
     justify-content: space-evenly;
 }
 #map {
-    height: 900px;
+    height: 1200px;
     width: 1200px;
-    margin: 280px auto 0;
+    margin: 50px auto 0;
+    border: 5px solid black;
     border-radius: 18px;
 }
 .map-overlay-container {
@@ -73,18 +74,44 @@ video{
     width: 400px;
     border-radius: 18px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: #e7e7e7;
+    color: black;
+    border: 2px solid #fc7a1e;
+    overflow: hidden;
 }
 
 .card-img-left {
     max-height: 50%;
 }
 
+.btn {
+    background-color: #e7e7e7;
+    color: #054A91;
+    border-radius: 8px;
+    border: 3px solid #054A91;
+    margin-left: 25px;
+    font-weight: bold;
+}
 
-/*.carousel-control-prev, .carousel-control-next {*/
-/*   color: #f9c784;*/
-/*    font-weight: bold;*/
-/*    font-size: 18px;*/
-/*}*/
+.btn:hover {
+    font-weight: bold;
+    background-color: #054A91;
+    color: #fc7a1e;
+    border: 5px solid #f9c784;
+}
+
+
+.carousel-control-prev, .carousel-control-next {
+    color: #fc7a1e;
+    font-weight: bold;
+    font-size: 18px;
+    margin: -45px;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    color: #fc7a1e;
+    font-size: 30px;
+}
 
 footer {
     background-color: white;

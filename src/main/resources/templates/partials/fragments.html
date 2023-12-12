@@ -13,7 +13,7 @@
 </head>
 <body>
 <!--NAV-->
-<nav th:fragment="navbar" class="navbar navbar-expand-lg bg-body-tertiary" xmlns:sec="http://www.w3.org/1999/xhtml">
+<nav th:fragment="navbar" class="navbar navbar-expand-lg " style="background-color: #e7e7e7; border: 2px solid #fc7a1e;" xmlns:sec="http://www.w3.org/1999/xhtml">
     <div class="container-fluid">
         <div>
             <a class="navbar-brand" th:href="@{/}"><img th:src="@{/assets/img/main_icon.png}" style="width: 75px; height: 75px"></a>
@@ -56,7 +56,7 @@
 </nav>
 <!--FOOTER-->
 
-        <footer th:fragment="footer" xmlns:sec="http://www.w3.org/1999/xhtml" class="py-3 my-4">
+        <footer th:fragment="footer" style="background-color: #e7e7e7; border: 3px solid #fc7a1e" xmlns:sec="http://www.w3.org/1999/xhtml" class="py-3 my-4">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
                 <li class="nav-item">
                     <a th:href="@{/}" class="nav-link px-2 text-body-secondary">Home</a>
