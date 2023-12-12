@@ -63,18 +63,18 @@ public class UserController {
         User user = userDao.getUserById(loggedInUser.getId());
         Truck truck = truckDao.findByOwner(user);
         List<Review> reviews = user.getReviews();
-        List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
+
 
         model.addAttribute("user", user);
         model.addAttribute("truck", truck);
         model.addAttribute("isTruckOwner", user.isTruckOwner());
         model.addAttribute("reviews", reviews);
-        model.addAttribute("truckReviews", truckReviews);
 
 
 //        user.setTruckOwner(user.isTruckOwner());
 
         if (user.isTruckOwner()){
+            List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
             model.addAttribute("truckReviews", truckReviews);
             return "users/owner_profile";
         }else {
