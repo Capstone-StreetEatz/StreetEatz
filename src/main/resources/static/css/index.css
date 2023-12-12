@@ -79,11 +79,12 @@ video{
     max-height: 50%;
 }
 
-.carousel-control-prev, .carousel-control-next {
-   color: #f9c784;
-    font-weight: bold;
-    font-size: 18px;
-}
+
+/*.carousel-control-prev, .carousel-control-next {*/
+/*   color: #f9c784;*/
+/*    font-weight: bold;*/
+/*    font-size: 18px;*/
+/*}*/
 
 footer {
     background-color: white;
