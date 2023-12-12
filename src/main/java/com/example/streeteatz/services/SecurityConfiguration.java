@@ -43,7 +43,7 @@ public class SecurityConfiguration {
 
                         /* Pages that do not require authentication
                          * anyone can visit the home page, register, login, and view ads */
-                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about", "/index", "/showAll", "/showAll/**","/trucks/**").permitAll()
+                        .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about", "/index", "/showAll", "/showAll/**","/trucks/*").permitAll()
 
 
                         .requestMatchers("/css/**", "/js/**", "/img/**","/partials/**", "/partials_css/**", "/assets/**").permitAll()
