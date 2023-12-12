@@ -10,6 +10,7 @@ public interface ReviewRepository extends JpaRepository<Review, Integer> {
     Review getReviewById(int id);
     Review deleteById(int id);
     List<Review> findAllByUserId(int user_id);
+    List<Review> findAllByTruckId(int truck_id);
 
 
 

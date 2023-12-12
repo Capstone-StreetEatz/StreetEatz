@@ -9,7 +9,28 @@ const map1 = new mapboxgl.Map({
     zoom: 8
 });
 
-// Create a default Marker and add it to the map.
-const markerA = new mapboxgl.Marker()
-    .setLngLat([-98.453986, 29.51907])
-    .addTo(map1);
+function geocode(search, token) {
+    let baseUrl = 'https://api.mapbox.com';
+    let endPoint = '/geocoding/v5/mapbox.places/';
+    return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+        .then(function(res) {
+            return res.json();
+            // to get all the data from the request, comment out the following three lines...
+        }).then(function(data) {
+            return data.features[0].center;
+        });
+}
+
+let spot = "301-303 E Houston St #500, San Antonio, TX 78205";
+
+geocode(spot, mapboxgl.accessToken ).then(function(result) {
+    console.log(result);
+    map1.setCenter(result);
+    map1.setZoom(12);
+
+        const markerA = new mapboxgl.Marker()
+            .setLngLat(result)
+            .addTo(map1);
+
+}
+);
