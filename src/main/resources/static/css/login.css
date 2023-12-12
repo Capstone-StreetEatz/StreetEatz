@@ -46,6 +46,15 @@ h1 {
     color: #f9c784;
 }
 
+p {
+    text-align: center;
+    color: #e7e7e7;
+}
+
+p:hover {
+    color: #fc7a1e;
+}
+
 .btn-login {
     background-color: #054A91;
     color: #f9c784;
