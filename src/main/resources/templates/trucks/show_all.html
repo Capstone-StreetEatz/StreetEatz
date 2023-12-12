@@ -14,6 +14,7 @@
 
                 <p> <span class="ad-title" th:text="${truck.getTruckName()}" ></span></p>
                 <p> <span class="ad-body" th:text="${truck.getWebsite()}" ></span></p>
+                <p> <span class="ad-body" th:text="${}" ></span></p>
 
                 <a th:href="@{/trucks/{id}(id=${truck.id})}">View Details</a>
             </div>

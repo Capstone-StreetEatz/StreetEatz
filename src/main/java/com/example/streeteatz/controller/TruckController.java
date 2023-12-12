@@ -3,6 +3,7 @@ package com.example.streeteatz.controller;
 import com.example.streeteatz.model.Review;
 import com.example.streeteatz.model.Truck;
 import com.example.streeteatz.model.User;
+import com.example.streeteatz.repository.ReviewRepository;
 import com.example.streeteatz.repository.TruckRepository;
 import com.example.streeteatz.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +22,12 @@ import java.util.List;
 public class TruckController {
     private UserRepository userDao;
     private TruckRepository truckDao;
+    private ReviewRepository reviewsDao;
 
-    public TruckController(UserRepository userDao, TruckRepository truckDao) {
+    public TruckController(UserRepository userDao, TruckRepository truckDao, ReviewRepository reviewsDao) {
         this.userDao = userDao;
         this.truckDao = truckDao;
+        this.reviewsDao = reviewsDao;
     }
 
     @GetMapping("/showAll")
@@ -31,8 +35,15 @@ public class TruckController {
     public String showAllTrucks(Model model) {
 
         ArrayList<Truck> trucks = (ArrayList<Truck>) truckDao.findAll();
+        ArrayList<User> users = new ArrayList<>();
 
+        for (Truck truck: trucks){
 
+            users.add( userDao.getUserById(truck.getOwner().getId()));
+
+        }
+
+        model.addAttribute("users",users);
         model.addAttribute("trucks",trucks);
         return "trucks/show_all";
     }
@@ -88,7 +99,9 @@ public class TruckController {
     public String individualReview(@PathVariable int id, Model model){
 
         Truck truck = truckDao.getTruckById(id);
+        List<Review> truckReviews = reviewsDao.findAllByTruckId(id);
 
+        model.addAttribute("truckReviews", truckReviews);
 
         model.addAttribute("truck", truck);
 
