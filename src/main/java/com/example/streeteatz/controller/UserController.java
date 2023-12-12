@@ -8,11 +8,13 @@ import com.example.streeteatz.model.User;
 import com.example.streeteatz.repository.ReviewRepository;
 import com.example.streeteatz.repository.TruckRepository;
 import com.example.streeteatz.repository.UserRepository;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import java.security.Principal;
@@ -118,8 +120,23 @@ public class UserController {
         User user = userDao.getUserById(loggedInUser.getId());
         user.setAvatar(imgLink);
         userDao.save(user);
+
         return "redirect:/profile";
     }
 
+    @GetMapping("/deleteUser")
+    public String showDeleteUserForm(Model model) {
+        User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        User user = userDao.getUserById(loggedInUser.getId());
+        model.addAttribute("user", user);
+        return "users/deleteConfirmation";
+    }
+    @PostMapping("/deleteUser/{id}")
+    public String deleteUser(@PathVariable Integer id){
+        Truck truck= truckDao.findByOwner(userDao.getUserById(id));
+        truckDao.deleteById(truck.getId());
+        userDao.deleteById(id);
+        return "redirect:/index";
+    }
 }
 

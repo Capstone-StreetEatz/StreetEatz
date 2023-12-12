@@ -66,6 +66,7 @@ public class TruckController {
         User user = userDao.getUserById(loggedInUser.getId());
         truck.setOwner(user);
         truck.setTruckName(user.getUsername());
+        truck.setAvatar(user.getAvatar());
         truckDao.save(truck);
 
         return "redirect:/profile";
@@ -89,6 +90,7 @@ public class TruckController {
         User user = userDao.getUserById(loggedInUser.getId());
         truck.setOwner(user);
         truck.setTruckName(user.getUsername());
+//        truck.setLocation(truck.getLocation());
         truckDao.save(truck);
 
         return "redirect:/profile";
@@ -99,11 +101,16 @@ public class TruckController {
     public String individualReview(@PathVariable int id, Model model){
 
         Truck truck = truckDao.getTruckById(id);
-        List<Review> truckReviews = reviewsDao.findAllByTruckId(id);
 
-        model.addAttribute("truckReviews", truckReviews);
+        User owner = userDao.getUserById(truck.getOwner().getId());
+
+        //List<Review> truckReviews = reviewsDao.findAllByTruckId(id);
+
+       // model.addAttribute("truckReviews", truckReviews);
+
 
         model.addAttribute("truck", truck);
+        model.addAttribute("user", owner);
 
         return "users/owner_profile";
         

@@ -21,6 +21,7 @@ public class Truck {
     private User owner;
     @Column(length = 300)
     private String website;
+
     @Column(nullable = false)
     private int location;
 

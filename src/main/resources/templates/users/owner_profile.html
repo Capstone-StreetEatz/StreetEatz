@@ -11,36 +11,47 @@
             <div class="col-md-8">
                 <div class="row">
                     <div class="col-md-4">
-                        <div th:if="${truck.getAvatar() != null}">
-                            <img alt="Profile picture" class="img-thumbnail" th:src="*{truck.getAvatar()}">
+                        <div th:if="${truck != null}">
+                            <div th:if="${user.getAvatar() != null}">
+                                <img alt="Profile picture" class="img-thumbnail" th:src="*{user.getAvatar()}">
+                            </div>
+                            <div th:if="${user.getAvatar() == null}">
+                                <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
+                            </div>
                         </div>
-                        <div th:if="${truck.getAvatar() == null}">
-                            <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/user_icon.png}">
+                        <div th:if="${truck == null}">
+                                <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
                         </div>
 
-                        <button type="button" id="upload" name="upload">Upload an image</button>
-                        <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
-                            <input type="hidden" name="img" id="img" value="">
-                        </form>
+
+                        <div sec:authorize="isAuthenticated()">
+                            <button type="button" id="upload" name="upload">Upload an image</button>
+                            <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
+                                <input type="hidden" name="img" id="img" value="">
+                            </form>
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
 
-                            <h1>Truck Name: <span th:text="${truck.getTruckName()}"/></h1>
-                            <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
-                            <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a></p>
+<!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
+                            <div th:if="${truck != null}">
+                                <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
+                                </p>
+                                <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
+                            </div>
                             <div sec:authorize="isAuthenticated()">
-                                <p>Username: <span th:text="${#authentication.principal.username}"/></p>
-                                <p>Email: <span th:text="${#authentication.principal.email}"/></p>
-                                <div th:if="${truck.getWebsite() == null}">
-                                    <a th:href="@{/truckinfo}">Add Truck Info</a>
+                                <p>Email: <span th:text="${user.getEmail()}"/></p>
+                                <div th:if="${truck == null}">
+                                        <a th:href="@{/truckInfo}">Add Truck Info</a>
                                 </div>
-                                <div th:if="${truck.getWebsite() != null}">
-                                    <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
+                                <div th:if="${truck != null}">
+                                    <div th:if="${truck.getWebsite() != null}">
+                                        <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
+                                    </div>
                                 </div>
-
-                            <a th:href="@{/updateOwner}">edit profile</a>
-                            <button type="submit">delete profile</button>
+                                <a th:href="@{/updateOwner}">edit profile</a>
+                                <a th:href="@{/deleteUser}">delete profile</a>
                             </div>
 
                         </div>
@@ -69,6 +80,9 @@
                         <!--     average reviews goes here-->
                     </div>
                     <div class="column">
+
+                        <!--                        list of all reviews of truck goes here-->
+
 <!--                        list of all reviews of truck goes here-->
                         <div  th:each="review : ${truckReviews}">
 
@@ -89,16 +103,17 @@
 <!--                                </form>-->
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div class="gallery">
-<!--                    placeholder images to make sure it works. will input filestack logic later-->
-<!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
-<!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
-<!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                    <!--                    placeholder images to make sure it works. will input filestack logic later-->
+                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
                 </div>
             </div>
             <!--            directions-->
@@ -110,8 +125,8 @@
 <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
 <!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
                     <div id="map1">
-<!--                    PUT MAP HERE-->
-                    <!--                    input location input-->
+                        <!--                    PUT MAP HERE-->
+                        <!--                    input location input-->
                     </div>
                 </div>
             </div>
