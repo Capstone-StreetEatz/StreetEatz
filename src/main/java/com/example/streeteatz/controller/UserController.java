@@ -3,10 +3,9 @@ package com.example.streeteatz.controller;
 
 
 import com.example.streeteatz.model.Truck;
-
 import com.example.streeteatz.model.Review;
-
 import com.example.streeteatz.model.User;
+import com.example.streeteatz.repository.ReviewRepository;
 import com.example.streeteatz.repository.TruckRepository;
 import com.example.streeteatz.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.security.Principal;
 import java.util.List;
 
@@ -22,12 +22,15 @@ import java.util.List;
 public class UserController {
     private UserRepository userDao;
     private TruckRepository truckDao;
+    private ReviewRepository reviewsDao;
+
     private PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, TruckRepository truckDao) {
+    public UserController(UserRepository userDao, PasswordEncoder passwordEncoder, TruckRepository truckDao, ReviewRepository reviewsDao) {
         this.userDao = userDao;
         this.passwordEncoder = passwordEncoder;
         this.truckDao= truckDao;
+        this.reviewsDao = reviewsDao;
     }
 
     @GetMapping("/sign-up")
@@ -58,15 +61,19 @@ public class UserController {
         User user = userDao.getUserById(loggedInUser.getId());
         Truck truck = truckDao.findByOwner(user);
         List<Review> reviews = user.getReviews();
+        List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
 
         model.addAttribute("user", user);
         model.addAttribute("truck", truck);
         model.addAttribute("isTruckOwner", user.isTruckOwner());
         model.addAttribute("reviews", reviews);
+        model.addAttribute("truckReviews", truckReviews);
+
 
 //        user.setTruckOwner(user.isTruckOwner());
 
         if (user.isTruckOwner()){
+            model.addAttribute("truckReviews", truckReviews);
             return "users/owner_profile";
         }else {
             return "users/user_profile";
