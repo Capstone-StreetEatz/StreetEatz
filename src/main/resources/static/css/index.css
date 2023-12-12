@@ -1,13 +1,19 @@
+body {
+    background-color: black;
+}
 
+.container {
+    justify-content: space-evenly;
+}
 #map {
-    height: 500px;
-    width: 90%;
+    height: 900px;
+    width: 1200px;
     margin: 280px auto 0;
     border-radius: 18px;
 }
 .map-overlay-container {
     position: absolute;
-    width: 25%;
+    width: 100%;
     top: 0;
     left: 0;
     padding: 10px;
@@ -42,10 +48,6 @@
     z-index: 2;
 }
 
-.hero-caption {
-    position: relative;
-    z-index: 3;
-}
 .video-wrapper{
     width: 100%;
     min-height: 100dvh;
@@ -68,6 +70,21 @@ video{
 
 .card {
     height: 400px;
+    width: 400px;
     border-radius: 18px;
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-left {
+    max-height: 50%;
+}
+
+.carousel-control-prev, .carousel-control-next {
+   color: #f9c784;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+footer {
+    background-color: white;
 }
