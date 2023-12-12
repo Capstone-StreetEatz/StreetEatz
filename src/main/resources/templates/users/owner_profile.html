@@ -19,28 +19,24 @@
                         </div>
 
                         <button type="button" id="upload" name="upload">Upload an image</button>
-
                         <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
                             <input type="hidden" name="img" id="img" value="">
-                        </form>                    </div>
+                        </form>
+                    </div>
                     <div class="col-md-8">
                         <div class="user-info">
 
                             <h1>Truck Name: <span th:text="${truck.getTruckName()}"/></h1>
                             <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
-                            <p>Visit Website: <span th:text="${truck.getWebsite()}"/></p>
+                            <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a></p>
                             <div sec:authorize="isAuthenticated()">
-                                <!--                                User ID: <span th:text="${#authentication.principal.id}"/>-->
                                 <p>Username: <span th:text="${#authentication.principal.username}"/></p>
                                 <p>Email: <span th:text="${#authentication.principal.email}"/></p>
-                                <div th:if="${truck != null}">
-                                    <p>Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a></p>
-                                </div>
                                 <div th:if="${truck.getWebsite() == null}">
-                                    <a th:href="@{/truckinfo}">Add Truck Website</a>
+                                    <a th:href="@{/truckinfo}">Add Truck Info</a>
                                 </div>
                                 <div th:if="${truck.getWebsite() != null}">
-                                    <a th:href="@{/editTruckInfo}">Edit Truck Website</a>
+                                    <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
                                 </div>
 
                             <a th:href="@{/updateOwner}">edit profile</a>
