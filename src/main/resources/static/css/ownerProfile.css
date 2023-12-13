@@ -76,9 +76,11 @@ at middle of screen */
 }
 
 #map1 {
-    height: 500px;
+    height: 600px;
     width: 100%;
-
+    margin: 50px auto 0;
+    border: 5px solid black;
+    border-radius: 18px;
 }
 
 /* Making images more responsive for smaller size device */
