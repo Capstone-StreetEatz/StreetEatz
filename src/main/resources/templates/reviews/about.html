@@ -14,12 +14,14 @@
     </div>
 
     <h2 class="mt-5 mb-5" style="text-align: center;">Our Team</h2>
-    <div class="container">
-        <div class="d-flex flex-row gap-5">
 
-            <div class="column">
-                <div class="card" style="height: 530px;">
+    <div class="container_profiles">
+        <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3">
+<!--            <div class="column">-->
+            <div class="profiles-half col-md-5 d-flex flex-row justify-content-evenly mt-2 gap-5">
+                <div class="card w-100" style="height: 400px; max-width: 340px;">
                     <img th:src="@{/assets/img/teamImages/luis.jpg}" alt="Luis" style="width: 100%">
+
                     <div class="container">
                         <h2>Luis Peluyera</h2>
                         <p class="title">Full Stack Web Developer</p>
@@ -28,10 +30,10 @@
                         <a th:target="_blank" th:href="@{https://www.linkedin.com/in/luis-f-peluyera}">Contact</a>
                     </div>
                 </div>
-            </div>
+<!--            </div>-->
 
-            <div class="column">
-                <div class="card" style="height: 530px;">
+<!--            <div class="column">-->
+                <div class="card w-100" style="height: 400px; max-width: 340px;">
                     <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
                     <div class="container">
                         <h2>Kyle Sowers</h2>
@@ -41,10 +43,11 @@
                         <a th:target="_blank" th:href="@{https://www.linkedin.com/in/kyle-sowers-983625104/}">Contact</a>
                     </div>
                 </div>
+<!--            </div>-->
             </div>
-
-            <div class="column">
-                <div class="card" style="height: 530px;">
+            <div class="profiles_half col-md-5 d-flex flex-row justify-content-evenly mt-2 gap-5">
+            <!--            <div class="column w-25">-->
+                <div class="card w-100" style="height: 400px; max-width: 340px;">
                     <img src="/w3images/team3.jpg" alt="John" style="width: 100%">
                     <div class="container">
                         <h2>Miliangigia Rios</h2>
@@ -54,10 +57,10 @@
                         <a th:target="_blank" th:href="@{https://www.linkedin.com/in/milianigiarios/}">Contact</a>
                     </div>
                 </div>
-            </div>
+<!--            </div>-->
 
-            <div class="column">
-                <div class="card" style="height: 530px;">
+<!--            <div class="column">-->
+                <div class="card w-100" style="height: 400px; max-width: 340px;">
                     <img src="/w3images/team3.jpg" alt="John" style="width: 100%">
                     <div class="container">
                         <h2>John Doe</h2>
@@ -67,15 +70,16 @@
                         <p><button class="button">Contact</button></p>
                     </div>
                 </div>
+<!--            </div>-->
             </div>
         </div>
     </div>
-    <div class="container">
-        <footer th:replace="partials/fragments :: footer"></footer>
-    </div>
+<!--    <div class="container">-->
+<!--        <footer th:replace="partials/fragments :: footer"></footer>-->
+<!--    </div>-->
 
 </div>
-
+<footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 </body>
 

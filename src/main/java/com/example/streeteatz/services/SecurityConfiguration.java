@@ -46,7 +46,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about", "/index", "/showAll", "/showAll/**","/trucks/*").permitAll()
 
 
-                        .requestMatchers("/css/**", "/js/**", "/img/**","/partials/**", "/partials_css/**", "/assets/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/img/**","/partials/**", "/partials_css/**", "/assets/**", "/error/**").permitAll()
 
 
                 )

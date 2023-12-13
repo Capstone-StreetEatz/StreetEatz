@@ -73,7 +73,7 @@ public class UserController {
 
 //        user.setTruckOwner(user.isTruckOwner());
 
-        if (user.isTruckOwner()){
+        if (user.isTruckOwner() && user.getTruck() != null){
             List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
             model.addAttribute("truckReviews", truckReviews);
             return "users/owner_profile";

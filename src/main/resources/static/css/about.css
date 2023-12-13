@@ -62,7 +62,8 @@ html {
 }
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 8px;
+    margin: 0;
+    padding: 0;
 }
 .about-section {
     padding: 50px;
@@ -70,34 +71,43 @@ html {
     background-color: #FC7A1E;
     color: white;
 }
-.container {
-    padding: 0 16px;
+.container_profiles {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
-.container::after, .row::after {
+.container_profiles::after, .row::after {
     content: "";
     clear: both;
     display: table;
 }
+
+.profiles-half {
+
+}
 .title {
     color: grey;
 }
-/*.button {*/
-/*    border: none;*/
-/*    outline: 0;*/
-/*    display: inline-block;*/
-/*    padding: 8px;*/
-/*    color: white;*/
-/*    background-color: #054A91;*/
-/*    text-align: center;*/
-/*    cursor: pointer;*/
-/*    width: 100%;*/
-/*}*/
-/*.button:hover {*/
-/*    background-color: #FC7A1E;*/
-/*}*/
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
+
+.button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #054A91;
+    text-align: center;
+    cursor: pointer;
+    width: 20%;
 }
+.button:hover {
+    background-color: #FC7A1E;
+}
+/*@media screen and (max-width: 650px) {*/
+/*    .column {*/
+/*        width: 100%;*/
+/*        display: block;*/
+/*    }*/
+/*}*/
+
+
