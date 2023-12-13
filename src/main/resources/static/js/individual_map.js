@@ -1,5 +1,6 @@
 "use strict";
 
+let truckLocation =document.getElementById("truck_location").value;
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3dhbGtlcjkzIiwiYSI6ImNsbWY4ajdubzF4MDUzcHJxNjR2dDNrYWkifQ.cil4dmekFqmMRRq4LYEpqg';
 const map1 = new mapboxgl.Map({
     container: 'map1',
@@ -21,9 +22,8 @@ function geocode(search, token) {
         });
 }
 
-let spot = "301-303 E Houston St #500, San Antonio, TX 78205";
 
-geocode(spot, mapboxgl.accessToken ).then(function(result) {
+geocode(truckLocation, mapboxgl.accessToken ).then(function(result) {
     console.log(result);
     map1.setCenter(result);
     map1.setZoom(12);

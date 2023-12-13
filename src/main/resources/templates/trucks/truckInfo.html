@@ -10,8 +10,12 @@
   <form th:action="@{/truckInfo}" th:method="post" th:object="${truck}">
     <div class="form-group">
 
+        <label for="truck_name">Truck Name:</label>
+        <input type="text" id="truck_name" name="truck_name" th:field="*{truckName}" class="form-control">
+
       <label for="website">Website:</label>
       <input type="text" id="website" name="website" th:field="*{website}" class="form-control">
+
 
         <label for="location">Location:</label>
         <input type="text" id="location" name="location" th:field="*{location}" class="form-control">
