@@ -27,6 +27,8 @@ public class Truck {
 
     @Column(length = 300)
     private String avatar;
+    @OneToMany
+    private List<Review> reviews;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
@@ -36,13 +38,14 @@ public class Truck {
     )
     private List<FoodType> foodType;
 
-    public Truck(int id, String truckName, User owner, String website, String location, String avatar, List<FoodType> foodType) {
+    public Truck(int id, String truckName, User owner, String website, String location, String avatar, List<Review> reviews, List<FoodType> foodType) {
         this.id = id;
         this.truckName = truckName;
         this.owner = owner;
         this.website = website;
         this.location = location;
         this.avatar = avatar;
+        this.reviews = reviews;
         this.foodType = foodType;
     }
 
@@ -104,6 +107,14 @@ public class Truck {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public List<Review> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
     }
 
     public List<FoodType> getFoodType() {

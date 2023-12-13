@@ -8,7 +8,8 @@
 }
 body {
     font-family: "Anton", sans-serif;
-    background-color: var(--colors-secondary-light);
+    background-color: #054A91;
+    margin: 0;
 }
 nav{
     background-color: var(--colors-light);
@@ -17,7 +18,7 @@ nav{
     color: var(--colors-primary);
     transition: all .3s ease-in-out;
 }
-.nav-info:hover{
+.nav-info:hover {
     color: var(--colors-secondary);
     font-family: Modak, serif;
     transform: scale(1.2);
@@ -30,16 +31,21 @@ nav{
 .nav-img:hover{
     transform: scale(1.2);
 }
-.page-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    background-image: url("../assets/img/main_icon.PNG");
-    background-repeat: no-repeat;
-    background-size: 1400px 900px;
-    background-position: center;
+.btn {
+    background-color: #e7e7e7;
+    color: var(--colors-primary);
+    border-radius: 8px;
+    border: 5px solid var(--colors-secondary);
+    margin-left: 25px;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+    font-weight: bold;
+    background-color: var(--colors-secondary);
+    color: var(--colors-primary);
+    border: 5px solid var(--colors-primary);
 }
 
 .container {
@@ -47,55 +53,41 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
-    margin: 0;
-    /*background-image: url("../assets/img/main_icon.PNG");*/
-    /*background-repeat: no-repeat;*/
-    /*background-size: 2500px 1200px;*/
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
-    justify-self: center;
     align-self: center;
     gap: 15px;
-    box-shadow: 0 0 150px 20px rgba(0, 0, 0, 1);
-    border: 9px solid #e7e7e7;
+    border: 5px solid var(--colors-light);
     border-radius: 18px;
     padding: 30px;
-    margin-bottom: 85px;
-    width: 600px;
-    height: 550px;
-    background-color: #054A91;
-    color: #f9c784;
+    margin: auto; /* Center the form horizontally */
+    max-width: 600px; /* Set a maximum width for responsiveness */
+    width: 100%; /* Adjust as needed */
+    background-color: var(--colors-secondary);
+    color: var(--colors-light);
+    box-shadow: 4px 3px 0px var(--colors-secondary-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
+
 }
 
 h1 {
+    font-family: Modak, serif;
     text-align: center;
-    color: #f9c784;
+    font-size: 55px;
+    color: var(--colors-primary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgb(185, 87, 0);
 }
 
 p {
-    font-size: 28px;
+    font-size: 14px;
     text-align: center;
-    color: #e7e7e7;
+    color: var(--colors-secondary-light);
 }
 
 p:hover {
-    color: #fc7a1e;
-}
-
-.btn-signup {
-    background-color: #054A91;
-    color: #f9c784;
-    font-weight: bold;
-    font-size: 20px;
-    border: 4px solid #e7e7e7;
-    border-radius: 18px;
-}
-
-.btn-signup:hover {
-    color: #fc7a1e;
+    color: var(--colors-light);
 }

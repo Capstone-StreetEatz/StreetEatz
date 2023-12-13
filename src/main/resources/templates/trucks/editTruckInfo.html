@@ -10,6 +10,9 @@
   <form th:action="@{/editTruckInfo}" th:method="post" th:object="${truck}">
     <div class="form-group">
 
+      <label for="truckName">Truck Name:</label>
+      <input type="text" id="truckName" name="truckName" th:field="*{truckName}" class="form-control">
+
       <label for="website">Website:</label>
       <input type="text" id="website" name="website" th:field="*{website}" class="form-control">
 
@@ -17,6 +20,7 @@
       <input type="text" id="location" name="location" th:field="*{location}" class="form-control">
 
       <input type="hidden" th:field="*{id}">
+      <input type="hidden" th:field="*{avatar}">
       <input type="submit" class="btn btn-block">
     </div>
   </form>
