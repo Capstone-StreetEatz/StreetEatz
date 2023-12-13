@@ -63,6 +63,7 @@ public class UserController {
         User user = userDao.getUserById(loggedInUser.getId());
         Truck truck = truckDao.findByOwner(user);
         List<Review> reviews = user.getReviews();
+        user.setTruck(truck);
 
 
         model.addAttribute("user", user);
@@ -73,9 +74,9 @@ public class UserController {
 
 //        user.setTruckOwner(user.isTruckOwner());
 
-        if (user.isTruckOwner() && user.getTruck() != null){
-            List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
-            model.addAttribute("truckReviews", truckReviews);
+        if (user.isTruckOwner()){
+//            List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
+//            model.addAttribute("truckReviews", truckReviews);
             return "users/owner_profile";
         }else {
             return "users/user_profile";
@@ -118,7 +119,9 @@ public class UserController {
     public String imgUpload(@RequestParam(name = "img") String imgLink){
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
+        Truck truck = truckDao.findByOwner(user);
         user.setAvatar(imgLink);
+        truck.setAvatar(user.getAvatar());
         userDao.save(user);
 
         return "redirect:/profile";

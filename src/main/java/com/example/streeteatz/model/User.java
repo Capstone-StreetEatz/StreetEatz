@@ -27,7 +27,7 @@ public class User {
     @Column(length = 500)
     private String bio;
 
-    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @OneToOne
     private Truck truck;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
@@ -35,6 +35,7 @@ public class User {
 
     @Column
     private boolean truckOwner;
+
     public User() {
     }
 
