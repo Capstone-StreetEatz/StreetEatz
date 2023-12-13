@@ -104,9 +104,9 @@ public class TruckController {
 
         User owner = userDao.getUserById(truck.getOwner().getId());
 
-        //List<Review> truckReviews = reviewsDao.findAllByTruckId(id);
+        List<Review> truckReviews = reviewsDao.findAllByTruckId(id);
 
-       // model.addAttribute("truckReviews", truckReviews);
+        model.addAttribute("truckReviews", truckReviews);
 
 
         model.addAttribute("truck", truck);
