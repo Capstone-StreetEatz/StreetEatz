@@ -40,6 +40,7 @@
                                 <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
+                                <p>Name: <span th:text="${truck.getTruckName()}"/></p>
                             </div>
                             <div sec:authorize="isAuthenticated()">
                                 <p>Email: <span th:text="${user.getEmail()}"/></p>
@@ -61,6 +62,9 @@
             </div>
         </div>
     </main>
+    <div>
+        <a href="{/reviews/create}">Leave a Review</a>
+    </div>
     <section class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -122,8 +126,13 @@
                 <div>
                     <!--                    map goes here-->
                     <h3>Get Directions</h3>
-                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>
-                    <h3>This is where the map will go.</h3>
+                    <label for="truck_location">
+                        <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
+                    </label>
+
+
+                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Get Directions</a>
+
 <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
 <!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
                     <div id="map1">

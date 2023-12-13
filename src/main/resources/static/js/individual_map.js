@@ -1,5 +1,12 @@
 "use strict";
 
+
+// console.log(userLocation);
+// const watchID = navigator.geolocation.watchPosition((position) => {
+//     // doSomething(position.coords.latitude, position.coords.longitude);
+// });
+
+
 let truckLocation =document.getElementById("truck_location").value;
 mapboxgl.accessToken = 'pk.eyJ1IjoiZ3dhbGtlcjkzIiwiYSI6ImNsbWY4ajdubzF4MDUzcHJxNjR2dDNrYWkifQ.cil4dmekFqmMRRq4LYEpqg';
 const map1 = new mapboxgl.Map({

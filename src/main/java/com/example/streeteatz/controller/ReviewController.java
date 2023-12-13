@@ -56,7 +56,6 @@ public class ReviewController {
     public String getCreate(Model model){
     model.addAttribute(new Review());
 
-
         return "/reviews/create";
     }
 
