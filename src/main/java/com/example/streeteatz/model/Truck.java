@@ -23,7 +23,7 @@ public class Truck {
     private String website;
 
     @Column(nullable = false)
-    private int location;
+    private String location;
 
     @Column(length = 300)
     private String avatar;
@@ -36,7 +36,7 @@ public class Truck {
     )
     private List<FoodType> foodType;
 
-    public Truck(int id, String truckName, User owner, String website, int location, String avatar, List<FoodType> foodType) {
+    public Truck(int id, String truckName, User owner, String website, String location, String avatar, List<FoodType> foodType) {
         this.id = id;
         this.truckName = truckName;
         this.owner = owner;
@@ -46,7 +46,7 @@ public class Truck {
         this.foodType = foodType;
     }
 
-    public Truck(String truckName, User owner, String website, int location, String avatar, List<FoodType> foodType) {
+    public Truck(String truckName, User owner, String website, String location, String avatar, List<FoodType> foodType) {
         this.truckName = truckName;
         this.owner = owner;
         this.website = website;
@@ -90,11 +90,11 @@ public class Truck {
         this.owner = owner;
     }
 
-    public int getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(int location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
