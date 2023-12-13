@@ -29,23 +29,12 @@
             </div>
         </div>
     </div>
-    <!--        <div  th:each="truck : ${trucks}">-->
-    <!--                <div class="column">-->
-    <!--                    <img alt="Profile picture" class="img-thumbnail" th:src="*{truck.getAvatar()}">-->
-    <!--                </div>-->
-    <!--                <div class="column">-->
-    <!--                    <p> <span class="ad-title" th:text="${truck.getTruckName()}" ></span></p>-->
-    <!--                    <p> <span class="ad-body" th:text="${truck.getWebsite()}" ></span></p>-->
-    <!--                    <a th:href="@{/trucks/{id}(id=${truck.id})}">View Details</a>-->
-    <!--                </div>-->
-    <!--        </div>-->
+<!--    <div class="container">-->
+<!--        <footer th:replace="partials/fragments :: footer"></footer>-->
+<!--    </div>-->
 
-
-    <div class="container">
-        <footer th:replace="partials/fragments :: footer"></footer>
-    </div>
 </div>
-
+<footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 </body>
 </html>

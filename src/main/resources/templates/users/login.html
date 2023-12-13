@@ -10,8 +10,9 @@
 		<form class="login-form" th:action="@{/login}" method="post">
 			<h1>Log In </h1>
 			<label for="username">Username</label>
-			<input id="username" name="username" type="text" />
+			<input th:required="requierd" id="username" name="username" type="text" />
 			<label for="password">Password</label>
+
 			<input id="password" name="password" type="password" />
 			<div th:if="${param.error}" class="error">
 				Invalid Username and Password.
@@ -20,6 +21,7 @@
 				You have been logged out.
 			</div>
 			<input class="btn" type="submit" value="Log In" />
+
 
 			<p><a class="nav-link active" aria-current="page" th:href="@{/sign-up}">Not A Member? Signup Today!</a></p>
 		</form>

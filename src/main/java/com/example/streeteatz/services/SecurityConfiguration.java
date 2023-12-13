@@ -39,14 +39,14 @@ public class SecurityConfiguration {
                          * only authenticated users can create and edit ads */
 
 
-                        .requestMatchers( "/reviews/**", "/reviews/create", "/reviews/*/update", "/reviews/update/**","/profile","/updateOwner", "/updateUser", "/truckInfo", "/editTruckInfo", "/imgUpload", "/deleteUser", "/deleteUser/*").authenticated()
+                        .requestMatchers( "/reviews/**", "/reviews/create", "/reviews/create/**", "/reviews/*/update", "/reviews/update/**","/profile","/updateOwner", "/updateUser", "/truckInfo", "/editTruckInfo", "/imgUpload", "/deleteUser", "/deleteUser/*").authenticated()
 
                         /* Pages that do not require authentication
                          * anyone can visit the home page, register, login, and view ads */
                         .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/login", "/about", "/index", "/showAll", "/showAll/**","/trucks/*").permitAll()
 
 
-                        .requestMatchers("/css/**", "/js/**", "/img/**","/partials/**", "/partials_css/**", "/assets/**").permitAll()
+                        .requestMatchers("/css/**", "/js/**", "/img/**","/partials/**", "/partials_css/**", "/assets/**", "/error/**").permitAll()
 
 
                 )
