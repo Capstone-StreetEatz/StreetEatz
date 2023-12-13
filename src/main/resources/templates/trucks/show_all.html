@@ -14,10 +14,9 @@
 
 
                 <img alt="Profile picture" class="img-thumbnail" th:src="*{truck.getAvatar()}">
-                <p> <span class="ad-title" th:text="${truck.getTruckName()}" ></span></p>
-                <p> <span class="ad-body" th:text="${truck.getWebsite()}" ></span></p>
-<!--                <p> <span class="ad-body" th:text="${}" ></span></p>-->
-
+                <p> Truck Name: <span class="ad-title" th:text="${truck.getTruckName()}" ></span></p>
+                <p>Click For Truck Website: <a th:href="${truck.getWebsite()}"><span/>Click Here</a>
+                </p>
                 <a th:href="@{/trucks/{id}(id=${truck.id})}">View Details</a>
             </div>
         </div>

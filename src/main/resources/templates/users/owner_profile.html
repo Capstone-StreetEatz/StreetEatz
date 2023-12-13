@@ -36,6 +36,7 @@
 
 <!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
                             <div th:if="${truck != null}">
+                                <p>Trucks Name: <span th:text="${truck.getTruckName()}"/></p>
                                 <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
