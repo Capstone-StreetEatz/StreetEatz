@@ -36,6 +36,7 @@
 
 <!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
                             <div th:if="${truck != null}">
+                                <p>Trucks Name: <span th:text="${truck.getTruckName()}"/></p>
                                 <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
@@ -121,12 +122,16 @@
                 <div>
                     <!--                    map goes here-->
                     <h3>Get Directions</h3>
+                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>
                     <h3>This is where the map will go.</h3>
 <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
 <!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
                     <div id="map1">
                         <!--                    PUT MAP HERE-->
                         <!--                    input location input-->
+
+
+
                     </div>
                 </div>
             </div>
