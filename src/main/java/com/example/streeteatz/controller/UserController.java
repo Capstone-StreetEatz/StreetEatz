@@ -18,6 +18,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -52,6 +53,8 @@ public class UserController {
 
     @GetMapping("/index")
     public String showLogIn(Model model) {
+        ArrayList<Truck> trucks = (ArrayList<Truck>) truckDao.findAll();
+        model.addAttribute("trucks",trucks);
         model.addAttribute("user", new User());
         return "reviews/index";
     }
@@ -102,6 +105,7 @@ public class UserController {
     public String showUpdateOwnerForm(Model model) {
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
+
         model.addAttribute("user", user);
         return "users/updateOwner";
     }
