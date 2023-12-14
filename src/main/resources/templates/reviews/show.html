@@ -11,6 +11,7 @@
 
 		<p> <span th:text="${review.getUser().getUsername()}"></span></p>
 
+		<p><span class="ad-body" th:text="${review.truck.getTruckName()}"></span></p>
 		<p>Body: <span th:text="${review.body}"></span></p>
 		<p>Rating: <span th:text="${review.rating}"></span></p>
 		<div class="form-control">

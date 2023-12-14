@@ -125,7 +125,9 @@ public class UserController {
         User user = userDao.getUserById(loggedInUser.getId());
         Truck truck = truckDao.findByOwner(user);
         user.setAvatar(imgLink);
-        truck.setAvatar(user.getAvatar());
+        if (user.isTruckOwner()){
+            truck.setAvatar(user.getAvatar());
+        }
         userDao.save(user);
 
         return "redirect:/profile";
@@ -140,8 +142,11 @@ public class UserController {
     }
     @PostMapping("/deleteUser/{id}")
     public String deleteUser(@PathVariable Integer id){
-        Truck truck= truckDao.findByOwner(userDao.getUserById(id));
-        truckDao.deleteById(truck.getId());
+
+        if(userDao.getUserById(id).isTruckOwner()){
+            Truck truck= truckDao.findByOwner(userDao.getUserById(id));
+            truckDao.deleteById(truck.getId());
+        }
         userDao.deleteById(id);
         return "redirect:/index";
     }

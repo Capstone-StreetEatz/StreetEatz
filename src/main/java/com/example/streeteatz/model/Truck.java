@@ -17,7 +17,8 @@ public class Truck {
     @Column(nullable = false, unique = true)
     private String truckName;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @JoinColumn
     private User owner;
     @Column(length = 300)
     private String website;
@@ -25,7 +26,7 @@ public class Truck {
     @Column(nullable = false)
     private String location;
 
-    @Column(length = 300)
+    @Column(length = 600)
     private String avatar;
     @OneToMany
     private List<Review> reviews;

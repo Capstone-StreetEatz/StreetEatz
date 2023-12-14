@@ -9,7 +9,9 @@
     center: [-98.453985, 29.518593],
     maxZoom: 16,
     minZoom: 9,
-    zoom: 9.68
+    zoom: 9.68,
+
+        interactive: false
 });
 
     const title = document.getElementById('location-title');

@@ -19,4 +19,5 @@ function closeImage() {
     const imagePopup = document.querySelector("#imagePopup");
     imagePopup.style.display = "none";
     document.body.style.overflow = "auto";
-}
+
+        }
