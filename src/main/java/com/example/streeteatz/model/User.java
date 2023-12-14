@@ -22,7 +22,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    @Column(length = 300)
+    @Column(length = 600)
     private String avatar;
     @Column(length = 500)
     private String bio;

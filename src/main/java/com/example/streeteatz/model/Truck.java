@@ -25,7 +25,7 @@ public class Truck {
     @Column(nullable = false)
     private String location;
 
-    @Column(length = 300)
+    @Column(length = 600)
     private String avatar;
     @OneToMany
     private List<Review> reviews;
