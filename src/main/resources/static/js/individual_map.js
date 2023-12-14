@@ -14,7 +14,8 @@ const map1 = new mapboxgl.Map({
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
     style: 'mapbox://styles/mapbox/streets-v12',
     center: [-98.45386, 29.51907],
-    zoom: 8
+    zoom: 8,
+
 });
 
 function geocode(search, token) {
@@ -25,10 +26,12 @@ function geocode(search, token) {
             return res.json();
             // to get all the data from the request, comment out the following three lines...
         }).then(function(data) {
-            return data.features[0].center;
+            return data.features[0].center
         });
 }
 
+function myFunction() {
+    document.getElementById("refresh").innerHTML = "YOU CLICKED ME!";
 
 geocode(truckLocation, mapboxgl.accessToken ).then(function(result) {
     console.log(result);
@@ -37,7 +40,11 @@ geocode(truckLocation, mapboxgl.accessToken ).then(function(result) {
 
         const markerA = new mapboxgl.Marker()
             .setLngLat(result)
-            .addTo(map1);
+            .addTo(map1)
+            location.replace();
 
 }
 );
+
+
+}
