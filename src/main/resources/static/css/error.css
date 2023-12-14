@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Modak&display=swap');
+:root{
+    --colors-primary: #054A91;
+    --colors-secondary: #FC7A1E;
+    --colors-secondary-light: #F9C784;
+    --colors-light:#E7E7E7;
+    --colors-dark: #312F2F;
+}
+body {
+
+    font-family: "Anton", sans-serif;
+    background-color: var(--colors-secondary);
+    margin: 0;
+}
+nav{
+    background-color: var(--colors-light);
+}
+.nav-info{
+    color: var(--colors-primary);
+    transition: all .3s ease-in-out;
+}
+.nav-info:hover {
+    color: var(--colors-secondary);
+    font-family: Modak, serif;
+    transform: scale(1.2);
+}
+.nav-img{
+    width: 75px;
+    height: 75px;
+    transition: all .3s ease-in-out;
+}
+.nav-img:hover{
+    transform: scale(1.2);
+}
+.btn {
+    background-color: #e7e7e7;
+    color: var(--colors-primary);
+    border-radius: 8px;
+    border: 5px solid var(--colors-primary);
+    margin-left: 25px;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover {
+    font-weight: bold;
+    background-color: var(--colors-primary);
+    color: var(--colors-secondary-light);
+    border: 5px solid var(--colors-secondary);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    gap: 15px;
+    border: 5px solid var(--colors-light);
+    border-radius: 18px;
+    padding: 30px;
+    margin: auto; /* Center the form horizontally */
+    max-width: 600px; /* Set a maximum width for responsiveness */
+    width: 100%; /* Adjust as needed */
+
+    background-color: #054A91;
+    color: var(--colors-light);
+    box-shadow: 4px 3px 0px var(--colors-secondary-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
+
+}
+
+h1 {
+    font-family: Modak, serif;
+    text-align: center;
+    font-size: 55px;
+    color: var(--colors-secondary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+    color: var(--colors-light);
+}
+
+p:hover {
+    color: var(--colors-secondary-light);
+}
+
+.error{
+    color: var(--colors-secondary)
+}
