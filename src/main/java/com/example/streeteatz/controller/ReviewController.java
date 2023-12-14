@@ -2,9 +2,10 @@ package com.example.streeteatz.controller;
 
 
 import com.example.streeteatz.model.Review;
-
+import com.example.streeteatz.model.Truck;
 import com.example.streeteatz.model.User;
 import com.example.streeteatz.repository.ReviewRepository;
+import com.example.streeteatz.repository.TruckRepository;
 import com.example.streeteatz.repository.UserRepository;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -19,12 +20,14 @@ public class ReviewController {
 
     private final ReviewRepository reviewDao;
     private final UserRepository userDao;
+    private final TruckRepository truckDao;
 
 
-    public ReviewController(ReviewRepository reviewDao, UserRepository userDao) {
+    public ReviewController(ReviewRepository reviewDao, UserRepository userDao, TruckRepository truckDao) {
 
         this.reviewDao = reviewDao;
         this.userDao = userDao;
+        this.truckDao = truckDao;
     }
 
 
@@ -52,14 +55,17 @@ public class ReviewController {
         return "reviews/show";
     }
 
-    @GetMapping("/reviews/create")
-    public String getCreate(Model model){
+    @GetMapping("/reviews/create/{id}")
+    public String getCreate(@PathVariable int id, Model model){
+    Truck truck = (Truck) truckDao.getTruckById(id);
+
+    model.addAttribute("truck", truck);
     model.addAttribute(new Review());
 
-        return "/reviews/create";
+        return "reviews/create";
     }
 
-    @PostMapping("/reviews/create")
+    @PostMapping("/reviews/create/{id}")
     public String reviewCreate(@ModelAttribute ("review") Review review){
         User loggedInUser = (User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
@@ -68,6 +74,7 @@ public class ReviewController {
 
 
         review.setUser(user);
+
 
         reviewDao.save(review);
 

@@ -27,7 +27,7 @@
                         <div sec:authorize="isAuthenticated()">
                             <button type="button" id="upload" name="upload">Upload an image</button>
                             <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
-                                <input type="hidden" name="img" id="img" value="">
+                                <input type="hidden" name="img" id="img" >
                             </form>
                         </div>
                     </div>
@@ -68,7 +68,8 @@
         </div>
     </main>
     <div>
-        <a href="{/reviews/create}">Leave a Review</a>
+        <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
+
     </div>
     <section class="container">
         <ul class="nav nav-tabs">
