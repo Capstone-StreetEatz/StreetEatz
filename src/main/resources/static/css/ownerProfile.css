@@ -124,6 +124,31 @@ at middle of screen */
     transform: translate(-50%, -50%);
 }
 
+.ad-card {
+    padding: 20px;
+    border-radius: 18px;
+    background-color: var(--colors-light);
+    /*box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);*/
+}
+
+.btn, button {
+    background-color: #e7e7e7;
+    color: var(--colors-primary);
+    border-radius: 8px;
+    border: 3px solid var(--colors-primary);
+    margin-left: 25px;
+    font-weight: bold;
+    transition: all .3s ease-in-out;
+}
+
+.btn:hover, button:hover {
+    font-weight: bold;
+    background-color: var(--colors-primary);
+    color: var(--colors-secondary-light);
+    border: 5px solid var(--colors-secondary);
+    transform: scale(1.2);
+}
+
 #map1 {
     height: 600px;
     width: 100%;
