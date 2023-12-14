@@ -27,14 +27,13 @@
                         <div sec:authorize="isAuthenticated()">
                             <button type="button" id="upload" name="upload">Upload an image</button>
                             <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
-                                <input type="hidden" name="img" id="img" value="">
+                                <input type="hidden" name="img" id="img" >
                             </form>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
 
-<!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
                             <div th:if="${user.getTruck() != null}">
                                 <h1>Trucks Name: <span th:text="${truck.getTruckName()}"/></h1>
                                 <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
@@ -64,7 +63,8 @@
         </div>
     </main>
     <div>
-        <a href="{/reviews/create}">Leave a Review</a>
+        <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
+
     </div>
     <section class="container">
         <ul class="nav nav-tabs">
