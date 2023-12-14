@@ -105,6 +105,7 @@ public class UserController {
     public String showUpdateOwnerForm(Model model) {
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
+
         model.addAttribute("user", user);
         return "users/updateOwner";
     }

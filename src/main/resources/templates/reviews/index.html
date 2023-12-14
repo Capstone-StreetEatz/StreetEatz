@@ -48,7 +48,7 @@
                             <div class="column gap-2 d-block">
 
                                 <div class="card column m-4">
-                                    <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
+                                    <img alt="Profile picture" class="card-img custom-image" th:src="*{truck.getAvatar()}">
                                     <div class="card-body">
                                         <h5 class="card-title"><span class="ad-title"
                                                                      th:text="${truck.getTruckName()}"></span></h5>

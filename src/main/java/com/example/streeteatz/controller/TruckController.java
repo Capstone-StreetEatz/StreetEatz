@@ -52,7 +52,6 @@ public class TruckController {
     public String showTruckInfoForm(Model model){
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         User user = userDao.getUserById(loggedInUser.getId());
-//        Truck loggedInOwner = (Truck) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Truck truck = new Truck();
         model.addAttribute("user", user);
         model.addAttribute("truck", truck);
