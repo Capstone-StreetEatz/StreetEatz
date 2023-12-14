@@ -33,28 +33,33 @@
                     </div>
                     <div class="col-md-8">
                         <div class="user-info">
-
-<!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
                             <div th:if="${user.getTruck() != null}">
                                 <h1>Trucks Name: <span th:text="${truck.getTruckName()}"/></h1>
                                 <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
-                                <p>Name: <span th:text="${truck.getTruckName()}"/></p>
                             </div>
                             <div sec:authorize="isAuthenticated()">
                                 <p>Username: <span th:text="${user.getUsername()}"/></p>
                                 <p>Email: <span th:text="${user.getEmail()}"/></p>
-                                <div th:if="${truck == null}">
+                                <p>Bio: <span th:text="${user.getBio()}"/></p>
+
+
+<!--                                <div th:if="${truck.getOwner().getId() != user.getId()}">-->
+                                    <div th:if="${truck == null}">
                                         <a th:href="@{/truckInfo}">Add Truck Info</a>
-                                </div>
-                                <div th:if="${truck != null}">
-                                    <div th:if="${truck.getWebsite() != null}">
-                                        <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
                                     </div>
-                                </div>
-                                <a th:href="@{/updateOwner}">edit profile</a>
-                                <a th:href="@{/deleteUser}">delete profile</a>
+                                    <div th:if="${truck != null}">
+                                        <div th:if="${truck.getWebsite() != null}">
+                                            <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
+                                        </div>
+                                    </div>
+
+                                    <a th:href="@{/updateOwner}">edit profile</a>
+                                    <a th:href="@{/deleteUser}">delete profile</a>
+<!--                                </div>-->
+
+
                             </div>
 
                         </div>
@@ -153,10 +158,9 @@
             </div>
         </div>
     </section>
-    <div class="container">
-        <footer th:replace="partials/fragments :: footer"></footer>
-    </div>
 </div>
+<footer th:replace="partials/fragments :: footer"></footer>
+
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 
 </body>

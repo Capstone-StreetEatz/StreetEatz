@@ -16,7 +16,7 @@
 <nav th:fragment="navbar" class="navbar navbar-expand-lg " xmlns:sec="http://www.w3.org/1999/xhtml">
     <div class="container-fluid">
 
-            <a class="navbar-brand col-xs-9" th:href="@{/}"><img th:src="@{/assets/img/main_icon.png}" style="width: 75px; height: 75px"></a>
+            <a class="navbar-brand nav-img col-xs-9" th:href="@{/}"><img th:src="@{/assets/img/main_icon.png}" style="width: 75px; height: 75px"></a>
             <button class="navbar-toggler col-xs-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,10 +27,10 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
 
-                        <a class="nav-link active text-end" aria-current="page" th:href="@{/about}">About</a>
+                        <a class="nav-link nav-info text-end" aria-current="page" th:href="@{/about}">About</a>
                     </li>
                     <li>
-                        <a class="nav-link text-end" th:href="@{/showAll}">See All Trucks</a>
+                        <a class="nav-link nav-info text-end" th:href="@{/showAll}">See All Trucks</a>
                     </li>
                 </ul>
             </div>
@@ -38,10 +38,10 @@
                 <ul class="navbar-nav">
 
                     <li class="nav-item text-end" sec:authorize="isAuthenticated()">
-                        <a class="nav-link" th:href="@{/profile}">Profile</a>
+                        <a class="nav-link btn" th:href="@{/profile}">Profile</a>
                     </li>
                     <li class="nav-item text-end" sec:authorize="isAnonymous()">
-                        <a class="nav-link" th:href="@{/sign-up}">Sign Up</a>
+                        <a class="nav-link btn" th:href="@{/sign-up}">Sign Up</a>
                     </li>
                     <li class="nav-item text-end" sec:authorize="isAuthenticated()">
                         <form th:action="@{/logout}" th:method="post">
@@ -50,7 +50,7 @@
                     </li>
 
                     <li class="nav-item text-end" sec:authorize="isAnonymous()">
-                        <a class="nav-link" th:href="@{/login}">Login</a>
+                        <a class="nav-link btn" th:href="@{/login}">Login</a>
                     </li>
                 </ul>
             </div>

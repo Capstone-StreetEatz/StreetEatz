@@ -69,6 +69,8 @@ public class TruckController {
         truck.setTruckName(user.getUsername());
         truck.setAvatar(user.getAvatar());
         truckDao.save(truck);
+        userDao.save(user);
+
 
         return "redirect:/profile";
 
@@ -92,11 +94,8 @@ public class TruckController {
         User user = userDao.getUserById(loggedInUser.getId());
 
         user.setTruck(truck);
-
         truck.setOwner(user);
 
-//        truck.setTruckName();
-//        truck.setLocation(truck.getLocation());
         truckDao.save(truck);
 
         return "redirect:/profile";
