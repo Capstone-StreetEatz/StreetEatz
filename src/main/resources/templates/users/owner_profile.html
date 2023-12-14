@@ -36,8 +36,8 @@
 
                             <div th:if="${user.getTruck() != null}">
                                 <h1>Trucks Name: <span th:text="${truck.getTruckName()}"/></h1>
-                                <p>Visit Website: <a th:href="${truck.getWebsite()}"><span
-                                        th:text="${truck.getWebsite()}"/></a>
+                                <p>Visit Website:
+                                    <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
                                 <p>Bio: <span th:text="${user.getBio()}"/></p>
@@ -91,8 +91,6 @@
                         <!--     average reviews goes here-->
                     </div>
                     <div class="column">
-
-                        <!--                        list of all reviews of truck goes here-->
 
                         <!--                        list of all reviews of truck goes here-->
                         <div th:each="review : ${truckReviews}">
