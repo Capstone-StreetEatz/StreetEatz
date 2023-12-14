@@ -20,7 +20,7 @@
                             </div>
                         </div>
                         <div th:if="${truck == null}">
-                                <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
+                            <img alt="Profile picture" class="img-thumbnail" th:src="@{/assets/img/truck_icon.png}">
                         </div>
 
 
@@ -34,29 +34,33 @@
                     <div class="col-md-8">
                         <div class="user-info">
 
-<!--                            <h1>Truck Name: <span th:text="${user.getUsername()}"/></h1>-->
                             <div th:if="${user.getTruck() != null}">
                                 <h1>Trucks Name: <span th:text="${truck.getTruckName()}"/></h1>
-                                <p>Visit Website: <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
+                                <p>Visit Website: <a th:href="${truck.getWebsite()}"><span
+                                        th:text="${truck.getWebsite()}"/></a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
-                                <p>Name: <span th:text="${truck.getTruckName()}"/></p>
+                                <p>Bio: <span th:text="${user.getBio()}"/></p>
                             </div>
                             <div sec:authorize="isAuthenticated()">
-                                <p>Username: <span th:text="${user.getUsername()}"/></p>
-                                <p>Email: <span th:text="${user.getEmail()}"/></p>
-                                <div th:if="${truck == null}">
-                                        <a th:href="@{/truckInfo}">Add Truck Info</a>
-                                </div>
-                                <div th:if="${truck != null}">
-                                    <div th:if="${truck.getWebsite() != null}">
-                                        <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
-                                    </div>
-                                </div>
-                                <a th:href="@{/updateOwner}">edit profile</a>
-                                <a th:href="@{/deleteUser}">delete profile</a>
-                            </div>
+                                <div th:if="${user.getId() == #authentication.principal.id && user.isTruckOwner() }">
 
+                                    <p>Username: <span th:text="${user.getUsername()}"/></p>
+                                    <p>Email: <span th:text="${user.getEmail()}"/></p>
+
+                                        <div th:if="${truck == null}">
+                                            <a th:href="@{/truckInfo}">Add Truck Info</a>
+                                        </div>
+                                        <div th:if="${truck != null}">
+                                            <div th:if="${truck.getWebsite() != null}">
+                                                <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
+                                            </div>
+                                        </div>
+
+                                    <a th:href="@{/updateOwner}">edit profile</a>
+                                    <a th:href="@{/deleteUser}">delete profile</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -89,24 +93,24 @@
 
                         <!--                        list of all reviews of truck goes here-->
 
-<!--                        list of all reviews of truck goes here-->
-                        <div  th:each="review : ${truckReviews}">
+                        <!--                        list of all reviews of truck goes here-->
+                        <div th:each="review : ${truckReviews}">
 
                             <div class="ad-card" style="border: 1px solid black">
 
-                                <p> <span class="ad-title" th:text="${review.body}" ></span></p>
-                                <p> <span class="ad-body" th:text="${review.rating}" ></span></p>
-<!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
+                                <p><span class="ad-title" th:text="${review.body}"></span></p>
+                                <p><span class="ad-body" th:text="${review.rating}"></span></p>
+                                <!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
 
-<!--                                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">-->
-<!--                                    <button class="update-profile">Update Info</button>-->
-<!--                                </form>-->
+                                <!--                                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">-->
+                                <!--                                    <button class="update-profile">Update Info</button>-->
+                                <!--                                </form>-->
 
-<!--                                <form th:action="@{reviews/delete}" method="post">-->
-<!--                                    <a th:href="@{/reviews/{id}(id=${review.id})}">View Details</a>-->
-<!--                                    <input name="id" th:hidden="true" th:value="${review.id}" >-->
-<!--                                    <button type="submit">Delete</button>-->
-<!--                                </form>-->
+                                <!--                                <form th:action="@{reviews/delete}" method="post">-->
+                                <!--                                    <a th:href="@{/reviews/{id}(id=${review.id})}">View Details</a>-->
+                                <!--                                    <input name="id" th:hidden="true" th:value="${review.id}" >-->
+                                <!--                                    <button type="submit">Delete</button>-->
+                                <!--                                </form>-->
                             </div>
                         </div>
 
@@ -128,24 +132,23 @@
                     <!--                    map goes here-->
                     <h3>Get Directions</h3>
 
-<!--                    Commenting out below to get access to profile page - truck does not exist at this point-->
-<!--                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>-->
-<!--                     <h3>This is where the map will go.</h3> -->
+                    <!--                    Commenting out below to get access to profile page - truck does not exist at this point-->
+                    <!--                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>-->
+                    <!--                     <h3>This is where the map will go.</h3> -->
 
-<!--                     <label for="truck_location">
-                        <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
-                    </label>
-
-
-                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Get Directions</a> -->
+                    <!--                     <label for="truck_location">
+                                            <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
+                                        </label>
 
 
-<!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
-<!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
+                                        <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Get Directions</a> -->
+
+
+                    <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
+                    <!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
                     <div id="map1">
                         <!--                    PUT MAP HERE-->
                         <!--                    input location input-->
-
 
 
                     </div>
@@ -153,10 +156,9 @@
             </div>
         </div>
     </section>
-    <div class="container">
-        <footer th:replace="partials/fragments :: footer"></footer>
-    </div>
 </div>
+<footer th:replace="partials/fragments :: footer"></footer>
+
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 
 </body>

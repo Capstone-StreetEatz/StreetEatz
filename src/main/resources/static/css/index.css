@@ -112,7 +112,7 @@ video{
 .scroll-down {
     position: absolute;
     left: 50%;
-    bottom: 10px;
+    bottom: 75px;
     display: block;
     text-align: center;
     font-size: 20px;
