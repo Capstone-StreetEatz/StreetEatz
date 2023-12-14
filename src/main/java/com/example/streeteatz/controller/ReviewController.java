@@ -57,7 +57,7 @@ public class ReviewController {
 
     @GetMapping("/reviews/create/{id}")
     public String getCreate(@PathVariable int id, Model model){
-    Truck truck = (Truck) truckDao.getTruckById(id);
+    Truck truck = truckDao.getTruckById(id);
 
     model.addAttribute("truck", truck);
     model.addAttribute(new Review());
@@ -66,15 +66,16 @@ public class ReviewController {
     }
 
     @PostMapping("/reviews/create/{id}")
-    public String reviewCreate(@ModelAttribute ("review") Review review){
+    public String reviewCreate(@ModelAttribute ("review") Review review, @PathVariable int id){
         User loggedInUser = (User) SecurityContextHolder
                 .getContext().getAuthentication().getPrincipal();
 
         User user = userDao.getUserById(loggedInUser.getId());
+        Truck truck = truckDao.getTruckById(id);
 
 
         review.setUser(user);
-
+        review.setTruck(truck);
 
         reviewDao.save(review);
 

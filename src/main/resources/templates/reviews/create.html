@@ -15,7 +15,7 @@
 				<input  type="range" min="0" max="10" name="rating" id="rating" th:field="*{rating}">
 				<label for="user_id" >Rating</label>
 				<input th:hidden="hidden" type="text" name="user_id" id="user_id" th:field="*{user}" >
-				<input th:hidden="hidden" type="text" name="truck_id" id="truck_id" th:field="*{truck}" >
+				<input th:hidden="hidden" type="text" name="truck_id" id="truck_id" th:field="*{truck.id}" >
 
 				<button type="submit">Post Review</button>
 			</div>
