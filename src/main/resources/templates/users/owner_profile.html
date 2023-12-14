@@ -80,7 +80,7 @@
                 <a class="nav-link" href="#tab2" data-bs-toggle="list">Photos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#tab3" data-bs-toggle="list">Directions</a>
+                <a class="nav-link" href="#tab3" data-bs-toggle="list" id="refresh" onclick="myFunction()" >Directions</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -128,6 +128,7 @@
             </div>
             <!--            directions-->
             <div class="tab-pane" id="tab3" role="tabpanel">
+
                 <div>
                     <!--                    map goes here-->
                     <h3>Get Directions</h3>
@@ -136,24 +137,29 @@
                     <!--                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>-->
                     <!--                     <h3>This is where the map will go.</h3> -->
 
-                    <!--                     <label for="truck_location">
-                                            <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
-                                        </label>
+
+                    <label for="truck_location">
+                        <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
+                    </label>
+
+                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click here for location!!!!</a>
 
 
-                                        <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Get Directions</a> -->
+<!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
+<!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
+<!--                    <div id="map1">-->
+
+                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+                        <div id="map1">
 
 
-                    <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
-                    <!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
-                    <div id="map1">
-                        <!--                    PUT MAP HERE-->
-                        <!--                    input location input-->
-
-
+                        </div>
+<!--  possible extra div-->
                     </div>
+
                 </div>
             </div>
+
         </div>
     </section>
 </div>
