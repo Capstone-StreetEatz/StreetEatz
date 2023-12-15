@@ -10,14 +10,14 @@
 		<form th:action="@{/reviews/create/{id}(id=${truck.getId()})}" method="post" th:object="${review}">
 			<div class="form-control">
 				<label for="body">body</label>
-				<textarea th:field="*{body}" name="body" id="body" cols="30" rows="10"></textarea>
+				<input th:field="*{body}" name="body" id="body" cols="30" rows="10"></input>
 				<label for="rating" >Rating </sp></label>
 				<input  type="range" min="0" max="10" name="rating" id="rating" th:field="*{rating}">
 				<label for="user_id" >Rating</label>
 				<input th:hidden="hidden" type="text" name="user_id" id="user_id" th:field="*{user}" >
 				<input th:hidden="hidden" type="text" name="truck_id" id="truck_id" th:field="*{truck.id}" >
 
-				<button type="submit">Post Review</button>
+				<a type="submit btn">Post Review</a>
 			</div>
 
 		</form>

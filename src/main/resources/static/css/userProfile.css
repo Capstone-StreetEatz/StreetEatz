@@ -22,7 +22,7 @@ nav{
     font-family: Modak, serif;
     transform: scale(1.2);
 }
-.btn {
+.btn, button {
     background-color: #e7e7e7;
     color: var(--colors-primary);
     border-radius: 8px;
@@ -32,7 +32,7 @@ nav{
     transition: all .3s ease-in-out;
 }
 
-.btn:hover {
+.btn:hover, button:hover {
     font-weight: bold;
     background-color: var(--colors-primary);
     color: var(--colors-secondary-light);
@@ -52,4 +52,11 @@ nav{
     width: 450px; /* adjust this to the size you want */
     border-radius: 50%;
     object-fit: cover;
+}
+
+.ad-card {
+    padding: 20px;
+    border-radius: 18px;
+    background-color: var(--colors-light);
+    /*box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);*/
 }

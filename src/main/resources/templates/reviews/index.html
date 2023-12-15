@@ -7,9 +7,9 @@
 
 <body>
 <div class="page-wrapper">
+<!--    Navbar-->
     <nav th:replace="partials/fragments :: navbar"></nav>
     <!--//Start of HERO-->
-
     <div class="video-wrapper d-flex justify-content-end">
         <div class="black-overlay"></div>
 
@@ -28,127 +28,62 @@
 
         </div>
     </div>
-
-    <div class="container-fluid d-flex flex-column gap-5 overflow-hidden" id="main">
-
+<!--Welcome container-->
+    <div class="container welcomeContainer" id="main">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <img th:src="@{/assets/img/main_icon.png}" style="width: 250px; height: 250px">
+            </div>
+            <div class="welcome">
+                <h2>Feeling Hungry? We got you covered!</h2>
+                <p class="var">Discover Food Trucks - Leave Reviews</p>
+                <div class="text-center">
+                    <a th:href="@{/about}" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-auto">
+                <img th:src="@{/assets/img/main_icon.png}" style="width: 250px; height: 250px">
+            </div>
+        </div>
+    </div>
+    <!--map and truck cards-->
+    <div class="container-fluid d-flex flex-column gap-5 overflow-hidden">
         <div class="row">
-            <div class="col-12 col-md-8 position-relative">
+            <div class="col-12 col-md-6 position-relative">
+                <h3 class="text-center">Trucks Near You</h3>
                 <div id="map"></div>
                 <div class="map-overlay-container">
                     <div class="map-overlay">
-                        <h2 id="location-title"></h2>
+                        <h3 id="location-title"></h3>
                         <p id="location-description"></p>
                     </div>
                 </div>
             </div>
-<!--            Truck carousel-->
-            <div class="col-12 col-md-4">
-                <div id="carouselExample" class="carousel slide overflow-hidden" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div th:each="truck : ${trucks}" class="carousel-item active">
-                            <div class="column gap-2 d-block">
-
-                                <div class="card column m-4">
-                                    <img alt="Profile picture" class="card-img custom-image" th:src="*{truck.getAvatar()}">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><span class="ad-title"
-                                                                     th:text="${truck.getTruckName()}"></span></h5>
-                                        <p class="card-text"><a th:href="${truck.getWebsite()}"><span
-                                                th:text="${truck.getWebsite()}"/></a></p>
-                                        <p class="card-text"><span th:text="${truck.getOwner().getId()}"/></p>
-                                        <a th:href="@{/trucks/{id}(id=${truck.id})}" class="btn btn-primary">View
-                                            Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="column gap-2 d-block">
-                                    <div class="card col m-4">
-                                        <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Maipe Foodies</h5>
-                                            <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned,
-                                                Family recipes,
-                                                fusion island and asian flavors</p>
-                                            <a href="#" class="btn btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                    <div class="card col m-4">
-                                        <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Maipe Foodies</h5>
-                                            <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned,
-                                                Family recipes,
-                                                fusion island and asian flavors</p>
-                                            <a href="#" class="btn btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                    <div class="card col m-4">
-                                        <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Maipe Foodies</h5>
-                                            <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned,
-                                                Family recipes,
-                                                fusion island and asian flavors</p>
-                                            <a href="#" class="btn btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="column gap-2 d-block">
-                                    <div class="card col m-4">
-                                        <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Maipe Foodies</h5>
-                                            <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned,
-                                                Family recipes,
-                                                fusion island and asian flavors</p>
-                                            <a href="#" class="btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                    <div class="card col m-4">
-                                        <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Maipe Foodies</h5>
-                                            <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned,
-                                                Family recipes,
-                                                fusion island and asian flavors</p>
-                                            <a href="#" class="btn">Learn More</a>
-                                        </div>
-                                    </div>
-                                    <div class="card col m-4">
-                                        <img src="/assets/img/truck_icon.png" class="card-img-left" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Maipe Foodies</h5>
-                                            <p class="card-text">Join us at the Table! Its MAIPE good! Family Owned,
-                                                Family recipes,
-                                                fusion island and asian flavors</p>
-                                            <a href="#" class="btn btn-primary">Learn More</a>
-                                        </div>
-                                    </div>
-                                </div>
+            <!--            Truck carousel-->
+            <div class="col-12 col-md-6">
+                <h3 class="text-center">Scroll Down to See More</h3>
+                <div class="carousel-container">
+                    <div th:each="truck : ${trucks}" class="carousel-card">
+                        <div class="card mb-4 d-flex flex-row"> <!-- Added flex-row class here -->
+                            <!-- Image on the left of the card -->
+                            <img alt="Profile picture" class="card-img-left custom-image" th:src="*{truck.getAvatar()}">
+                            <div class="card-body">
+                                <!-- Move the card title and text inside the card-body div -->
+                                <h4 class="card-title"><span class="ad-title" th:text="${truck.getTruckName()}"></span></h4>
+                                <p class="card-text"><span th:text="${truck.getOwner().getBio()}"></span></p>
+                                <p class="card-text" style="font-size: 16px"><a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"></span></a></p>
+                                <a th:href="@{/trucks/{id}(id=${truck.id})}" class="btn btn-primary">View Details</a>
                             </div>
                         </div>
-                        <button class="carousel-control-prev pr-5" type="button" data-bs-target="#carouselExample"
-                                data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span></span>
-                        </button>
-                        <button class="carousel-control-next pl-5" type="button" data-bs-target="#carouselExample"
-                                data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span></span>
-                        </button>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container">
-            <footer th:replace="partials/fragments :: footer"></footer>
+
         </div>
     </div>
-    <th:block th:replace="partials/fragments :: scripts"></th:block>
 </div>
+<footer th:replace="partials/fragments :: footer"></footer>
+
+<th:block th:replace="partials/fragments :: scripts"></th:block>
 </body>
 </html>
