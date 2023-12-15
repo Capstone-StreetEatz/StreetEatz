@@ -145,6 +145,12 @@ public class UserController {
 
         if(userDao.getUserById(id).isTruckOwner()){
             Truck truck= truckDao.findByOwner(userDao.getUserById(id));
+            if(truck.getReviews() != null){
+                List<Review> reviews = reviewsDao.findAllByTruckId(truck.getId());
+                for (Review review: reviews) {
+                    reviewsDao.deleteById(review.getId());
+                }
+            }
             truckDao.deleteById(truck.getId());
         }
         userDao.deleteById(id);
