@@ -14,7 +14,7 @@ public class Review {
     @Column(nullable = false, length = 500)
     private String body;
 
-    @Column( length = 300)
+    @Column( length = 900)
     private String picture;
 
     @Column(nullable = false, length = 2)
