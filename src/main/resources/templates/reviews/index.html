@@ -69,9 +69,9 @@
                             <img alt="Profile picture" class="card-img-left custom-image" th:src="*{truck.getAvatar()}">
                             <div class="card-body">
                                 <!-- Move the card title and text inside the card-body div -->
-                                <h5 class="card-title"><span class="ad-title" th:text="${truck.getTruckName()}"></span></h5>
-                                <p class="card-text"><a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"></span></a></p>
-                                <p class="card-text"><span th:text="${truck.getOwner().getId()}"></span></p>
+                                <h4 class="card-title"><span class="ad-title" th:text="${truck.getTruckName()}"></span></h4>
+                                <p class="card-text"><span th:text="${truck.getOwner().getBio()}"></span></p>
+                                <p class="card-text" style="font-size: 16px"><a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"></span></a></p>
                                 <a th:href="@{/trucks/{id}(id=${truck.id})}" class="btn btn-primary">View Details</a>
                             </div>
                         </div>

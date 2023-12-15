@@ -54,7 +54,12 @@
             <!--            Reviews-->
             <div class="tab-pane active" id="tab1" role="tabpanel">
                 <div>
-                    <p>Review goes here </p>
+
+                    <div>
+                        <div th:if="${truck != null}">
+                            <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}" class="btn">Leave a Review</a>
+                        </div>
+                    </div>
                     <div th:each="review : ${reviews}">
 
                         <div class="ad-card" style="border: 1px solid black">

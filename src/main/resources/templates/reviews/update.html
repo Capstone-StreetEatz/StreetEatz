@@ -6,26 +6,23 @@
 <body>
 <div class="page-wrapper">
 	<nav th:replace="partials/fragments :: navbar"></nav>
-	<div class="ad-card">
-		<form th:action="@{/reviews/update}" method="post" th:object="${review}">
-			<div class="form-control">
-				<label for="rating">Rating</label>
+	<div class="container">
+		<form class="signup-form" th:action="@{/reviews/update}" method="post" th:object="${review}">
+			<h1>Update Review</h1>
+
+				<label for="rating">Rating:</label>
 				<input  type="text" name="rating" id="rating" th:value="${review.rating}" th:field="*{rating}">
 
-				<label for="body">Body</label>
+				<label for="body">Body:</label>
 				<textarea name="body" id="body"  th:text="${review.body}" th:field="*{body}"></textarea>
-			</div>
+
 			<input name="id" th:hidden="true" th:value="${review.id}" th:field="*{id}">
 			<input name="author" th:hidden="true" th:value="${review.user}" th:field="*{user}">
-			<button type="submit">Update</button>
-
-
+			<input type="submit" class="btn" value="Update">
 		</form>
 	</div>
-	<div class="container fixed-bottom">
-		<footer th:replace="partials/fragments :: footer"></footer>
-	</div>
 </div>
+<footer th:replace="partials/fragments :: footer"></footer>
 
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 
