@@ -6,8 +6,8 @@
 <body>
 <div class="page-wrapper">
 	<nav th:replace="partials/fragments :: navbar"></nav>
-	<div class="ad-card">
-		<form th:action="@{/reviews/create/{id}(id=${truck.getId()})}" method="post" th:object="${review}">
+	<div class="container">
+		<form th:action="@{/reviews/create/{id}(id=${truck.getId()})}" method="post" th:object="${review}" class="show">
 			<div class="form-control">
 				<label for="body">body</label>
 				<input th:field="*{body}" name="body" id="body" cols="30" rows="10"></input>
@@ -17,7 +17,7 @@
 				<input th:hidden="hidden" type="text" name="user_id" id="user_id" th:field="*{user}" >
 				<input th:hidden="hidden" type="text" name="truck_id" id="truck_id" th:field="*{truck.id}" >
 
-				<a type="submit btn">Post Review</a>
+				<button type="submit" class="btn">Post Review</button>
 			</div>
 
 		</form>

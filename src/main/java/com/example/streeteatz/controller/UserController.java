@@ -78,8 +78,10 @@ public class UserController {
 //        user.setTruckOwner(user.isTruckOwner());
 
         if (user.isTruckOwner()){
-//            List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
-//            model.addAttribute("truckReviews", truckReviews);
+            if(user.getTruck() != null){
+                List<Review> truckReviews = reviewsDao.findAllByTruckId(truck.getId());
+                model.addAttribute("truckReviews", truckReviews);
+            }
             return "users/owner_profile";
         }else {
             return "users/user_profile";

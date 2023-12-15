@@ -10,7 +10,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div th:if="${truck != null}">
                             <div th:if="${user.getAvatar() != null}">
                                 <img alt="Profile picture" class="img-thumbnail" th:src="*{user.getAvatar()}">
@@ -27,14 +27,14 @@
                         <div sec:authorize="isAuthenticated()">
                             <div th:if="${user.getId() == #authentication.principal.id && user.isTruckOwner() }">
 
-                            <button type="button" id="upload" name="upload">Upload an image</button>
-                            <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
-                                <input type="hidden" name="img" id="img" >
-                            </form>
+                                <button type="button" id="upload" name="upload">Upload an image</button>
+                                <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
+                                    <input type="hidden" name="img" id="img">
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="user-info">
 
                             <div th:if="${user.getTruck() != null}">
@@ -51,14 +51,14 @@
                                     <p>Username: <span th:text="${user.getUsername()}"/></p>
                                     <p>Email: <span th:text="${user.getEmail()}"/></p>
 
-                                        <div th:if="${truck == null}">
-                                            <a th:href="@{/truckInfo}">Add Truck Info</a>
+                                    <div th:if="${truck == null}">
+                                        <a th:href="@{/truckInfo}">Add Truck Info</a>
+                                    </div>
+                                    <div th:if="${truck != null}">
+                                        <div th:if="${truck.getWebsite() != null}">
+                                            <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
                                         </div>
-                                        <div th:if="${truck != null}">
-                                            <div th:if="${truck.getWebsite() != null}">
-                                                <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
-                                            </div>
-                                        </div>
+                                    </div>
 
                                     <a th:href="@{/updateOwner}">edit profile</a>
                                     <a th:href="@{/deleteUser}">delete profile</a>
@@ -79,7 +79,8 @@
                 <a class="nav-link" href="#tab2" data-bs-toggle="list">Photos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#tab3" data-bs-toggle="list" id="refresh" onclick="myFunction()" >Directions</a>
+                <a class="nav-link" href="#tab3" data-bs-toggle="list" id="refresh"
+                   onclick="myFunction()">Directions</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -90,9 +91,10 @@
                         <!--     average reviews goes here-->
                     </div>
                     <div class="column">
-                        <div>
-                            <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
-
+                        <div th:if="${user.getTruck() != null}">
+                            <div>
+                                <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
+                            </div>
                         </div>
                         <!--                        list of all reviews of truck goes here-->
                         <div th:each="review : ${truckReviews}">
@@ -100,7 +102,8 @@
                             <div class="ad-card" style="border: 1px solid black">
 
 
-                                <p><span class="ad-title" th:text="${user.username}"></span>'s Truck Review: <span class="ad-title" th:text="${review.body}"></span></p>
+                                <p><span class="ad-title" th:text="${user.username}"></span>'s Truck Review: <span
+                                        class="ad-title" th:text="${review.body}"></span></p>
                                 <p>Rating: <span class="ad-body" th:text="${review.rating}"></span></p>
                                 <!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
 
@@ -122,10 +125,10 @@
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div class="gallery">
-                                        placeholder images to make sure it works. will input filestack logic later
-                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
-                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
-                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
+                    placeholder images to make sure it works. will input filestack logic later
+                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
+                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
+                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
                 </div>
             </div>
             <!--            directions-->
@@ -133,34 +136,29 @@
 
                 <div>
                     <!--                    map goes here-->
-                    <h3>Get Directions</h3>
+                    <div th:if="${user.getTruck() != null}">
+                        <h3>Get Directions</h3>
+                        <label for="truck_location">
+                            <input th:hidden="hidden" name="truck_location" id="truck_location" type="text"
+                                   th:value="${truck.getLocation}">
+                        </label>
 
-                    <!--                    Commenting out below to get access to profile page - truck does not exist at this point-->
-                    <!--                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>-->
-                    <!--                     <h3>This is where the map will go.</h3> -->
-
-
-                    <label for="truck_location">
-                        <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
-                    </label>
-
-                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click here for directions!!!!</a>
-
-
-<!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
-<!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
-<!--                    <div id="map1">-->
-
-                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
-                        <div id="map1">
-
-
-                        </div>
-<!--  possible extra div-->
+                        <a target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click
+                            here for directions!!!!</a>
                     </div>
 
+
+                    <link rel="stylesheet"
+                          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+                          type="text/css">
+                    <div id="map1">
+
+
+                    </div>
                 </div>
+
             </div>
+        </div>
     </section>
 </div>
 <footer th:replace="partials/fragments :: footer"></footer>
