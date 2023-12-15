@@ -37,7 +37,7 @@
                             <div th:if="${user.getTruck() != null}">
                                 <h1>Trucks Name: <span th:text="${truck.getTruckName()}"/></h1>
                                 <p>Visit Website:
-                                    <a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a>
+                                    <a th:href="${truck.getWebsite()}">Click here for Truck's Website!!!!</a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
                                 <p>Bio: <span th:text="${user.getBio()}"/></p>
@@ -98,8 +98,8 @@
                             <div class="ad-card" style="border: 1px solid black">
 
 
-                                <p><span class="ad-title" th:text="${review.body}"></span></p>
-                                <p><span class="ad-body" th:text="${review.rating}"></span></p>
+                                <p><span class="ad-title" th:text="${user.username}"></span>'s Truck Review: <span class="ad-title" th:text="${review.body}"></span></p>
+                                <p>Rating: <span class="ad-body" th:text="${review.rating}"></span></p>
                                 <!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
 
                                 <!--                                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">-->
@@ -120,10 +120,10 @@
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div class="gallery">
-                    <!--                    placeholder images to make sure it works. will input filestack logic later-->
-                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
-                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
-                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                                        placeholder images to make sure it works. will input filestack logic later
+                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
+                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
+                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
                 </div>
             </div>
             <!--            directions-->
@@ -142,7 +142,7 @@
                         <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
                     </label>
 
-                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click here for location!!!!</a>
+                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click here for directions!!!!</a>
 
 
 <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->

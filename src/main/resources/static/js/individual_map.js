@@ -25,6 +25,7 @@ function myFunction() {
         style: 'mapbox://styles/mapbox/streets-v12',
         center: [-98.45386, 29.51907],
         zoom: 8,
+        interactive: false
     });
     geocode(truckLocation, mapboxgl.accessToken ).then(function(result) {
         console.log(result);
