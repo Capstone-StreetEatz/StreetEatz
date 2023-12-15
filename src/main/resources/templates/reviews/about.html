@@ -7,79 +7,188 @@
 <div class="page-wrapper">
     <nav th:replace="partials/fragments :: navbar"></nav>
 
-    <div class="about-section text-center mb-5 ">
-        <h1>About Us Page</h1>
-        <p>Some text about who we are and what we do.</p>
-        <p>Resize the browser window to see that this page is responsive by the way.</p>
+    <div class="container about-section text-center mb-5 ">
+        <h1>Who We Are?</h1>
+        <p class="main">At Street Eatz, we're on a mission to bring foodies and food truck owners together in a delicious harmony. Whether you're a seasoned food truck enthusiast or a casual passerby, we've created the perfect platform to discover, review, and savor the diverse world of mobile culinary delights.</p>
+    </div>
+    <div class="container">
+        <h4>How it Works:</h4>
+        <p>Joining our community is as easy as enjoying your favorite food truck dish. Simply sign up as a:</p>
+        <ul>
+            <li><p>Regular User: Explore, review, and share your culinary adventures.</p></li>
+            <li><p>Truck Owner: Showcase your delectable offerings, connect with your audience, and watch your fanbase grow.</p></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h4>Discover Trucks</h4>
+        <p>Browse through a diverse array of food trucks in your area. From savory street tacos to mouthwatering desserts, we've got it all. Our intuitive search feature helps you find the perfect mobile eatery for every craving.</p>
+    </div>
+    <div class="container">
+        <h4>Leave Reviews</h4>
+        <p>Share your thoughts and experiences! Your reviews help fellow foodies make informed decisions and support food truck owners in delivering the best possible culinary delights. Be a part of the vibrant [Your Website Name] community by contributing your insights.</p>
+    </div>
+    <div class="container">
+        <h4>Connect with Owners</h4>
+        <p>Are you a food truck owner? Join Street Eatz to gain exposure, connect with your community, get valuable feedback on your services, and build lasting relationships with your customers.</p>
     </div>
 
-    <h2 class="mt-5 mb-5" style="text-align: center;">Our Team</h2>
-
-    <div class="container_profiles">
-        <div class="d-flex flex-row flex-wrap justify-content-evenly gap-3">
-<!--            <div class="column">-->
-            <div class="profiles-half col-md-5 d-flex flex-row justify-content-evenly mt-2 gap-5">
-                <div class="card w-100" style="height: 400px; max-width: 340px;">
-                    <img th:src="@{/assets/img/teamImages/luis.jpg}" alt="Luis" style="width: 100%">
-
-                    <div class="container">
-                        <h2>Luis Peluyera</h2>
-                        <p class="title">Full Stack Web Developer</p>
-                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                        <p>jane@example.com</p>
-                        <a th:target="_blank" th:href="@{https://www.linkedin.com/in/luis-f-peluyera}">Contact</a>
-                    </div>
-                </div>
-<!--            </div>-->
-
-<!--            <div class="column">-->
-                <div class="card w-100" style="height: 400px; max-width: 340px;">
-                    <img th:src="@{/assets/img/teamImages/kyle.png}" alt="Mike" style="width:100%">
-                    <div class="container">
-                        <h2>Kyle Sowers</h2>
-                        <p class="title">Full Stack Web Developer</p>
-                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                        <p>mike@example.com</p>
-                        <a th:target="_blank" th:href="@{https://www.linkedin.com/in/kyle-sowers-983625104/}">Contact</a>
-                    </div>
-                </div>
-<!--            </div>-->
+    <div class="container">
+        <h4>Get Directions:</h4>
+        <p>Navigate easily to your chosen food truck with our integrated maps feature. No more wandering the streets—find your favorite flavors with a single click.</p>
+    </div>
+    <div class="container benefit-container">
+        <h1 class="text-center benefits">The Benefits</h1>
+        <div class="row">
+            <div class="column">
+                <p class="benefits">For Regular Users:</p>
+                <ul>
+                    <li><p><strong>Personalized Recommendations:</strong> Discover new food trucks tailored to your preferences.</p></li>
+                    <li><p><strong>Community Engagement:</strong> Connect with fellow foodies, share tips, and make the most of your culinary adventures.</p></li>
+                    <li><p><strong>Exclusive Offers:</strong> Receive special promotions and discounts from participating food trucks.</p></li>
+                </ul>
             </div>
-            <div class="profiles_half col-md-5 d-flex flex-row justify-content-evenly mt-2 gap-5">
-            <!--            <div class="column w-25">-->
-                <div class="card w-100" style="height: 400px; max-width: 340px;">
-                    <img src="/w3images/team3.jpg" alt="John" style="width: 100%">
-                    <div class="container">
-                        <h2>Miliangigia Rios</h2>
-                        <p class="title">Full Stack Web Developer</p>
-                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                        <p>john@example.com</p>
-                        <a th:target="_blank" th:href="@{https://www.linkedin.com/in/milianigiarios/}">Contact</a>
-                    </div>
-                </div>
-<!--            </div>-->
+            <div class="column">
+                <p class="benefits">For Truck Owners:</p>
+                <ul>
+                    <li><p><strong>Increased Visibility:</strong> Showcase your unique offerings to a broader audience.</p></li>
+                    <li><p><strong>Customer Engagement:</strong> Interact with your customers, build loyalty, and turn first-timers into regulars.</p></li>
+                    <li><p><strong>Analytics:</strong>Analytics: Gain insights into customer preferences and tailor your menu for maximum satisfaction.</p></li>
+                </ul>
+            </div>
+        </div>
+        <p><strong>Ready to embark on a flavorful journey? Sign up now and be a part of the Street Eatz community!</strong></p>
+        <a class="nav-link btn text-center" th:href="@{/sign-up}">Sign Up Now!</a>
+    </div>
 
-<!--            <div class="column">-->
-                <div class="card w-100" style="height: 400px; max-width: 340px;">
-                    <img th:src="@{/assets/img/teamImages/gerald.png}" alt="John" style="width: 100%">
-                    <div class="container">
-                        <h2>Gerald Walker</h2>
-                        <p class="title">Full Stack Web Developer</p>
-                        <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                        <p>john@example.com</p>
-                        <p><button class="button">Contact</button></p>
+    <div class="container team-container p-5">
+        <h2 class="text-center m-3">Meet Our Team</h2>
+        <div class="row justify-content-center">
+            <!--                Luis-->
+            <div class="person-column col-md-6 mb-4">
+                <div class="person-container">
+                    <img src="/assets/img/teamImages/luis.png" class="rounded-circle d-block mx-lg-auto img-fluid"
+                         alt="Luis" style="object-fit: cover; border-radius: 50%; width: 200px; height: 200px;"
+                         loading="lazy">
+                    <h3 class="py-3 text-center">Luis Peluyera</h3>
+                    <p class="about">Army veteran with a Top Secret/SCI clearance and a passion for bridging languages
+                        and building immersive web experiences. Fluent in Spanish, English, Javascript and Java, I bring
+                        a 4D perspective to the world of full-stack web development. Committed to continuous learning
+                        and growth, I bring a strong dedication to excellence in my work.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="https://www.linkedin.com/in/luis-f-peluyera/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-linkedin" viewBox="0 0 16 16">>
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/LuisFPeluyera">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-<!--            </div>-->
+            </div>
+
+
+            <!--                Kyle-->
+            <div class="person-column col-md-6 mb-4">
+                <div class="person-container">
+                    <img src="/assets/img/teamImages/kyle.png" class="rounded-circle d-block mx-lg-auto img-fluid"
+                         alt="Kyle" style="object-fit: cover; border-radius: 50%; width: 200px; height: 200px;"
+                         loading="lazy">
+                    <h3 class="py-3 text-center">Kyle Sowers</h3>
+                    <p class="about">Web Developer and Air Force Veteran encompassing instructing, team cultivation,
+                        project
+                        management, problem solving and leadership experience. Leveraging full-stack program skills with
+                        a
+                        passion for programming solutions, through secure and innovative skills, contributing to the
+                        growth
+                        of today’s software applications.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="https://www.linkedin.com/in/kyle-sowers-983625104/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/KyleSowers">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-github"
+                                 viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <!--                Gerald-->
+            <div class="person-column col-md-6 mb-4">
+                <div class="person-container">
+                    <img src="/assets/img/teamImages/gerald.png" class="rounded-circle d-block mx-lg-auto img-fluid"
+                         alt="Bootstrap Themes"
+                         style="object-fit: cover; border-radius: 50%; width: 200px; height: 200px;"
+                         loading="lazy">
+                    <h3 class="py-3 text-center">Gerald Walker</h3>
+                    <p class="about">Air Force veteran with a passion for helping others and striving for new
+                        skills. Worked
+                        with aircraft for 10 years, and now looking forward to learning new skills and languages in
+                        the coding
+                        world.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="https://github.com/GWalker93">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-github"
+                                 viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--                Nani-->
+            <div class="person-column col-md-6 mb-4">
+                <div class="person-container">
+                    <img src="/assets/img/teamImages/nani.png"
+                         class="rounded-circle d-block mx-lg-auto img-fluid"
+                         alt="Bootstrap Themes"
+                         style="object-fit: cover; border-radius: 50%; width: 200px; height: 200px;"
+                         loading="lazy">
+                    <h3 class="py-3 text-center team">Milianigia Rios</h3>
+                    <p class="about">Dedicated full-stack web developer with a business administration
+                        Bachelor's Degree, blending a
+                        passion for design with a commitment to assisting others, bringing a unique perspective
+                        as a female
+                        professional in the field.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <a href="www.linkedin.com/in/milianigiarios">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-linkedin"
+                                 viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/mrios671">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white"
+                                 class="bi bi-github"
+                                 viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-<!--    <div class="container">-->
-<!--        <footer th:replace="partials/fragments :: footer"></footer>-->
-<!--    </div>-->
 
+
+    <footer th:replace="partials/fragments :: footer"></footer>
 </div>
-<footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 </body>
 

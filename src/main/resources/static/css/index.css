@@ -197,7 +197,7 @@ video{
     border-radius: 18px;
     padding: 30px;
     margin: auto; /* Center the form horizontally */
-    max-width: 700px; /* Set a maximum width for responsiveness */
+    max-width: 750px; /* Set a maximum width for responsiveness */
     width: 100%; /* Adjust as needed */
 
     background-color: #054A91;
