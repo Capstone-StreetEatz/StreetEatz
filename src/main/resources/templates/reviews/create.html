@@ -7,17 +7,18 @@
 <div class="page-wrapper">
 	<nav th:replace="partials/fragments :: navbar"></nav>
 	<div class="ad-card">
-		<form th:action="@{/reviews/create}" method="post" th:object="${review}">
+		<form th:action="@{/reviews/create/{id}(id=${truck.getId()})}" method="post" th:object="${review}">
 			<div class="form-control">
 				<label for="body">body</label>
 				<textarea th:field="*{body}" name="body" id="body" cols="30" rows="10"></textarea>
-				<label for="rating" >Rating</label>
+				<label for="rating" >Rating </sp></label>
 				<input  type="range" min="0" max="10" name="rating" id="rating" th:field="*{rating}">
 				<label for="user_id" >Rating</label>
-				<input  type="text" name="user_id" id="user_id" th:field="*{user}" th:value="">
-			</div>
-			<button type="submit">Post Review</button>
+				<input th:hidden="hidden" type="text" name="user_id" id="user_id" th:field="*{user}" >
+				<input th:hidden="hidden" type="text" name="truck_id" id="truck_id" th:field="*{truck.id}" >
 
+				<button type="submit">Post Review</button>
+			</div>
 
 		</form>
 	</div>

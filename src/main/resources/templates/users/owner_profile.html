@@ -78,7 +78,6 @@
                 <a class="nav-link" href="#tab3" data-bs-toggle="list" id="refresh" onclick="myFunction()" >Directions</a>
             </li>
         </ul>
-
         <div class="tab-content">
             <!--            Reviews-->
             <div class="tab-pane active" id="tab1" role="tabpanel">
@@ -95,8 +94,8 @@
 
                             <div class="ad-card" style="border: 1px solid black">
 
-                                <p> <span class="ad-title" th:text="${user.username}"></span>'s Review: <span class="ad-title" th:text="${review.body}"></span></p>
-                                <p> Rating: <span class="ad-body" th:text="${review.rating}"></span></p>
+                                <p> <span class="ad-title" th:text="${review.body}" ></span></p>
+                                <p> <span class="ad-body" th:text="${review.rating}" ></span></p>
 <!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
 
 <!--                                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">-->
@@ -117,10 +116,10 @@
             <!--            photos-->
             <div class="tab-pane" id="tab2" role="tabpanel">
                 <div class="gallery">
-                                        placeholder images to make sure it works. will input filestack logic later
-                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
-                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
-                                        <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">
+                    <!--                    placeholder images to make sure it works. will input filestack logic later-->
+                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
+                    <!--                    <img th:src="@{/assets/img/main_icon.png}" class="gallery-img img">-->
                 </div>
             </div>
             <!--            directions-->
