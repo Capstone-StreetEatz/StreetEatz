@@ -7,9 +7,9 @@
 
 <body>
 <div class="page-wrapper">
+<!--    Navbar-->
     <nav th:replace="partials/fragments :: navbar"></nav>
     <!--//Start of HERO-->
-
     <div class="video-wrapper d-flex justify-content-end">
         <div class="black-overlay"></div>
 
@@ -28,58 +28,62 @@
 
         </div>
     </div>
-
-    <div class="container-fluid d-flex flex-column gap-5 overflow-hidden" id="main">
-
+<!--Welcome container-->
+    <div class="container welcomeContainer" id="main">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-auto">
+                <img th:src="@{/assets/img/main_icon.png}" style="width: 250px; height: 250px">
+            </div>
+            <div class="welcome">
+                <h2>Your one stop site for all things food trucks!</h2>
+                <p class="var">Discover Food Trucks - Leave Reviews</p>
+                <div class="text-center">
+                    <a th:href="@{/about}" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-auto">
+                <img th:src="@{/assets/img/main_icon.png}" style="width: 250px; height: 250px">
+            </div>
+        </div>
+    </div>
+    <!--map and truck cards-->
+    <div class="container-fluid d-flex flex-column gap-5 overflow-hidden">
         <div class="row">
-            <div class="col-12 col-md-8 position-relative">
+            <div class="col-12 col-md-6 position-relative">
+                <h3 class="text-center">Trucks Near You</h3>
                 <div id="map"></div>
                 <div class="map-overlay-container">
                     <div class="map-overlay">
-                        <h2 id="location-title"></h2>
+                        <h3 id="location-title"></h3>
                         <p id="location-description"></p>
                     </div>
                 </div>
             </div>
             <!--            Truck carousel-->
-            <div class="column">
-                <div class="carousel">
-                    <div th:each="truck : ${trucks}" class="card">
-                        <!-- Your card content goes here -->
-                        <h5 class="card-title"><span class="ad-title" th:text="${truck.getTruckName()}"></span></h5>
-                        <p class="card-text"><a th:href="${truck.getWebsite()}"><span
-                                th:text="${truck.getWebsite()}"/></a></p>
-                        <p class="card-text"><span th:text="${truck.getOwner().getId()}"/></p>
-                        <a th:href="@{/trucks/{id}(id=${truck.id})}" class="btn btn-primary">View
-                            Details</a>
+            <div class="col-12 col-md-6">
+                <h3 class="text-center">Scroll Down to See More</h3>
+                <div class="carousel-container">
+                    <div th:each="truck : ${trucks}" class="carousel-card">
+                        <div class="card mb-4 d-flex flex-row"> <!-- Added flex-row class here -->
+                            <!-- Image on the left of the card -->
+                            <img alt="Profile picture" class="card-img-left custom-image" th:src="*{truck.getAvatar()}">
+                            <div class="card-body">
+                                <!-- Move the card title and text inside the card-body div -->
+                                <h5 class="card-title"><span class="ad-title" th:text="${truck.getTruckName()}"></span></h5>
+                                <p class="card-text"><a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"></span></a></p>
+                                <p class="card-text"><span th:text="${truck.getOwner().getId()}"></span></p>
+                                <a th:href="@{/trucks/{id}(id=${truck.id})}" class="btn btn-primary">View Details</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-
-            <div class="container">
-                <footer th:replace="partials/fragments :: footer"></footer>
-            </div>
         </div>
     </div>
 </div>
-<script>
-    function autoscroll() {
-        var carousel = document.querySelector('.carousel');
-        var cardWidth = carousel.firstElementChild.clientWidth;
-        var currentScrollPosition = carousel.scrollLeft;
+<footer th:replace="partials/fragments :: footer"></footer>
 
-        var nextScrollPosition = currentScrollPosition + cardWidth;
-        carousel.scrollTo({
-            left: nextScrollPosition,
-            behavior: 'smooth'
-        });
-
-        setTimeout(autoscroll, 3000);
-    }
-
-    autoscroll();
-</script>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 </body>
 </html>
