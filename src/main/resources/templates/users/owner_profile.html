@@ -25,12 +25,10 @@
 
 
                         <div sec:authorize="isAuthenticated()">
-                            <div th:if="${user.getId() == #authentication.principal.id && user.isTruckOwner() }">
-                                <button type="button" id="upload" name="upload">Upload an image</button>
-                                <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
-                                    <input type="hidden" name="img" id="img">
-                                </form>
-                            </div>
+                            <button type="button" id="upload" name="upload">Upload an image</button>
+                            <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
+                                <input type="hidden" name="img" id="img" >
+                            </form>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -50,14 +48,14 @@
                                     <p>Username: <span th:text="${user.getUsername()}"/></p>
                                     <p>Email: <span th:text="${user.getEmail()}"/></p>
 
-                                    <div th:if="${truck == null}">
-                                        <a th:href="@{/truckInfo}">Add Truck Info</a>
-                                    </div>
-                                    <div th:if="${truck != null}">
-                                        <div th:if="${truck.getWebsite() != null}">
-                                            <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
+                                        <div th:if="${truck == null}">
+                                            <a th:href="@{/truckInfo}">Add Truck Info</a>
                                         </div>
-                                    </div>
+                                        <div th:if="${truck != null}">
+                                            <div th:if="${truck.getWebsite() != null}">
+                                                <a th:href="@{/editTruckInfo}">Edit Truck Info</a>
+                                            </div>
+                                        </div>
 
                                     <a th:href="@{/updateOwner}">edit profile</a>
                                     <a th:href="@{/deleteUser}">delete profile</a>
@@ -69,6 +67,10 @@
             </div>
         </div>
     </main>
+    <div>
+        <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
+
+    </div>
     <section class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -78,8 +80,7 @@
                 <a class="nav-link" href="#tab2" data-bs-toggle="list">Photos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#tab3" data-bs-toggle="list" id="refresh"
-                   onclick="myFunction()">Directions</a>
+                <a class="nav-link" href="#tab3" data-bs-toggle="list" id="refresh" onclick="myFunction()" >Directions</a>
             </li>
         </ul>
         <div class="tab-content">
@@ -90,11 +91,7 @@
                         <!--     average reviews goes here-->
                     </div>
                     <div class="column">
-                        <div>
-                            <div th:if="${truck != null}">
-                                <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}" class="btn">Leave a Review</a>
-                            </div>
-                        </div>
+
                         <!--                        list of all reviews of truck goes here-->
                         <div th:each="review : ${truckReviews}">
 
@@ -102,7 +99,7 @@
 
 
                                 <p><span class="ad-title" th:text="${review.body}"></span></p>
-                                <p>Rating: <span class="ad-body" th:text="${review.rating}"></span></p>
+                                <p><span class="ad-body" th:text="${review.rating}"></span></p>
                                 <!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
 
                                 <!--                                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">-->
@@ -140,34 +137,30 @@
                     <!--                    <label for="truck_location"><input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}"></label>-->
                     <!--                     <h3>This is where the map will go.</h3> -->
 
-                    <div th:if="${truck != null}">
-                        <label for="truck_location">
-                            <input th:hidden="hidden" name="truck_location" id="truck_location" type="text"
-                                   th:value="${truck.getLocation}">
-                        </label>
-                        <a target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click
-                            here
-                            for location!!!!</a>
+
+                    <label for="truck_location">
+                        <input th:hidden="hidden" name="truck_location" id="truck_location" type="text" th:value="${truck.getLocation}">
+                    </label>
+
+                    <a  target="_blank" th:href="@{https://maps.google.co.uk/maps?(q=${truck.getLocation})}">Click here for location!!!!</a>
+
+
+<!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
+<!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
+<!--                    <div id="map1">-->
+
+                        <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+                        <div id="map1">
+
+
+                        </div>
+<!--  possible extra div-->
                     </div>
 
-
-                    <!--                    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>-->
-                    <!--                    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">-->
-                    <!--                    <div id="map1">-->
-
-                    <link rel="stylesheet"
-                          href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
-                          type="text/css">
-                    <div id="map1">
-
-
-                    </div>
-                    <!--  possible extra div-->
                 </div>
-
             </div>
-        </div>
 
+        </div>
     </section>
 </div>
 <footer th:replace="partials/fragments :: footer"></footer>

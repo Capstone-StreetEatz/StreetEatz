@@ -157,9 +157,9 @@ at middle of screen */
     border-radius: 18px;
 }
 
-#content {
-    overflow: auto;  /* or overflow: hidden; */
-}
+/*#content {*/
+/*    overflow: auto;  !* or overflow: hidden; *!*/
+/*}*/
 
 /* Making images more responsive for smaller size device */
 @media (max-width:670px) {
