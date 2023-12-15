@@ -1,5 +1,3 @@
-
-
 let uploadDoc= document.getElementById("upload")
 let userInput = document.getElementById("img")
 let uploadForm=document.getElementById("imgForm")
