@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div th:if="${user.getAvatar() != null}">
                             <img alt="Profile picture" class="img-thumbnail" th:src="*{user.getAvatar()}">
                         </div>
@@ -26,7 +26,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div class="user-info">
                             <div sec:authorize="isAuthenticated()">
                                 <h1>Username: <span th:text="${#authentication.principal.username}"/></h1>

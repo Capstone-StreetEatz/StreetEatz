@@ -48,10 +48,10 @@ nav{
     transform: scale(1.2);
 }
 /*Need to add media query to this to make it smaller for smaller screens*/
-.img-thumbnail{
-    width: 450px; /* adjust this to the size you want */
+img{
+    width:350px;
+    height:350px;
     border-radius: 50%;
-    object-fit: cover;
 }
 
 .ad-card {
