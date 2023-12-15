@@ -25,10 +25,13 @@
 
 
                         <div sec:authorize="isAuthenticated()">
+                            <div th:if="${user.getId() == #authentication.principal.id && user.isTruckOwner() }">
+
                             <button type="button" id="upload" name="upload">Upload an image</button>
                             <form th:action="@{/imgUpload}" th:method="post" id="imgForm">
                                 <input type="hidden" name="img" id="img" >
                             </form>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -67,10 +70,6 @@
             </div>
         </div>
     </main>
-    <div>
-        <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
-
-    </div>
     <section class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -91,7 +90,10 @@
                         <!--     average reviews goes here-->
                     </div>
                     <div class="column">
+                        <div>
+                            <a th:href="@{/reviews/create/{id}(id=${truck.getId()})}">Leave a Review</a>
 
+                        </div>
                         <!--                        list of all reviews of truck goes here-->
                         <div th:each="review : ${truckReviews}">
 
@@ -159,8 +161,6 @@
 
                 </div>
             </div>
-
-        </div>
     </section>
 </div>
 <footer th:replace="partials/fragments :: footer"></footer>

@@ -17,7 +17,9 @@ function myFunction() {
 (()=>{
     let truckLocation =document.getElementById("truck_location").value;
     document.getElementById("truck_location").dispatchEvent(new Event('click'))
+
     mapboxgl.accessToken = STREETEATZ_MAPBOX_API_KEY;
+
     const map1 = new mapboxgl.Map({
         container: 'map1',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio

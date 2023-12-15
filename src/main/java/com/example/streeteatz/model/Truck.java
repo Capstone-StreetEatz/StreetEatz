@@ -28,7 +28,7 @@ public class Truck {
 
     @Column(length = 600)
     private String avatar;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<Review> reviews;
 
     @ManyToMany(cascade = CascadeType.ALL)

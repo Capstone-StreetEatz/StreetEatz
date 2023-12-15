@@ -1,7 +1,9 @@
 "use strict";
 
 
+
     mapboxgl.accessToken = STREETEATZ_MAPBOX_API_KEY;
+
     const map = new mapboxgl.Map({
     container: 'map',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio

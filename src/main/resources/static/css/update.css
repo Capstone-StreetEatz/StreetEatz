@@ -8,7 +8,7 @@
 }
 body {
     font-family: "Anton", sans-serif;
-    background-color: var(--colors-primary);
+    background-color: var(--colors-secondary);
 }
 nav{
     background-color: var(--colors-light);

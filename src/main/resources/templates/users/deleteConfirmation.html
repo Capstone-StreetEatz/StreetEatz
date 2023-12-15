@@ -7,10 +7,12 @@
     <nav th:replace="partials/fragments :: navbar"></nav>
     <div class="container justify-content-center">
         <form th:action="@{/deleteUser/{id}(id=${user.id})}" method="post" th:object="${user}" class="login-form">
-            <h1>Your profile was successfully deleted</h1>
+            <h1>Are you sure you want to delete your profile?</h1>
             <input type="hidden" th:field="*{id}">
 
-            <p><a class="nav-link active" aria-current="page" th:href="@{/index}">Return to Home Page</a></p>
+            <button class="btn" type="submit">Yes, Delete</button>
+            <p><a class="nav-link active text-center" aria-current="page" th:href="@{/profile}">Cancel</a></p>
+
         </form>
     </div>
 
