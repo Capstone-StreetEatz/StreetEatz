@@ -159,30 +159,45 @@ video{
     margin: 0 0 10px;
 }
 
-.card {
-    height: 400px;
-    width: 400px;
-    border-radius: 18px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    background-color: #e7e7e7;
-    color: black;
-    /*border: 2px solid #fc7a1e;*/
+/*.card {*/
+/*    height: 400px;*/
+/*    width: 400px;*/
+/*    border-radius: 18px;*/
+/*    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    background-color: #e7e7e7;*/
+/*    color: black;*/
+/*    !*border: 2px solid #fc7a1e;*!*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.card-img-left {*/
+/*    max-height: 50%;*/
+/*}*/
+
+/*.carousel-control-prev, .carousel-control-next {*/
+/*    color: var(--colors-secondary);*/
+/*    font-weight: bold;*/
+/*    font-size: 18px;*/
+/*    margin: -45px;*/
+/*}*/
+
+/*.carousel-control-next-icon, .carousel-control-prev-icon {*/
+/*    color: var(--colors-secondary);*/
+/*    font-size: 30px;*/
+/*}*/
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
     overflow: hidden;
+    white-space: nowrap;
 }
 
-.card-img-left {
-    max-height: 50%;
-}
-
-.carousel-control-prev, .carousel-control-next {
-    color: var(--colors-secondary);
-    font-weight: bold;
-    font-size: 18px;
-    margin: -45px;
-}
-
-.carousel-control-next-icon, .carousel-control-prev-icon {
-    color: var(--colors-secondary);
-    font-size: 30px;
+.card {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /*animated scroll arrow animation*/
