@@ -1,41 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="~{partials/fragments :: head(Show, '/css/show.css')}">
-	<title>Show</title>
+    <title>Show</title>
 </head>
 <body>
 <div class="page-wrapper">
-	<nav th:replace="partials/fragments :: navbar"></nav>
-	<h1>Viewing Individual Review</h1>
-	<div class="ad-card">
+    <nav th:replace="partials/fragments :: navbar"></nav>
+    <div class="container show">
+        <h1>Review</h1>
+        <div class="ad-card">
 
-		<p> <span th:text="${review.getUser().getUsername()}"></span></p>
+            <p><span th:text="${review.getUser().getUsername()}"></span></p>
 
-		<p><span class="ad-body" th:text="${review.truck.getTruckName()}"></span></p>
-		<p>Body: <span th:text="${review.body}"></span></p>
-		<p>Rating: <span th:text="${review.rating}"></span></p>
-		<div class="form-control">
-			<form th:action="@{/reviews/delete}" method="post">
-				<input name="id" th:hidden="true" th:value="${review.id}" >
-				<button type="submit">Delete</button>
-			</form>
-			<form th:action="@{/reviews/update/{id}(id=${review.getId()})}">
-				<button>Update</button>
-			</form>
+            <p><span class="ad-body" th:text="${review.truck.getTruckName()}"></span></p>
+            <p>Body: <span th:text="${review.body}"></span></p>
+            <p>Rating: <span th:text="${review.rating}"></span></p>
+            <div class="row">
+                <form th:action="@{/reviews/delete}" method="post">
+                    <input name="id" th:hidden="true" th:value="${review.id}">
+                    <button type="submit">Delete</button>
+                </form>
+                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">
+                    <button>Update</button>
+                </form>
+            </div>
 
-		</div>
-	</div>
-	<div sec:authorize="isAuthenticated()">
-		This content is only shown to authenticated users.
 
-		User ID: <span th:text="${#authentication.principal.id}"/>
-		Username: <span th:text="${#authentication.principal.username}"/>
-		Email: <span th:text="${#authentication.principal.email}"/>
-	</div>
-	<div class="container">
-		<footer th:replace="partials/fragments :: footer"></footer>
-	</div>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <!--		This content is only shown to authenticated users.-->
+
+            User ID: <span th:text="${#authentication.principal.id}"/>
+            Username: <span th:text="${#authentication.principal.username}"/>
+            Email: <span th:text="${#authentication.principal.email}"/>
+        </div>
+    </div>
+
+
 </div>
+
+<footer th:replace="partials/fragments :: footer"></footer>
 
 <th:block th:replace="partials/fragments :: scripts"></th:block>
 

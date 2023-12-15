@@ -20,6 +20,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h3 class="card-title"><span class="ad-title" th:text="${truck.getTruckName()}" ></span></h3>
+                                <p class="card-text"><span th:text="${truck.getOwner().getBio()}"></span></p>
                                 <p class="card-text"><a th:href="${truck.getWebsite()}"><span th:text="${truck.getWebsite()}"/></a></p>
                                 <a th:href="@{/trucks/{id}(id=${truck.id})}" class="btn btn-primary">View Details</a>
                             </div>
@@ -33,7 +34,7 @@
         <div class="row justify-content-center">
             <div class="col-auto">
                 <h2>Don't See Your Food Truck? Sign Up today!</h2>
-                <a class="nav-link btn" th:href="@{/sign-up}">Sign Up</a>
+                <a class="nav-link btn text-center" th:href="@{/sign-up}">Sign Up</a>
             </div>
         </div>
     </div>

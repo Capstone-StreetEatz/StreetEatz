@@ -35,15 +35,6 @@ public class TruckController {
     public String showAllTrucks(Model model) {
 
         ArrayList<Truck> trucks = (ArrayList<Truck>) truckDao.findAll();
-//        ArrayList<User> users = new ArrayList<>();
-
-//        for (Truck truck: trucks){
-//
-//            users.add( userDao.getUserById(truck.getOwner().getId()));
-//
-//        }
-
-//        model.addAttribute("users",users);
         model.addAttribute("trucks",trucks);
         return "trucks/show_all";
     }

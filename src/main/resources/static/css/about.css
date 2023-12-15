@@ -103,6 +103,38 @@ html {
 .button:hover {
     background-color: #FC7A1E;
 }
+.main{
+    max-width: 750px;
+}
+h2{
+    font-family: Modak, serif;
+    text-align: center;
+    font-size: 65px;
+    color: var(--colors-secondary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
+}
+h3{
+    color: var(--colors-secondary-light);
+    font-size: 50px;
+}
+.benefits{
+    color: var(--colors-primary);
+}
+.about{
+    color: var(--colors-light);
+}
+.team-container{
+    background-color: var(--colors-primary);
+}
+.benefit-container{
+    background-color: var(--colors-secondary);
+}
+.person-container{
+    max-width: 350px;
+}
+.person-column{
+    max-width: 450px;
+}
 /*@media screen and (max-width: 650px) {*/
 /*    .column {*/
 /*        width: 100%;*/

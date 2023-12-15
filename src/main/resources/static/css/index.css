@@ -133,7 +133,7 @@ video{
     justify-content: space-evenly;
 }
 #map {
-    height: 1200px;
+    height: 600px;
     margin: 50px auto 0;
     /*border: 5px solid black;*/
     border-radius: 18px;
@@ -159,32 +159,70 @@ video{
     margin: 0 0 10px;
 }
 
-.card {
-    height: 400px;
-    width: 400px;
+.carousel-container {
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: scroll; /* Change to 'auto' to enable vertical scrolling */
+    max-height: 600px; /* Set a maximum height for the container to limit the visible cards */
+    margin: 50px auto 0;
+}
+
+.carousel-card {
+    width: 100%; /* Set the width to 100% to make the cards fill the entire width of the container */
+    display: inline-block; /* Display cards in a horizontal line */
+    margin-right: 10px; /* Add some space between cards */
+}
+.container.welcomeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 100%;
+}
+.custom-image{
+    padding: 10px;
+    width: 250px; /* Adjust the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    gap: 15px;
+    border: 5px solid var(--colors-light);
     border-radius: 18px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    background-color: #e7e7e7;
-    color: black;
-    /*border: 2px solid #fc7a1e;*/
-    overflow: hidden;
+    padding: 30px;
+    margin: auto; /* Center the form horizontally */
+    max-width: 750px; /* Set a maximum width for responsiveness */
+    width: 100%; /* Adjust as needed */
+
+    background-color: #054A91;
+    color: var(--colors-light);
+    box-shadow: 4px 3px 0px var(--colors-secondary-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
+
 }
 
-.card-img-left {
-    max-height: 50%;
-}
-
-.carousel-control-prev, .carousel-control-next {
+h2 {
+    font-family: Modak, serif;
+    text-align: center;
+    font-size: 55px;
     color: var(--colors-secondary);
-    font-weight: bold;
-    font-size: 18px;
-    margin: -45px;
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
-    color: var(--colors-secondary);
-    font-size: 30px;
+p.var {
+    font-size: 25px;
+    text-align: center;
+    color: var(--colors-light);
 }
 
+p.var:hover {
+    color: var(--colors-secondary-light);
+}
 /*animated scroll arrow animation*/
 @-webkit-keyframes fade_move_down {
     0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
