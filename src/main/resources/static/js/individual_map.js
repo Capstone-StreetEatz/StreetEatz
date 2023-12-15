@@ -12,13 +12,12 @@ function geocode(search, token) {
 
 function myFunction() {
     window.dispatchEvent(new Event('resize'));
-
 }
 
 (()=>{
     let truckLocation =document.getElementById("truck_location").value;
     document.getElementById("truck_location").dispatchEvent(new Event('click'))
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZ3dhbGtlcjkzIiwiYSI6ImNsbWY4ajdubzF4MDUzcHJxNjR2dDNrYWkifQ.cil4dmekFqmMRRq4LYEpqg';
+    mapboxgl.accessToken = STREETEATZ_MAPBOX_API_KEY;
     const map1 = new mapboxgl.Map({
         container: 'map1',
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
