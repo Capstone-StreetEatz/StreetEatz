@@ -8,7 +8,7 @@
 }
 body {
     font-family: "Anton", sans-serif;
-    background-color: var(--colors-secondary-light);
+    background-color: var(--colors-secondary);
 }
 nav{
     background-color: var(--colors-light);
@@ -46,4 +46,47 @@ nav{
 }
 .nav-img:hover{
     transform: scale(1.2);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 15px;
+    border: 5px solid var(--colors-light);
+    border-radius: 18px;
+    padding: 30px;
+    margin: auto; /* Center the form horizontally */
+    max-width: 600px; /* Set a maximum width for responsiveness */
+    width: 100%; /* Adjust as needed */
+    background-color: var(--colors-secondary);
+    color: var(--colors-light);
+    box-shadow: 4px 3px 0px var(--colors-secondary-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
+
+}
+
+h1 {
+    font-family: Modak, serif;
+    text-align: center;
+    font-size: 55px;
+    color: var(--colors-primary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgb(185, 87, 0);
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+    color: var(--colors-secondary-light);
+}
+
+p:hover {
+    color: var(--colors-light);
 }
