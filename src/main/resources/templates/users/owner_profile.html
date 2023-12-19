@@ -40,7 +40,7 @@
                             <div th:if="${user.getTruck() != null}">
                                 <h1>Trucks Name: <span th:text="${truck.getTruckName()}"/></h1>
                                 <p>Visit Website:
-                                    <a th:href="${truck.getWebsite()}">Click here for Truck's Website!!!!</a>
+                                    <a target="_blank" th:href="${truck.getWebsite()}">Click here for Truck's Website!!!!</a>
                                 </p>
                                 <p>Truck Location: <span th:text="${truck.getLocation()}"/></p>
                                 <p>Bio: <span th:text="${user.getBio()}"/></p>
@@ -98,24 +98,10 @@
                         </div>
                         <!--                        list of all reviews of truck goes here-->
                         <div th:each="review : ${truckReviews}">
-
                             <div class="ad-card" style="border: 1px solid black">
-
-
                                 <p><span class="ad-title" th:text="${user.username}"></span>'s Truck Review: <span
                                         class="ad-title" th:text="${review.body}"></span></p>
                                 <p>Rating: <span class="ad-body" th:text="${review.rating}"></span></p>
-                                <!--                                <p> <span class="ad-body" th:text="${review.user_id}" ></span></p>-->
-
-                                <!--                                <form th:action="@{/reviews/update/{id}(id=${review.getId()})}">-->
-                                <!--                                    <button class="update-profile">Update Info</button>-->
-                                <!--                                </form>-->
-
-                                <!--                                <form th:action="@{reviews/delete}" method="post">-->
-                                <!--                                    <a th:href="@{/reviews/{id}(id=${review.id})}">View Details</a>-->
-                                <!--                                    <input name="id" th:hidden="true" th:value="${review.id}" >-->
-                                <!--                                    <button type="submit">Delete</button>-->
-                                <!--                                </form>-->
                             </div>
                         </div>
 

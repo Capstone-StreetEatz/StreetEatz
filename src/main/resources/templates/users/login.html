@@ -4,8 +4,8 @@
 	<title>Login</title>
 </head>
 <body>
-<nav th:replace="partials/fragments :: navbar"></nav>
 <div class="page-wrapper">
+	<nav th:replace="partials/fragments :: navbar"></nav>
 	<div class="container">
 		<form class="login-form" th:action="@{/login}" method="post">
 			<h1>Log In </h1>
@@ -21,14 +21,11 @@
 				You have been logged out.
 			</div>
 			<input class="btn" type="submit" value="Log In" />
-
-
 			<p><a class="nav-link active" aria-current="page" th:href="@{/sign-up}">Not A Member? Signup Today!</a></p>
 		</form>
 	</div>
 </div>
 <footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
-
 </body>
 </html>
