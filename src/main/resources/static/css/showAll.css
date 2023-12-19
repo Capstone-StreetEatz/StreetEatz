@@ -56,8 +56,8 @@ nav{
     box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }
 .custom-image {
-    width: 175px; /* Ensure the image doesn't exceed the container's width */
-    height: 175px; /* Ensure the image doesn't exceed the container's height */
+    width: 175px;
+    height: 175px;
     border-radius: 18px;
 }
 .card-body {
