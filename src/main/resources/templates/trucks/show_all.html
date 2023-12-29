@@ -6,8 +6,17 @@
 <body>
 <div class="page-wrapper">
     <nav th:replace="partials/fragments :: navbar"></nav>
-
-    <div class="container my-5">
+    <div>
+        <label for="truckSearch">Search by truck name:</label>
+        <input type="text" id="truckSearch" />
+        <button type="submit" id="searchTruckBtn">Search</button>
+    </div>
+<!--    <div class="container">-->
+<!--        <label for="search">Search for Trucks </label>-->
+<!--        <input type="text" id="search" name="search" placeholder="truck name">-->
+<!--        <div id="search-results"></div>-->
+<!--    </div>-->
+    <div id="trucks" class="container my-5">
         <div class="row">
             <div th:each="truck : ${trucks}" class="col-lg-6 mb-4 single-card">
                 <div class="card p-3">
@@ -32,6 +41,7 @@
             </div>
         </div>
     </div>
+<!--    If the user does not see what they are looking for-->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-auto">
@@ -44,5 +54,8 @@
 </div>
 <footer th:replace="partials/fragments :: footer"></footer>
 <th:block th:replace="partials/fragments :: scripts"></th:block>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/searchAll.js"></script>
+
 </body>
 </html>
