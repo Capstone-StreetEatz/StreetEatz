@@ -78,7 +78,7 @@ h2{
     text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
 }
 h3{
-    color: var(--colors-secondary-light);
+    color: var(--colors-primary);
     font-size: 50px;
 }
 .benefits{
@@ -137,10 +137,11 @@ h3{
     text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
     z-index: 5;
 }
-.header h1 {
+h1 {
     font-family: Modak, serif;
-    font-size: 150px;
-    color: var(--colors-secondary);
+    font-size: 85px;
+    color: var(--colors-primary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }
 .header p{
     font-family: inherit;
@@ -152,4 +153,7 @@ h3{
 }
 .header a {
     text-shadow: none;
+}
+.about-img{
+    box-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }
