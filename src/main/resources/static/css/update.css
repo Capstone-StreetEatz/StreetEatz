@@ -8,7 +8,7 @@
 }
 body {
     font-family: "Anton", sans-serif;
-    background-color: var(--colors-secondary);
+    background-color: var(--colors-secondary-light);
 }
 nav{
     background-color: var(--colors-light);
@@ -69,7 +69,7 @@ nav{
     width: 100%; /* Adjust as needed */
     background-color: var(--colors-secondary);
     color: var(--colors-light);
-    box-shadow: 4px 3px 0px var(--colors-secondary-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
+    box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);
 
 }
 

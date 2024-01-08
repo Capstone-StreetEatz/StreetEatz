@@ -49,7 +49,6 @@ public class ReviewController {
 
         Review review = reviewDao.getReviewById(id);
 
-
        model.addAttribute("review", review);
 
         return "reviews/show";
@@ -103,8 +102,6 @@ public class ReviewController {
 
     @PostMapping("/reviews/update")
     public String reviewUpdate(@ModelAttribute ("review") Review review){
-
-
 
         reviewDao.save(review);
 

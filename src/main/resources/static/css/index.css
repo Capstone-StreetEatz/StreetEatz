@@ -192,7 +192,6 @@ video{
     margin: auto; /* Center the form horizontally */
     max-width: 750px; /* Set a maximum width for responsiveness */
     width: 100%; /* Adjust as needed */
-
     background-color: #054A91;
     color: var(--colors-light);
     box-shadow: 4px 3px 0px var(--colors-secondary-light), 9px 8px 0px rgba(41, 54, 117, 0.65);

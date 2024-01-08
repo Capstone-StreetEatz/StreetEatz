@@ -70,22 +70,24 @@ nav{
 .main{
     max-width: 750px;
 }
-h2{
+h2, h3{
     font-family: Modak, serif;
     text-align: center;
-    font-size: 65px;
+    font-size: 45px;
     color: var(--colors-secondary);
     text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
 }
-h3{
+.benefits p{
     color: var(--colors-secondary-light);
-    font-size: 50px;
-}
-.benefits{
-    color: var(--colors-primary);
 }
 .benefit-container{
-    background-color: var(--colors-secondary);
+    background-color: var(--colors-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content {
+    text-align: center;
 }
 .about-wrapper {
     display: flex;
@@ -152,4 +154,14 @@ h3{
 }
 .header a {
     text-shadow: none;
+}
+.svg-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    font-size: 20px;
+    color: var(--colors-primary);
 }

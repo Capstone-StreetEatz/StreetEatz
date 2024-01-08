@@ -6,37 +6,45 @@
 <body>
 <div class="page-wrapper">
     <nav th:replace="partials/fragments :: navbar"></nav>
-
+    <!--Header-->
     <div class="about-wrapper d-flex justify-content-end">
         <div class="black-overlay"></div>
         <img class="hero-img" src="/assets/img/about.png">
         <div class="header">
             <h1>Who We Are</h1>
-            <p>At Street Eatz, we're on a mission to bring foodies and food truck owners together in a delicious harmony. Whether you're a seasoned food truck enthusiast or a casual passerby, we've created the perfect platform to discover, review, and savor the diverse world of mobile culinary delights.</p>
+            <p>At Street Eatz, we're on a mission to bring foodies and food truck owners together in a delicious
+                harmony. Whether you're a seasoned food truck enthusiast or a casual passerby, we've created the perfect
+                platform to discover, review, and savor the diverse world of mobile culinary delights.</p>
             <a class="btn" th:href="@{/aboutTeam}">Meet the Team!</a>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+
+    <!--    step by step guide-->
+    <div class="container m-5 p-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-sm-8 col-lg-4 svg-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#054A91" class="bi bi-search"
+                     viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                 </svg>
             </div>
-            <div class="column">
-                <h4>Discover Trucks</h4>
-                <p>Browse through a diverse array of food trucks in your area. From savory street tacos to mouthwatering desserts, we've got it all.</p>
+            <div class="col-lg-5 col-sm-10">
+                <h2>Discover Trucks</h2>
+                <p>Browse through a diverse array of food trucks in your area. From savory street tacos to mouthwatering
+                    desserts, we've got it all.</p>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <h4>Leave Reviews</h4>
-                <p>Your reviews help fellow foodies make informed decisions and support food truck owners in delivering the best possible culinary delights.</p>
+    <div class="container m-5 p-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 col-sm-10">
+                <h2>Leave Reviews</h2>
+                <p>Your reviews help fellow foodies make informed decisions and support food truck owners in delivering
+                    the best possible culinary delights.</p>
             </div>
-            <div class="column">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+            <div class="col-sm-8 col-lg-4 svg-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#054A91"
+                     class="bi bi-chat-left-text" viewBox="0 0 16 16">
                     <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
                     <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
                 </svg>
@@ -44,63 +52,80 @@
         </div>
 
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="column">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
+    <div class="container m-5 p-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-sm-8 col-lg-4 svg-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#054A91"
+                     class="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5"/>
                 </svg>
             </div>
-            <div class="column">
-                <h4>Connect with Owners</h4>
-                <p>Are you a food truck owner? Join Street Eatz to gain exposure, connect with your community, get valuable feedback on your services, and build lasting relationships with your customers.</p>
+            <div class="col-lg-5 col-sm-10">
+                <h2>Connect with Owners</h2>
+                <p>Are you a food truck owner? Join Street Eatz to gain exposure, connect with your community, get
+                    valuable feedback on your services, and build lasting relationships with your customers.</p>
             </div>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="column">
+    <div class="container m-5 p-5">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-5 col-sm-10">
+                <h2>Get Directions:</h2>
+                <p>Navigate easily to your chosen food truck with our integrated maps feature. No more wandering the
+                    streets—find your favorite flavors with a single click.</p>
+            </div>
+            <div class="col-sm-8 col-lg-4 svg-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#054A91" class="bi bi-map"
+                     viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                          d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
+                </svg>
+            </div>
+        </div>
+    </div>
 
-            </div>
-            <div class
+    <!--    How it works-->
+    <div class="container benefit-container benefits">
+        <h2>How it works</h2>
+        <div class="content">
+            <p>Step 1: Choose the option you need and click the corresponding button.</p>
+            <p>Step 2: Complete the form and submit your information.</p>
+            <p>Step 3: Once your request is approved, you are ready to log in and start reviewing or advertising your
+                truck!.</p>
         </div>
-        <h4>Get Directions:</h4>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z"/>
-        </svg>
-        <p>Navigate easily to your chosen food truck with our integrated maps feature. No more wandering the streets—find your favorite flavors with a single click.</p>
-    </div>
-    <div class="container">
-        <h4>How it Works:</h4>
-        <p> Be a part of the vibrant Street Eatz community by contributing your insights. Joining our community is as easy as enjoying your favorite food truck dish. Simply sign up as a:</p>
-        <ul>
-            <li><p>Regular User: Explore, review, and share your culinary adventures.</p></li>
-            <li><p>Truck Owner: Showcase your delectable offerings, connect with your audience, and watch your fanbase grow.</p></li>
-        </ul>
-    </div>
-    <div class="container benefit-container">
-        <h1 class="text-center benefits">The Benefits</h1>
-        <div class="row">
-            <div class="column">
-                <p class="benefits">For Regular Users:</p>
-                <ul>
-                    <li><p><strong>Personalized Recommendations:</strong> Discover new food trucks tailored to your preferences.</p></li>
-                    <li><p><strong>Community Engagement:</strong> Connect with fellow foodies, share tips, and make the most of your culinary adventures.</p></li>
-                    <li><p><strong>Exclusive Offers:</strong> Receive special promotions and discounts from participating food trucks.</p></li>
-                </ul>
-            </div>
-            <div class="column">
-                <p class="benefits">For Truck Owners:</p>
-                <ul>
-                    <li><p><strong>Increased Visibility:</strong> Showcase your unique offerings to a broader audience.</p></li>
-                    <li><p><strong>Customer Engagement:</strong> Interact with your customers, build loyalty, and turn first-timers into regulars.</p></li>
-                    <li><p><strong>Analytics:</strong>Analytics: Gain insights into customer preferences and tailor your menu for maximum satisfaction.</p></li>
-                </ul>
+
+        <h3 class="benefits">The Benefits</h3>
+        <div class="content">
+            <div class="row align-items-center justify-content-center">
+                <div class="column">
+                    <p>For Regular Users:</p>
+                    <ul>
+                        <li><p><strong>Personalized Recommendations:</strong> Discover new food trucks tailored to your
+                            preferences.</p></li>
+                        <li><p><strong>Community Engagement:</strong> Connect with fellow foodies, share tips, and make
+                            the most of your culinary adventures.</p></li>
+                        <li><p><strong>Exclusive Offers:</strong> Receive special promotions and discounts from
+                            participating food trucks.</p></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <p class="benefits">For Truck Owners:</p>
+                    <ul>
+                        <li><p><strong>Increased Visibility:</strong> Showcase your unique offerings to a broader
+                            audience.</p></li>
+                        <li><p><strong>Customer Engagement:</strong> Interact with your customers, build loyalty, and
+                            turn first-timers into regulars.</p></li>
+                        <li><p><strong>Analytics:</strong>Gain insights into customer preferences and tailor your menu
+                            for maximum satisfaction.</p></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <p><strong>Ready to embark on a flavorful journey? Sign up now and be a part of the Street Eatz community!</strong></p>
-        <a class="nav-link btn text-center" th:href="@{/sign-up}">Sign Up Now!</a>
+        <p><strong>Ready to embark on a flavorful journey? Sign up now and be a part of the Street Eatz
+            community!</strong></p>
+        <a class="btn text-center" th:href="@{/sign-up}">Sign Up Now!</a>
     </div>
     <footer th:replace="partials/fragments :: footer"></footer>
 </div>

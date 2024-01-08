@@ -155,5 +155,5 @@ h1 {
     text-shadow: none;
 }
 .about-img{
-    box-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
+    box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }
