@@ -175,7 +175,23 @@ at middle of screen */
     .heading{
         font-size: 20px;
     }
-
-    /*For the map of where the truck is.*/
-
+}
+a{
+    color: #054A91;
+    text-underline: none;
+    transition: all .3s ease-in-out;
+}
+a:hover{
+    color: #FC7A1E;
+    transform: scale(1.2);
+}
+h1{
+    font-family: Modak, serif;
+    text-align: center;
+    font-size: 55px;
+    color: var(--colors-primary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgb(185, 87, 0);
+}
+p{
+    font-size: 20px;
 }

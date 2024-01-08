@@ -9,6 +9,9 @@
 body {
     font-family: "Anton", sans-serif;
     background-color: var(--colors-secondary-light);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 nav{
     background-color: var(--colors-light);
@@ -53,13 +56,15 @@ nav{
     box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }
 .custom-image {
-    width: 200px; /* Ensure the image doesn't exceed the container's width */
-    height: 200px; /* Ensure the image doesn't exceed the container's height */
+    width: 175px;
+    height: 175px;
     border-radius: 18px;
-    object-fit: contain; /* Maintain aspect ratio and fit within the container */
 }
 .card-body {
     padding: 20px;
+}
+.bio{
+    max-width: 350px;
 }
 h3 span{
     font-family: Modak, serif;
@@ -75,4 +80,7 @@ h2{
 }
 .nav-link.btn{
     margin: 0 1rem;
+}
+footer {
+    margin-top: auto;
 }

@@ -70,24 +70,22 @@ nav{
 .main{
     max-width: 750px;
 }
-h2, h3{
+h2{
     font-family: Modak, serif;
     text-align: center;
-    font-size: 45px;
+    font-size: 65px;
     color: var(--colors-secondary);
     text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
 }
-.benefits p{
-    color: var(--colors-secondary-light);
+h3{
+    color: var(--colors-primary);
+    font-size: 50px;
+}
+.benefits{
+    color: var(--colors-primary);
 }
 .benefit-container{
-    background-color: var(--colors-primary);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.content {
-    text-align: center;
+    background-color: var(--colors-secondary);
 }
 .about-wrapper {
     display: flex;
@@ -139,10 +137,11 @@ h2, h3{
     text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(41, 54, 117, 0.65);
     z-index: 5;
 }
-.header h1 {
+h1 {
     font-family: Modak, serif;
-    font-size: 150px;
-    color: var(--colors-secondary);
+    font-size: 85px;
+    color: var(--colors-primary);
+    text-shadow: 4px 3px 0px var(--colors-light), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }
 .header p{
     font-family: inherit;
@@ -155,13 +154,6 @@ h2, h3{
 .header a {
     text-shadow: none;
 }
-.svg-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-p{
-    font-size: 20px;
-    color: var(--colors-primary);
+.about-img{
+    box-shadow: 4px 3px 0px var(--colors-primary), 9px 8px 0px rgba(255, 137, 2, 0.65);
 }

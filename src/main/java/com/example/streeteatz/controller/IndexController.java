@@ -24,7 +24,6 @@ public class IndexController {
         return "reviews/index";
     }
     @GetMapping("/truckCarousel")
-
     public String showAllTrucks(Model model) {
 
         ArrayList<Truck> trucks = (ArrayList<Truck>) truckDao.findAll();
